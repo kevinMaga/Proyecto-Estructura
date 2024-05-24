@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -8,39 +10,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.espol.concesionaria.PaginaPrincipalController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaPrincipalController">
    <content>
-      <VBox prefHeight="681.0" prefWidth="929.0">
+      <VBox prefHeight="1723.0" prefWidth="929.0" spacing="15.0">
          <children>
-            <HBox fx:id="head" prefHeight="100.0" prefWidth="200.0">
+            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
                <children>
-                  <AnchorPane prefHeight="100.0" prefWidth="338.0">
+                  <AnchorPane prefHeight="86.0" prefWidth="288.0">
                      <children>
                         <ImageView fitHeight="61.0" fitWidth="52.0" layoutX="31.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/volante.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="97.0" layoutY="30.0" prefHeight="40.0" prefWidth="151.0" text="Patiotuerca" textFill="#c97c00">
+                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
                            <font>
-                              <Font name="Bernard MT Condensed" size="33.0" />
+                              <Font name="Bernard MT Condensed" size="35.0" />
                            </font>
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="100.0" prefWidth="418.0">
+                  <AnchorPane prefHeight="86.0" prefWidth="466.0">
                      <children>
-                        <ComboBox fx:id="cmbHead" layoutX="26.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" promptText="Otros" style="-fx-font-size: 16; -fx-font-family: &quot;Bernard MT Condensed&quot;;">
+                        <ComboBox fx:id="cmbHead" layoutX="34.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" promptText="Otros" style="-fx-font-size: 16; -fx-font-family: &quot;Bernard MT Condensed&quot;;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <TextField fx:id="TFHead" layoutX="153.0" layoutY="34.0" prefHeight="38.0" prefWidth="175.0" />
-                        <ImageView fx:id="IVBuscar" fitHeight="46.0" fitWidth="41.0" layoutX="288.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="TFHead" layoutX="161.0" layoutY="34.0" prefHeight="38.0" prefWidth="190.0" />
+                        <ImageView fx:id="IVBuscar" fitHeight="46.0" fitWidth="41.0" layoutX="310.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/lupa.png" />
                            </image>
@@ -52,17 +55,9 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="100.0" prefWidth="398.0">
                      <children>
-                        <Label fx:id="LBIniciarSesion" alignment="CENTER" layoutX="39.0" layoutY="26.0" prefHeight="48.0" prefWidth="87.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
+                        <Label fx:id="LBIniciarSesion" alignment="CENTER" layoutX="57.0" layoutY="33.0" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
                            <font>
-                              <Font name="Bernard MT Condensed" size="12.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Label>
-                        <Label fx:id="LBVende" alignment="CENTER" layoutX="148.0" layoutY="26.0" prefHeight="48.0" prefWidth="118.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Vende tu Vehículo" textFill="WHITE">
-                           <font>
-                              <Font name="Bernard MT Condensed" size="12.0" />
+                              <Font name="Bernard MT Condensed" size="17.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -71,9 +66,241 @@
                      </children>
                   </AnchorPane>
                </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
             </HBox>
-            <HBox fx:id="menu" prefHeight="100.0" prefWidth="200.0" />
-            <HBox fx:id="filtro" prefHeight="100.0" prefWidth="200.0" />
+            <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="428.0" spacing="10.0" style="-fx-background-color: #FE4040;">
+                     <children>
+                        <ImageView fitHeight="56.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/carroNuevo.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="50.0" text="Nuevos" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="503.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/carro.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="54.0" text="Usados" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding></HBox>
+            <HBox fx:id="filtro" prefHeight="151.0" prefWidth="930.0" spacing="45.0" style="-fx-background-color: linear-gradient(90deg, #24617f,#9ce2f7,#80e8f4);;">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox>
+                     <children>
+                        <VBox>
+                           <children>
+                              <HBox />
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <AnchorPane prefHeight="300.0" prefWidth="342.0" style="-fx-border-color: black; -fx-background-color: white;">
+                     <children>
+                        <Label layoutX="21.0" layoutY="6.0" prefHeight="38.0" prefWidth="233.0" text="Encuentra el auto">
+                           <font>
+                              <Font name="Calibri Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="32.0" prefHeight="38.0" prefWidth="154.0" text="de tus sueños">
+                           <font>
+                              <Font name="Calibri Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <ComboBox layoutX="21.0" layoutY="85.0" prefHeight="30.0" prefWidth="92.0" promptText="Autos" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="113.0" layoutY="85.0" prefHeight="30.0" prefWidth="98.0" promptText="Marca" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="211.0" layoutY="85.0" prefHeight="30.0" prefWidth="110.0" promptText="Modelo" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="21.0" layoutY="126.0" prefHeight="40.0" prefWidth="146.0" promptText="Precio desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="167.0" layoutY="126.0" prefHeight="40.0" prefWidth="154.0" promptText="Precio hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="21.0" layoutY="178.0" prefHeight="40.0" prefWidth="146.0" promptText="Año desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <ComboBox layoutX="167.0" layoutY="178.0" prefHeight="40.0" prefWidth="155.0" promptText="Año hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <Button layoutX="88.0" layoutY="236.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="174.0" style="-fx-background-color: #FE4040;" text="Buscar" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="21.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="417.0" fitWidth="469.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/exter.jpg" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children></HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="442.0" text="Los autos más vendidos en Ecuador">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="211.0" fitWidth="861.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/masVendidos.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver más">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="442.0" text="Últimas publicaciones">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="211.0" fitWidth="861.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/ultimasP.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="222.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver últimas publicaciones">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="914.0" spacing="15.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="442.0" text="Autos destacados">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="211.0" fitWidth="861.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/masVendidos.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver más autos destacados">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
          </children>
       </VBox>
    </content>
