@@ -15,7 +15,7 @@ import modelo.Tipo;
 
 /**
  * FXML Controller class
- *
+ * estop esnubsunsduasuasdadssdadsasddasads
  * @author Justin Roldan
  */
 public class PaginaPrincipalController implements Initializable {
