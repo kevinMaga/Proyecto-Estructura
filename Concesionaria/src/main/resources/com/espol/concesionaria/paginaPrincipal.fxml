@@ -72,7 +72,7 @@
             </HBox>
             <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="428.0" spacing="10.0" style="-fx-background-color: #FE4040;">
+                  <HBox fx:id="nuevos" alignment="CENTER" prefHeight="100.0" prefWidth="428.0" spacing="10.0" style="-fx-background-color: #FE4040;">
                      <children>
                         <ImageView fitHeight="56.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -89,7 +89,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="62.0" prefWidth="503.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
+                  <HBox fx:id="usados" alignment="CENTER" prefHeight="62.0" prefWidth="503.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
                      <children>
                         <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -54,7 +54,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="100.0" prefWidth="398.0">
                      <children>
-                        <Label fx:id="LBIniciarSesion1" alignment="CENTER" layoutX="57.0" layoutY="33.0" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
+                        <Label fx:id="LBIniciarSesion1" alignment="CENTER" layoutX="28.0" layoutY="34.0" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
                            <font>
                               <Font name="Bernard MT Condensed" size="17.0" />
                            </font>
@@ -62,6 +62,14 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
+                        <ImageView fx:id="IVInicio" fitHeight="36.0" fitWidth="41.0" layoutX="180.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Inicio.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
@@ -71,16 +79,7 @@
             </HBox>
             <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fx:id="IVInicio" fitHeight="46.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/Inicio.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="870.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
+                  <HBox alignment="CENTER" prefHeight="66.0" prefWidth="930.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
                      <children>
                         <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -98,14 +97,8 @@
                      </cursor>
                   </HBox>
                </children>
-               <padding>
-                  <Insets left="30.0" right="30.0" />
-               </padding>
             </HBox>
             <HBox fx:id="filtro" alignment="CENTER" prefHeight="76.0" prefWidth="930.0" spacing="45.0" style="-fx-background-color: linear-gradient(90deg, #24617f,#9ce2f7,#80e8f4);;">
-               <padding>
-                  <Insets bottom="10.0" top="10.0" />
-               </padding>
                <children>
                   <Label text="Autos Usados en Venta en Ecuador">
                      <font>
@@ -113,6 +106,9 @@
                      </font>
                   </Label>
                </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="930.0" spacing="15.0">
                <padding>

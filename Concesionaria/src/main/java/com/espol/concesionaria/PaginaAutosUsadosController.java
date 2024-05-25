@@ -4,6 +4,7 @@
  */
 package com.espol.concesionaria;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -49,7 +51,15 @@ public class PaginaAutosUsadosController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        IVInicio.setOnMouseClicked(e->{
+            Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaPrincipal", 929, 681);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }    
     
 }
