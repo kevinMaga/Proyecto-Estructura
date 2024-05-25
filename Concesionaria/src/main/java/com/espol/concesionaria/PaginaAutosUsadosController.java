@@ -44,7 +44,41 @@ public class PaginaAutosUsadosController implements Initializable {
     @FXML
     private TextField TFHasta1;
     @FXML
-    private ImageView IVBuscarPrecio;
+    private ImageView IVBuscarPrecio1;
+    @FXML
+    private TextField TFDesde2;
+    @FXML
+    private TextField TFHasta2;
+    @FXML
+    private ImageView IVBuscarPrecio2;
+    @FXML
+    private Label LMarcas;
+    @FXML
+    private Label LProvincias;
+    @FXML
+    private TextField TFDesde3;
+    @FXML
+    private TextField TFHasta3;
+    @FXML
+    private ImageView IVBuscarPrecio3;
+    @FXML
+    private Label LTransmision;
+    @FXML
+    private ImageView IVCars1;
+    @FXML
+    private ImageView IVCars2;
+    @FXML
+    private ImageView IVCars3;
+    @FXML
+    private ImageView IVCars4;
+    @FXML
+    private ImageView IVCars5;
+    @FXML
+    private ImageView IVCars6;
+    @FXML
+    private ImageView IVCars7;
+    @FXML
+    private ImageView IVCars8;
 
     /**
      * Initializes the controller class.

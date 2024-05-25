@@ -115,16 +115,16 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
                <children>
-                  <SplitPane dividerPositions="0.2378378378378378" prefHeight="335.0" prefWidth="890.0">
+                  <SplitPane dividerPositions="0.2378378378378378" prefHeight="387.0" prefWidth="986.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="209.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="208.0">
                            <children>
                               <Label layoutX="16.0" layoutY="14.0" text="Precio:">
                                  <font>
                                     <Font name="Arial" size="18.0" />
                                  </font>
                               </Label>
-                              <HBox layoutX="5.0" layoutY="42.0" prefHeight="36.0" prefWidth="190.0">
+                              <HBox layoutX="9.0" layoutY="42.0" prefHeight="36.0" prefWidth="190.0">
                                  <children>
                                     <TextField fx:id="TFDesde1" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
                                        <font>
@@ -136,16 +136,136 @@
                                           <Font size="14.0" />
                                        </font>
                                     </TextField>
-                                    <ImageView fx:id="IVBuscarPrecio" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="IVBuscarPrecio1" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../images/lupa.png" />
                                        </image>
                                     </ImageView>
                                  </children>
                               </HBox>
+                              <Label layoutX="16.0" layoutY="93.0" text="Año:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="9.0" layoutY="125.0" prefHeight="36.0" prefWidth="190.0">
+                                 <children>
+                                    <TextField fx:id="TFDesde2" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="TFHasta2" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="IVBuscarPrecio2" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/lupa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="15.0" layoutY="246.0" text="Marcas">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LMarcas" layoutX="178.0" layoutY="243.0" text="+">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="290.0" text="Provincias/Estados">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LProvincias" layoutX="178.0" layoutY="287.0" text="+">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="173.0" text="Recorrido:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="9.0" layoutY="198.0" prefHeight="36.0" prefWidth="190.0">
+                                 <children>
+                                    <TextField fx:id="TFDesde3" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="TFHasta3" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="IVBuscarPrecio3" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/lupa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <Label layoutX="15.0" layoutY="329.0" text="Transmisión">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="LTransmision" layoutX="178.0" layoutY="326.0" text="+">
+                                 <font>
+                                    <Font name="Arial" size="24.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="704.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="386.0" prefWidth="674.0">
+                           <children>
+                              <ImageView fx:id="IVCars1" fitHeight="178.0" fitWidth="149.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars2" fitHeight="178.0" fitWidth="149.0" layoutX="178.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars3" fitHeight="178.0" fitWidth="149.0" layoutX="345.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars4" fitHeight="178.0" fitWidth="149.0" layoutX="514.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars5" fitHeight="178.0" fitWidth="149.0" layoutX="12.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars6" fitHeight="178.0" fitWidth="149.0" layoutX="178.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/6.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars7" fitHeight="178.0" fitWidth="149.0" layoutX="345.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/7.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="IVCars8" fitHeight="178.0" fitWidth="149.0" layoutX="514.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/AutosUsados/8.png" />
+                                 </image>
+                              </ImageView>
+                           </children></AnchorPane>
                     </items>
                   </SplitPane>
                </children>
