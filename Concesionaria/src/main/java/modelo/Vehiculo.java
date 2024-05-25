@@ -21,8 +21,9 @@ public class Vehiculo {
     private double peso;
     private String ubicacionActualVehiculo;
     private ArrayList<String> accidentes;
+    private Tipo tipo;
 
-    public Vehiculo(double precio, String marca, String modelo, int año, String kilometraje, String motor, String transmisión, double peso, String ubicacionActualVehiculo, ArrayList<String> accidentes) {
+    public Vehiculo(double precio, String marca, String modelo, int año, String kilometraje, String motor, String transmisión, double peso, String ubicacionActualVehiculo, ArrayList<String> accidentes, Tipo tipo) {
         this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
@@ -33,6 +34,7 @@ public class Vehiculo {
         this.peso = peso;
         this.ubicacionActualVehiculo = ubicacionActualVehiculo;
         this.accidentes = accidentes;
+        this.tipo = tipo;
     }
 
     public double getPrecio() {
@@ -113,6 +115,14 @@ public class Vehiculo {
 
     public void setAccidentes(ArrayList<String> accidentes) {
         this.accidentes = accidentes;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
     
 }
