@@ -1,11 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
-    
-</AnchorPane>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
+   <content>
+      <VBox prefHeight="681.0" prefWidth="929.0" spacing="15.0">
+         <children>
+            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
+               <children>
+                  <AnchorPane prefHeight="86.0" prefWidth="288.0">
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="52.0" layoutX="31.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/volante.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="86.0" prefWidth="466.0">
+                     <children>
+                        <ComboBox fx:id="cmbHead1" layoutX="34.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" promptText="Otros" style="-fx-font-size: 16; -fx-font-family: &quot;Bernard MT Condensed&quot;;">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ComboBox>
+                        <TextField fx:id="TFHead1" layoutX="161.0" layoutY="34.0" prefHeight="38.0" prefWidth="190.0" />
+                        <ImageView fx:id="IVBuscar1" fitHeight="46.0" fitWidth="41.0" layoutX="310.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/lupa.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="100.0" prefWidth="398.0">
+                     <children>
+                        <Label fx:id="LBIniciarSesion1" alignment="CENTER" layoutX="57.0" layoutY="33.0" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="IVInicio" fitHeight="46.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Inicio.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="870.0" spacing="10.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 35%, #80e8f4, #9ce2f7, #24617f);;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/carro.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="54.0" text="Usados" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="filtro" alignment="CENTER" prefHeight="76.0" prefWidth="930.0" spacing="45.0" style="-fx-background-color: linear-gradient(90deg, #24617f,#9ce2f7,#80e8f4);;">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label text="Autos Usados en Venta en Ecuador">
+                     <font>
+                        <Font name="Arial" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
