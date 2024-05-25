@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -113,10 +114,45 @@
                   </Label>
                </children>
             </HBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+            <VBox alignment="TOP_CENTER" prefHeight="438.0" prefWidth="930.0" spacing="15.0">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
+               <children>
+                  <SplitPane dividerPositions="0.2378378378378378" prefHeight="335.0" prefWidth="890.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="209.0">
+                           <children>
+                              <Label layoutX="16.0" layoutY="14.0" text="Precio:">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="5.0" layoutY="42.0" prefHeight="36.0" prefWidth="190.0">
+                                 <children>
+                                    <TextField fx:id="TFDesde1" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="TFHasta1" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                    <ImageView fx:id="IVBuscarPrecio" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../images/lupa.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="704.0" />
+                    </items>
+                  </SplitPane>
+               </children>
             </VBox>
          </children>
       </VBox>

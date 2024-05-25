@@ -37,6 +37,12 @@ public class PaginaAutosUsadosController implements Initializable {
     private ImageView IVInicio;
     @FXML
     private HBox filtro;
+    @FXML
+    private TextField TFDesde1;
+    @FXML
+    private TextField TFHasta1;
+    @FXML
+    private ImageView IVBuscarPrecio;
 
     /**
      * Initializes the controller class.
