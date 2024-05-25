@@ -1,34 +1,34 @@
 precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentesOServicios,tipo,cantidadVentas,foto,usadoONuevo
-20000,Toyota,Corolla,2019,15000,1.8L,Automática,1300kg,Guayaquil,Reparaciones;Cambio de aceite,AUTOS,5,img1.png,Usado
-18000,Honda,Civic,2018,20000,2.0L,Manual,1200kg,Quito,Revisión de frenos;Cambio de aceite,AUTOS,3,img2.png,Usado
-30000,Ford,F-150,2020,10000,3.5L,Automática,2200kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,img3.png,Usado
-15000,Yamaha,YZF-R3,2017,5000,321cc,Manual,169kg,Loja,Cambio de cadena;Cambio de aceite,MOTOS,8,img4.png,Usado
-50000,Caterpillar,320D,2015,3000,6.4L,Automática,21000kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,img5.png,Usado
-25000,Sea Ray,SPX 190,2019,200,4.5L,Automática,1200kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,img6.png,Nuevo
-35000,BMW,X5,2018,25000,3.0L,Automática,2100kg,Manta,Revisión de motor;Cambio de aceite,AUTOS,4,img7.png,Usado
-22000,Chevrolet,Silverado,2017,35000,5.3L,Automática,2400kg,Ambato,Cambio de filtros;Cambio de aceite,PESADOS,3,img8.png,Usado
-16000,Kawasaki,Ninja 650,2019,8000,649cc,Manual,193kg,Esmeraldas,Cambio de llantas;Reparaciones,MOTOS,6,img9.png,Usado
-70000,John Deere,850K,2021,1500,6.8L,Automática,15500kg,Riobamba,Reparaciones;Cambio de aceite,MAQUINARIAS,0,img10.png,Nuevo
-15000,Volkswagen,Golf,2015,45000,1.4L,Automática,1200kg,Ibarra,Revisión de motor;Cambio de aceite,AUTOS,7,img11.png,Usado
-38000,Nissan,Altima,2019,22000,2.5L,Automática,1470kg,Santo Domingo,Reparaciones;Cambio de filtros,AUTOS,2,img12.png,Usado
-10000,Hyundai,Accent,2016,50000,1.6L,Manual,1150kg,Latacunga,Cambio de aceite;Cambio de filtros,AUTOS,10,img13.png,Usado
-45000,Mercedes-Benz,C-Class,2018,30000,2.0L,Automática,1610kg,Quito,Revisión de frenos;Reparaciones,AUTOS,3,img14.png,Usado
-12000,Honda,CBR500R,2018,7000,471cc,Manual,192kg,Guayaquil,Cambio de aceite;Cambio de llantas,MOTOS,5,img15.png,Usado
-32000,Ford,Ranger,2020,12000,2.2L,Automática,2000kg,Cuenca,Revisión de motor;Reparaciones,PESADOS,2,img16.png,Usado
-60000,Volvo,EC210D,2016,2500,5.7L,Automática,21000kg,Machala,Cambio de aceite;Reparaciones,MAQUINARIAS,1,img17.png,Usado
-20000,Yamaha,WaveRunner VX,2019,100,1049cc,Automática,355kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,img18.png,Nuevo
-28000,Kia,Sportage,2017,40000,2.0L,Automática,1540kg,Manta,Cambio de aceite;Reparaciones,AUTOS,4,img19.png,Usado
-15000,Ford,EcoSport,2016,60000,1.5L,Manual,1300kg,Ambato,Cambio de aceite;Cambio de filtros,AUTOS,9,img20.png,Usado
-37000,BMW,3 Series,2019,25000,2.0L,Automática,1570kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,2,img21.png,Usado
-45000,Chevrolet,Tahoe,2018,30000,5.3L,Automática,2500kg,Riobamba,Cambio de aceite;Reparaciones,PESADOS,1,img22.png,Usado
-22000,Suzuki,GSX-S750,2019,5000,749cc,Manual,213kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,img23.png,Usado
-80000,Komatsu,PC200-8,2015,4000,6.7L,Automática,19200kg,Santo Domingo,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,img24.png,Usado
-19000,Jeep,Wrangler,2017,45000,3.6L,Automática,1800kg,Latacunga,Reparaciones;Cambio de filtros,AUTOS,6,img25.png,Usado
-15000,Nissan,Sentra,2015,55000,1.8L,Manual,1250kg,Guayaquil,Revisión de frenos;Cambio de aceite,AUTOS,8,img26.png,Usado
-23000,Honda,CB650R,2020,3000,649cc,Manual,202kg,Quito,Cambio de aceite;Cambio de filtros,MOTOS,3,img27.png,Usado
-45000,Ford,Explorer,2018,32000,3.5L,Automática,2250kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,img28.png,Usado
-60000,Caterpillar,426F2,2017,2500,4.4L,Automática,9100kg,Machala,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,img29.png,Usado
-27000,Sea-Doo,RXP-X 300,2019,200,1630cc,Automática,405kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,img30.png,Nuevo
+20000,Toyota,Corolla,2019,15000,1.8L,Automática,1300kg,Guayaquil,Reparaciones;Cambio de aceite,AUTOS,5,toyotaCorolla.png,Usado
+18000,Honda,Civic,2018,20000,2.0L,Manual,1200kg,Quito,Revisión de frenos;Cambio de aceite,AUTOS,3,hondaCivic.jpg,Usado
+30000,Ford,F-150,2020,10000,3.5L,Automática,2200kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,fordF-150.jpg,Usado
+15000,Yamaha,YZF-R3,2017,5000,321cc,Manual,169kg,Loja,Cambio de cadena;Cambio de aceite,MOTOS,8,yamahaYZF-R3.jpg,Usado
+50000,Caterpillar,320D,2015,3000,6.4L,Automática,21000kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,caterpillar320D.jpg,Usado
+25000,Sea Ray,SPX 190,2019,200,4.5L,Automática,1200kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,seaRaySPX190.jpg,Nuevo
+35000,BMW,X5,2018,25000,3.0L,Automática,2100kg,Manta,Revisión de motor;Cambio de aceite,AUTOS,4,BMWX5.png,Usado
+22000,Chevrolet,Silverado,2017,35000,5.3L,Automática,2400kg,Ambato,Cambio de filtros;Cambio de aceite,PESADOS,3,chevroletSilverado.png,Usado
+16000,Kawasaki,Ninja 650,2019,8000,649cc,Manual,193kg,Esmeraldas,Cambio de llantas;Reparaciones,MOTOS,6,kawasakiNinja650.png,Usado
+70000,John Deere,850K,2021,1500,6.8L,Automática,15500kg,Riobamba,Reparaciones;Cambio de aceite,MAQUINARIAS,0,johnDeere850K.png,Nuevo
+15000,Volkswagen,Golf,2015,45000,1.4L,Automática,1200kg,Ibarra,Revisión de motor;Cambio de aceite,AUTOS,7,volkswagenGolf.png,Usado
+38000,Nissan,Altima,2019,22000,2.5L,Automática,1470kg,Santo Domingo,Reparaciones;Cambio de filtros,AUTOS,2,nissanAltima.png,Usado
+10000,Hyundai,Accent,2016,50000,1.6L,Manual,1150kg,Latacunga,Cambio de aceite;Cambio de filtros,AUTOS,10,hyundaiAccent.png,Usado
+45000,Mercedes-Benz,C-Class,2018,30000,2.0L,Automática,1610kg,Quito,Revisión de frenos;Reparaciones,AUTOS,3,mercedes-BenzC-Class.png,Usado
+12000,Honda,CBR500R,2018,7000,471cc,Manual,192kg,Guayaquil,Cambio de aceite;Cambio de llantas,MOTOS,5,hondaCBR500R.png,Usado
+32000,Ford,Ranger,2020,12000,2.2L,Automática,2000kg,Cuenca,Revisión de motor;Reparaciones,PESADOS,2,fordRanger.png,Usado
+60000,Volvo,EC210D,2016,2500,5.7L,Automática,21000kg,Machala,Cambio de aceite;Reparaciones,MAQUINARIAS,1,volvoEC210D.png,Usado
+20000,Yamaha,WaveRunner VX,2019,100,1049cc,Automática,355kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,yamahaWaveRunnerVX.png,Nuevo
+28000,Kia,Sportage,2017,40000,2.0L,Automática,1540kg,Manta,Cambio de aceite;Reparaciones,AUTOS,4,kiaSportage.png,Usado
+15000,Ford,EcoSport,2016,60000,1.5L,Manual,1300kg,Ambato,Cambio de aceite;Cambio de filtros,AUTOS,9,fordEcoSport.png,Usado
+37000,BMW,3 Series,2019,25000,2.0L,Automática,1570kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,2,BMW3Series.jpg,Usado
+45000,Chevrolet,Tahoe,2018,30000,5.3L,Automática,2500kg,Riobamba,Cambio de aceite;Reparaciones,PESADOS,1,chevroletTahoe.png,Usado
+22000,Suzuki,GSX-S750,2019,5000,749cc,Manual,213kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,suzukiGSX-S750.jpg,Usado
+80000,Komatsu,PC200-8,2015,4000,6.7L,Automática,19200kg,Santo Domingo,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,komatsuPC200-8.png,Usado
+19000,Jeep,Wrangler,2017,45000,3.6L,Automática,1800kg,Latacunga,Reparaciones;Cambio de filtros,AUTOS,6,jeepWrangler.png,Usado
+15000,Nissan,Sentra,2015,55000,1.8L,Manual,1250kg,Guayaquil,Revisión de frenos;Cambio de aceite,AUTOS,8,nissanSentra.png,Usado
+23000,Honda,CB650R,2020,3000,649cc,Manual,202kg,Quito,Cambio de aceite;Cambio de filtros,MOTOS,3,hondaCB650R.png,Usado
+45000,Ford,Explorer,2018,32000,3.5L,Automática,2250kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,fordExplorer.png,Usado
+60000,Caterpillar,426F2,2017,2500,4.4L,Automática,9100kg,Machala,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,caterpillar426F2.png,Usado
+27000,Sea-Doo,RXP-X 300,2019,200,1630cc,Automática,405kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,sea-DooRXP-X300.jpg,Nuevo
 32000,Mazda,CX-5,2020,20000,2.5L,Automática,1600kg,Manta,Cambio de aceite;Cambio de filtros,AUTOS,3,img31.png,Usado
 18000,Kia,Rio,2017,35000,1.6L,Manual,1250kg,Ambato,Cambio de aceite;Reparaciones,AUTOS,7,img32.png,Usado
 40000,Audi,A4,2018,30000,2.0L,Automática,1600kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,1,img33.png,Usado
