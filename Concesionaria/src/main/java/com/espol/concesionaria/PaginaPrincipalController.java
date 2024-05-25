@@ -49,4 +49,5 @@ public class PaginaPrincipalController implements Initializable {
         cmbHead.getItems().addAll(Tipo.AUTOS,Tipo.ACUATICOS,Tipo.MAQUINARIAS,Tipo.MOTOS,Tipo.PESADOS);
     }    
     
+    
 }
