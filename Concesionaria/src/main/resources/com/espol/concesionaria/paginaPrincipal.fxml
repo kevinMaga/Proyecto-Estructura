@@ -17,7 +17,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaPrincipalController">
    <content>
-      <VBox prefHeight="1723.0" prefWidth="929.0" spacing="15.0">
+      <VBox prefHeight="681.0" prefWidth="929.0" spacing="15.0">
          <children>
             <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
                <children>
@@ -286,7 +286,44 @@
                   </FlowPane>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver más autos destacados">
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver más autos">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="914.0" spacing="15.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label prefHeight="18.0" prefWidth="442.0" text="Noticias">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="211.0" fitWidth="861.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/masVendidos.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="228.0" style="-fx-background-color: white; -fx-background-radius: 40; -fx-border-color: black;" text="Ver más noticias">
                            <font>
                               <Font name="Calibri Bold" size="18.0" />
                            </font>
