@@ -29,36 +29,36 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 45000,Ford,Explorer,2018,32000,3.5L,Automática,2250kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,fordExplorer.png,Usado
 60000,Caterpillar,426F2,2017,2500,4.4L,Automática,9100kg,Machala,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,caterpillar426F2.png,Usado
 27000,Sea-Doo,RXP-X 300,2019,200,1630cc,Automática,405kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,sea-DooRXP-X300.jpg,Nuevo
-32000,Mazda,CX-5,2020,20000,2.5L,Automática,1600kg,Manta,Cambio de aceite;Cambio de filtros,AUTOS,3,img31.png,Usado
-18000,Kia,Rio,2017,35000,1.6L,Manual,1250kg,Ambato,Cambio de aceite;Reparaciones,AUTOS,7,img32.png,Usado
-40000,Audi,A4,2018,30000,2.0L,Automática,1600kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,1,img33.png,Usado
-25000,Honda,CR-V,2019,25000,2.4L,Automática,1500kg,Riobamba,Ninguno,AUTOS,5,img34.png,Usado
-18000,Yamaha,MT-07,2019,6000,689cc,Manual,182kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,img35.png,Usado
-90000,John Deere,410L,2020,1500,4.5L,Automática,8135kg,Santo Domingo,Cambio de aceite;Reparaciones,MAQUINARIAS,0,img36.png,Nuevo
-16000,Hyundai,Elantra,2016,45000,1.8L,Automática,1275kg,Latacunga,Cambio de aceite;Reparaciones,AUTOS,8,img37.png,Usado
-35000,Toyota,RAV4,2018,30000,2.5L,Automática,1650kg,Guayaquil,Revisión de motor;Cambio de filtros,AUTOS,3,img38.png,Usado
-27000,Ford,Edge,2017,45000,2.0L,Automática,1800kg,Quito,Cambio de aceite;Cambio de filtros,AUTOS,6,img39.png,Usado
-16000,Yamaha,MT-09,2018,8000,847cc,Manual,193kg,Cuenca,Revisión de frenos;Reparaciones,MOTOS,5,img40.png,Usado
-52000,Komatsu,WA320-7,2017,3000,6.7L,Automática,15700kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,img41.png,Usado
-22000,Volkswagen,Passat,2016,60000,1.8L,Automática,1500kg,Portoviejo,Cambio de aceite;Reparaciones,AUTOS,7,img42.png,Usado
-30000,Chevrolet,Colorado,2018,30000,3.6L,Automática,2100kg,Manta,Cambio de filtros;Cambio de aceite,PESADOS,2,img43.png,Usado
-15000,Yamaha,MT-03,2017,10000,321cc,Manual,168kg,Ambato,Reparaciones;Cambio de aceite,MOTOS,6,img44.png,Usado
-28000,Honda,HR-V,2019,20000,1.8L,Automática,1330kg,Esmeraldas,Cambio de aceite;Cambio de filtros,AUTOS,3,img45.png,Usado
-50000,Bobcat,S590,2016,3000,2.4L,Automática,3000kg,Riobamba,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,img46.png,Usado
-27000,Sea Ray,SPX 210,2019,150,4.5L,Automática,1400kg,Ibarra,Cambio de aceite;Reparaciones,ACUATICOS,0,img47.png,Nuevo
-16000,Chevrolet,Trax,2017,40000,1.4L,Automática,1450kg,Santo Domingo,Cambio de filtros;Cambio de aceite,AUTOS,4,img48.png,Usado
-12000,Kawasaki,Z400,2018,9000,399cc,Manual,168kg,Latacunga,Revisión de frenos;Cambio de aceite,MOTOS,5,img49.png,Usado
-30000,Toyota,Highlander,2017,35000,3.5L,Automática,2000kg,Guayaquil,Reparaciones;Cambio de filtros,AUTOS,2,img50.png,Usado
-45000,Mercedes-Benz,GLC,2019,20000,2.0L,Automática,1750kg,Quito,Revisión de motor;Cambio de aceite,AUTOS,1,img51.png,Usado
-18000,Honda,Accord,2017,30000,2.4L,Manual,1550kg,Cuenca,Reparaciones;Cambio de filtros,AUTOS,3,img52.png,Usado
-32000,Ford,Mustang,2018,25000,2.3L,Automática,1600kg,Machala,Cambio de aceite;Revisión de frenos,AUTOS,2,img53.png,Usado
-15000,Yamaha,FZ-07,2016,10000,689cc,Manual,182kg,Portoviejo,Revisión de motor;Cambio de aceite,MOTOS,6,img54.png,Usado
-80000,Caterpillar,D6T,2015,4000,9.3L,Automática,20210kg,Manta,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,img55.png,Usado
-25000,Sea-Doo,GTR 230,2019,150,1494cc,Automática,376kg,Ambato,Reparaciones;Cambio de aceite,ACUATICOS,0,img56.png,Nuevo
-30000,Toyota,Tacoma,2017,35000,3.5L,Automática,1950kg,Esmeraldas,Cambio de aceite;Cambio de filtros,PESADOS,4,img57.png,Usado
-19000,Suzuki,Swift,2016,40000,1.2L,Manual,950kg,Riobamba,Cambio de aceite;Reparaciones,AUTOS,9,img58.png,Usado
-16000,Honda,CB300R,2018,6000,286cc,Manual,143kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,5,img59.png,Usado
-85000,John Deere,850K,2020,2000,6.8L,Automática,15500kg,Santo Domingo,Reparaciones;Cambio de aceite,MAQUINARIAS,0,img60.png,Nuevo
+32000,Mazda,CX-5,2020,20000,2.5L,Automática,1600kg,Manta,Cambio de aceite;Cambio de filtros,AUTOS,3,mazdaCX5.jpg,Usado
+18000,Kia,Rio,2017,35000,1.6L,Manual,1250kg,Ambato,Cambio de aceite;Reparaciones,AUTOS,7,kiaRio.jpeg,Usado
+40000,Audi,A4,2018,30000,2.0L,Automática,1600kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,1,audiA4.jpeg,Usado
+25000,Honda,CR-V,2019,25000,2.4L,Automática,1500kg,Riobamba,Ninguno,AUTOS,5,hondaCRV.jpg,Usado
+18000,Yamaha,MT-07,2019,6000,689cc,Manual,182kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,yamahaMT07.jfif,Usado
+90000,John Deere,410L,2020,1500,4.5L,Automática,8135kg,Santo Domingo,Cambio de aceite;Cambio de filtros,MAQUINARIAS,0,johnDeere410L.jpg,Nuevo
+16000,Hyundai,Elantra,2016,45000,1.8L,Automática,1275kg,Latacunga,Cambio de aceite;Reparaciones,AUTOS,8,hyundaiElantra.jpg,Usado
+35000,Toyota,RAV4,2018,30000,2.5L,Automática,1650kg,Guayaquil,Revisión de motor;Cambio de filtros,AUTOS,3,toyotaRAV4.jpeg,Usado
+27000,Ford,Edge,2017,45000,2.0L,Automática,1800kg,Quito,Cambio de aceite;Cambio de filtros,AUTOS,6,fordEdge.jpg,Nuevo
+16000,Yamaha,MT-09,2018,8000,847cc,Manual,193kg,Cuenca,Revisión de frenos;Reparaciones,MOTOS,5,yamahaMT09.jfif,Usado
+52000,Komatsu,WA320-7,2017,3000,6.7L,Automática,15700kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,komatsuWA320.jfif,Usado
+22000,Volkswagen,Passat,2016,60000,1.8L,Automática,1500kg,Portoviejo,Cambio de aceite,AUTOS,7,volkswagenPassat.jpg,Nuevo
+30000,Chevrolet,Colorado,2018,30000,3.6L,Automática,2100kg,Manta,Cambio de filtros;Cambio de aceite,PESADOS,2,chevroletColorado.jpg,Usado
+15000,Yamaha,MT-03,2017,10000,321cc,Manual,168kg,Ambato,Reparaciones;Cambio de aceite,MOTOS,6,yamahaMT03.jpg,Usado
+28000,Honda,HR-V,2019,20000,1.8L,Automática,1330kg,Esmeraldas,Cambio de aceite;Cambio de filtros,AUTOS,3,hondaHRV.jpg,Nuevo
+50000,Bobcat,S590,2016,3000,2.4L,Automática,3000kg,Riobamba,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,bobcatS590.jpg,Usado
+27000,Sea Ray,SPX 210,2019,150,4.5L,Automática,1400kg,Ibarra,Cambio de aceite,ACUATICOS,0,seareySPX210.jpg,Nuevo
+16000,Chevrolet,Trax,2017,40000,1.4L,Automática,1450kg,Santo Domingo,Cambio de filtros;Cambio de aceite,AUTOS,4,chevroletTrax.jpg,Usado
+12000,Kawasaki,Z400,2018,9000,399cc,Manual,168kg,Latacunga,Revisión de frenos;Cambio de aceite,MOTOS,5,kawasakiZ400.jpg,Usado
+30000,Toyota,Highlander,2017,35000,3.5L,Automática,2000kg,Guayaquil,Reparaciones;Cambio de filtros,AUTOS,2,toyotaHighlander.jpg,Usado
+45000,Mercedes-Benz,GLC,2019,20000,2.0L,Automática,1750kg,Quito,Revisión de motor;Cambio de aceite,AUTOS,1,mercedezGLC.jpg,Nuevo
+18000,Honda,Accord,2017,30000,2.4L,Manual,1550kg,Cuenca,Reparaciones;Cambio de filtros,AUTOS,3,hondaAccord.jfif,Usado
+32000,Ford,Mustang,2018,25000,2.3L,Automática,1600kg,Machala,Cambio de aceite;Revisión de frenos,AUTOS,2,fordMustang.jpg,Usado
+15000,Yamaha,FZ-07,2016,10000,689cc,Manual,182kg,Portoviejo,Revisión de motor;Cambio de aceite,MOTOS,6,yamahaFZ07.jpg,Usado
+80000,Caterpillar,D6T,2015,4000,9.3L,Automática,20210kg,Manta,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,caterpillarD6T.jpg,Usado
+25000,Sea-Doo,GTR 230,2019,150,1494cc,Automática,376kg,Ambato,Reparaciones;Cambio de aceite,ACUATICOS,0,seadoGTR230.jpg,Nuevo
+30000,Toyota,Tacoma,2017,35000,3.5L,Automática,1950kg,Esmeraldas,Cambio de aceite;Cambio de filtros,PESADOS,4,toyotaTacoma.jpg,Usado
+19000,Suzuki,Swift,2016,40000,1.2L,Manual,950kg,Riobamba,Cambio de aceite;Reparaciones,AUTOS,9,suzukiSwift.png,Usado
+16000,Honda,CB300R,2018,6000,286cc,Manual,143kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,5,Honda-CB300R.jpg,Usado
+85000,John Deere,850K,2020,2000,6.8L,Automática,15500kg,Santo Domingo,Cambio de aceite,MAQUINARIAS,0,johnDeere850K.jpg,Nuevo
 15000,Volkswagen,Jetta,2016,50000,1.4L,Automática,1200kg,Latacunga,Cambio de filtros;Revisión de frenos,AUTOS,7,img61.png,Usado
 45000,Audi,Q5,2018,25000,2.0L,Automática,1720kg,Guayaquil,Reparaciones;Cambio de aceite,AUTOS,2,img62.png,Usado
 32000,Ford,Explorer,2019,20000,3.5L,Automática,2200kg,Quito,Cambio de filtros;Revisión de motor,PESADOS,1,img63.png,Usado
