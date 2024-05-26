@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -21,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import java.util.ArrayList;
 import modelo.Tipo;
 import modelo.Vehiculo;
 
@@ -49,7 +49,7 @@ public class PaginaPrincipalController implements Initializable {
     private ImageView IVBuscar;
     
     @FXML
-    private Label LBIniciarSesion;
+    private Label LBUser;
     
     @FXML
     private Label LBVende;
@@ -81,7 +81,8 @@ public class PaginaPrincipalController implements Initializable {
     
     public static ArrayList<Vehiculo> vehiculosPorTipo(ArrayList<Vehiculo> vehiculos,Tipo t){
         ArrayList<Vehiculo> array = new ArrayList<>();
-        for(Vehiculo v:vehiculos){
+        for(int i=0;i<vehiculos.size();i++){
+            Vehiculo v = vehiculos.get(i);
             if(v.getTipo().equals(t)){
                 array.add(v);
             }
@@ -91,6 +92,7 @@ public class PaginaPrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LBUser.setText(InicioSesionController.usuario.getUsuario());
         cmbHead.getItems().addAll(Tipo.AUTOS,Tipo.ACUATICOS,Tipo.MAQUINARIAS,Tipo.MOTOS,Tipo.PESADOS);
         nuevos.setOnMouseClicked(e ->{
             Stage ventanaActual = (Stage) nuevos.getScene().getWindow();

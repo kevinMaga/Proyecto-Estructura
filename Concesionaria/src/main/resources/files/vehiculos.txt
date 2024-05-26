@@ -3,7 +3,7 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 30000,Ford,F-150,2020,10000,3.5L,Automática,2200kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,fordF-150.jpg,Usado
 15000,Yamaha,YZF-R3,2017,5000,321cc,Manual,169kg,Loja,Cambio de cadena;Cambio de aceite,MOTOS,8,yamahaYZF-R3.jpg,Usado
 50000,Caterpillar,320D,2015,3000,6.4L,Automática,21000kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,caterpillar320D.jpg,Usado
-25000,Sea Ray,SPX 190,2019,200,4.5L,Automática,1200kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,seaRaySPX190.jpg,Nuevo
+25000,Sea Ray,SPX 190,2019,200,4.5L,Automática,1200kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,seaRaySPX190.jpg,Usado
 35000,BMW,X5,2018,25000,3.0L,Automática,2100kg,Manta,Revisión de motor;Cambio de aceite,AUTOS,4,BMWX5.png,Usado
 22000,Chevrolet,Silverado,2017,35000,5.3L,Automática,2400kg,Ambato,Cambio de filtros;Cambio de aceite,PESADOS,3,chevroletSilverado.png,Usado
 16000,Kawasaki,Ninja 650,2019,8000,649cc,Manual,193kg,Esmeraldas,Cambio de llantas;Reparaciones,MOTOS,6,kawasakiNinja650.png,Usado

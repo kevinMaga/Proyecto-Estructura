@@ -4,17 +4,25 @@
  */
 package com.espol.concesionaria;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import modelo.Tipo;
+import modelo.Vehiculo;
 
 /**
  * FXML Controller class
@@ -31,8 +39,6 @@ public class PaginaAutosUsadosController implements Initializable {
     private TextField TFHead1;
     @FXML
     private ImageView IVBuscar1;
-    @FXML
-    private Label LBIniciarSesion1;
     @FXML
     private HBox menu;
     @FXML
@@ -64,27 +70,46 @@ public class PaginaAutosUsadosController implements Initializable {
     @FXML
     private Label LTransmision;
     @FXML
-    private ImageView IVCars1;
+    private Label LBAutos;
     @FXML
-    private ImageView IVCars2;
+    private Label LBMotos; 
     @FXML
-    private ImageView IVCars3;
+    private Label LBPesados;
     @FXML
-    private ImageView IVCars4;
+    private Label LBMaquinarias;
     @FXML
-    private ImageView IVCars5;
+    private Label LBAcuaticos;
     @FXML
-    private ImageView IVCars6;
-    @FXML
-    private ImageView IVCars7;
-    @FXML
-    private ImageView IVCars8;
-
+    private FlowPane fpVehiculos;
     /**
      * Initializes the controller class.
      */
+    public static void llenarVehiculosEnContenedor(String usadoONuevo,Tipo t,FlowPane fpVehiculos){
+        fpVehiculos.getChildren().clear();
+        ArrayList<Vehiculo> vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, t);
+        for(int i = 0; i < vehiculos.size(); i++){
+            if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
+                Label lbl = new Label(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
+                lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
+                ImageView iv = null;
+                try {
+                    FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutaFoto());
+                    Image img = new Image(f, 290, 180, false, false);
+                    iv = new ImageView(img);
+                    iv.setPreserveRatio(true);
+                } catch (FileNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                lbl.setGraphic(iv);
+                lbl.setContentDisplay(ContentDisplay.TOP);
+                fpVehiculos.getChildren().add(lbl);
+            }
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LBAutos.setStyle("-fx-background-color:blue;");
+        llenarVehiculosEnContenedor("Usado",Tipo.AUTOS,fpVehiculos);
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
@@ -94,6 +119,47 @@ public class PaginaAutosUsadosController implements Initializable {
                 ex.printStackTrace();
             }
         });
+        LBAutos.setOnMouseClicked(e->{
+            LBAutos.setStyle("-fx-background-color:blue;");
+            LBMotos.setStyle("-fx-background-color:black;");
+            LBMaquinarias.setStyle("-fx-background-color:black;");
+            LBAcuaticos.setStyle("-fx-background-color:black;");
+            LBPesados.setStyle("-fx-background-color:black;");
+            llenarVehiculosEnContenedor("Usado",Tipo.AUTOS,fpVehiculos);
+        });
+        LBMotos.setOnMouseClicked(e->{
+            LBAutos.setStyle("-fx-background-color:black;");
+            LBMotos.setStyle("-fx-background-color:blue;");
+            LBMaquinarias.setStyle("-fx-background-color:black;");
+            LBAcuaticos.setStyle("-fx-background-color:black;");
+            LBPesados.setStyle("-fx-background-color:black;");
+            llenarVehiculosEnContenedor("Usado",Tipo.MOTOS,fpVehiculos);
+        });
+        LBMaquinarias.setOnMouseClicked(e->{
+            LBAutos.setStyle("-fx-background-color:black;");
+            LBMotos.setStyle("-fx-background-color:black;");
+            LBMaquinarias.setStyle("-fx-background-color:blue;");
+            LBAcuaticos.setStyle("-fx-background-color:black;");
+            LBPesados.setStyle("-fx-background-color:black;");
+            llenarVehiculosEnContenedor("Usado",Tipo.MAQUINARIAS,fpVehiculos);
+        });
+        LBPesados.setOnMouseClicked(e->{
+            LBAutos.setStyle("-fx-background-color:black;");
+            LBMotos.setStyle("-fx-background-color:black;");
+            LBMaquinarias.setStyle("-fx-background-color:black;");
+            LBAcuaticos.setStyle("-fx-background-color:black;");
+            LBPesados.setStyle("-fx-background-color:blue;");
+            llenarVehiculosEnContenedor("Usado",Tipo.PESADOS,fpVehiculos);
+        });
+        LBAcuaticos.setOnMouseClicked(e->{
+            LBAutos.setStyle("-fx-background-color:black;");
+            LBMotos.setStyle("-fx-background-color:black;");
+            LBMaquinarias.setStyle("-fx-background-color:black;");
+            LBAcuaticos.setStyle("-fx-background-color:blue;");
+            LBPesados.setStyle("-fx-background-color:black;");
+            llenarVehiculosEnContenedor("Usado",Tipo.ACUATICOS,fpVehiculos);
+        });
+        
     }    
     
 }

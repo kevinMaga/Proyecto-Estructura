@@ -4,14 +4,21 @@
  */
 package listas;
 
+import static java.nio.file.Files.size;
+
 /**
  *
  * @author Justin Roldan
  */
 public class ArrayList<E> implements List<E>{
-    public int effectiveSize;
-    public int CAPACITY;
-    public E[] elements;
+    public int effectiveSize = 0;
+    public int CAPACITY = 100;
+    public E[] elements = null;
+    
+    public ArrayList(){
+        this.elements = (E[]) new Object[CAPACITY];
+        
+    }
     
     @Override
     public E get(int index) {
@@ -36,38 +43,36 @@ public class ArrayList<E> implements List<E>{
 
     @Override
     public boolean add(E element) {
-        if(element==null){
+                
+        if (element == null){
             throw new NullPointerException();
-        }
-        if(isFull()){
+        }else if(this.isEmpty()){
+            elements[effectiveSize++]=element;
+            return true;
+        }else if(this.isFull()){
             addCapacity();
         }
-        if(isEmpty()){
-            elements[0]=element;
-            effectiveSize+=1;
-        }
-        elements[effectiveSize-1]=element;
-        effectiveSize+=1;
+        elements[effectiveSize] = element;
+        effectiveSize++;
         return true;
     }
 
     @Override
-    public boolean add(int index, E element) {
-        if(element==null){
+    public void add(int index, E element) {      
+        if(element == null){
             throw new NullPointerException();
+        }else if (index <0 || index > this.effectiveSize){
+            throw new IndexOutOfBoundsException(); 
+        }else if (this.isEmpty()){
+            elements[effectiveSize++] = element;
+        }else if(this.isFull()){
+            this.addCapacity();
         }
-        if(index<0 || index>=effectiveSize || isEmpty()){
-            throw new IndexOutOfBoundsException();
+        for(int i=effectiveSize; i>index; i--){
+            elements[i+1] = elements[i];
         }
-        if(isFull()){
-            addCapacity();
-        }
-        for(int i=effectiveSize-1;i>=index;i--){
-            elements[i+1]=elements[i];
-        }
-        elements[index]=element;
-        effectiveSize+=1;
-        return true;
+        elements[index] = element;
+        effectiveSize++;
     }
 
     @Override
@@ -100,7 +105,7 @@ public class ArrayList<E> implements List<E>{
         if(o==null){
             throw new NullPointerException();
         }
-        for(int i=0;i<effectiveSize-1;i++){
+        for(int i=0;i<effectiveSize;i++){
             if(elements[i].equals(o)){
                 return true;
             }
@@ -161,5 +166,13 @@ public class ArrayList<E> implements List<E>{
     private boolean isFull(){
         return effectiveSize==CAPACITY;
     }
+
+    @Override
+    public int size() {
+        return effectiveSize;
+    }
+    
+   
+    
     
 }

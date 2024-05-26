@@ -57,7 +57,7 @@
                               <Image url="@../../../images/usuario.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="LBIniciarSesion" alignment="CENTER" layoutX="452.0" layoutY="57.0" prefHeight="22.0" prefWidth="116.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
+                        <Label fx:id="LBUser" alignment="CENTER" layoutX="452.0" layoutY="57.0" prefHeight="22.0" prefWidth="116.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
                            <font>
                               <Font name="Bernard MT Condensed" size="17.0" />
                            </font>
