@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import modelo.Tipo;
 
 /**
  * FXML Controller class
@@ -24,9 +25,7 @@ public class PaginaPorTipoController implements Initializable {
     @FXML
     private Label volver;
     
-    public void setDatos(String tipo){
-    
-    }
+    public static Tipo tipo;
     /**
      * Initializes the controller class.
      */

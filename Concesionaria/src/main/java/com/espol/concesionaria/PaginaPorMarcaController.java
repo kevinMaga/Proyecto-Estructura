@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import modelo.Marca;
 
 /**
  * FXML Controller class
@@ -23,6 +24,8 @@ public class PaginaPorMarcaController implements Initializable {
     private ImageView IVInicio;
     @FXML
     private Label volver;
+    
+    public static Marca marca;
     
     public void setDatos(String tipo){
     

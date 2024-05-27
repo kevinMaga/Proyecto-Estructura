@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
@@ -20,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import modelo.Tipo;
 import modelo.Vehiculo;
@@ -89,20 +91,23 @@ public class PaginaAutosUsadosController implements Initializable {
         ArrayList<Vehiculo> vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, t);
         for(int i = 0; i < vehiculos.size(); i++){
             if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
+                VBox v = new VBox();
+                v.setAlignment(Pos.CENTER);
+                v.setStyle("-fx-background-color: white;");
                 Label lbl = new Label(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
                 lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
                 ImageView iv = null;
                 try {
                     FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutaFoto());
-                    Image img = new Image(f, 290, 180, false, false);
+                    Image img = new Image(f, 200, 90, false, false);
                     iv = new ImageView(img);
                     iv.setPreserveRatio(true);
                 } catch (FileNotFoundException ex) {
                     ex.printStackTrace();
                 }
-                lbl.setGraphic(iv);
-                lbl.setContentDisplay(ContentDisplay.TOP);
-                fpVehiculos.getChildren().add(lbl);
+                
+                v.getChildren().addAll(iv,lbl);
+                fpVehiculos.getChildren().add(v);
             }
         }
     }

@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
    <content>
-      <VBox prefHeight="681.0" prefWidth="929.0" spacing="15.0">
+      <VBox prefHeight="722.0" prefWidth="930.0" spacing="15.0">
          <children>
             <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
                <children>
@@ -107,7 +107,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
                <children>
-                  <Label fx:id="LBAutos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Autos" textFill="WHITE">
+                  <Label fx:id="LBAutos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Autos" textFill="WHITE">
                      <font>
                         <Font name="Bernard MT Condensed" size="17.0" />
                      </font>
@@ -115,7 +115,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="LBMotos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Motos" textFill="WHITE">
+                  <Label fx:id="LBMotos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Motos" textFill="WHITE">
                      <font>
                         <Font name="Bernard MT Condensed" size="17.0" />
                      </font>
@@ -123,7 +123,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="LBPesados" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Pesados" textFill="WHITE">
+                  <Label fx:id="LBPesados" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Pesados" textFill="WHITE">
                      <font>
                         <Font name="Bernard MT Condensed" size="17.0" />
                      </font>
@@ -131,7 +131,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="LBMaquinarias" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Maquinarias" textFill="WHITE">
+                  <Label fx:id="LBMaquinarias" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Maquinarias" textFill="WHITE">
                      <font>
                         <Font name="Bernard MT Condensed" size="17.0" />
                      </font>
@@ -139,7 +139,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label fx:id="LBAcuaticos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Acuaticos" textFill="WHITE">
+                  <Label fx:id="LBAcuaticos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Acuaticos" textFill="WHITE">
                      <font>
                         <Font name="Bernard MT Condensed" size="17.0" />
                      </font>
@@ -151,7 +151,7 @@
             </HBox>
             <HBox prefHeight="426.0" prefWidth="930.0">
                <children>
-                  <VBox prefHeight="396.0" prefWidth="278.0" spacing="13.0">
+                  <VBox prefHeight="398.0" prefWidth="234.0" spacing="13.0">
                      <children>
                         <HBox prefHeight="36.0" prefWidth="407.0">
                            <children>
@@ -256,7 +256,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
                   </VBox>
-                  <FlowPane fx:id="fpVehiculos" hgap="20.0" prefHeight="396.0" prefWidth="658.0" vgap="20.0" />
+                  <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="20.0" prefHeight="398.0" prefWidth="696.0" vgap="20.0" />
                </children>
             </HBox>
          </children>

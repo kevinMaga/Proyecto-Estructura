@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaPorMarcaController">
    <content>
       <VBox prefHeight="1723.0" prefWidth="910.0">
          <children>
-            <HBox prefHeight="102.0" prefWidth="927.0">
+            <HBox prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <padding>
                   <Insets left="30.0" right="30.0" />
                </padding>
@@ -27,9 +27,9 @@
                               <Image url="@../../../images/volante.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
+                        <Label layoutX="97.0" layoutY="26.0" prefHeight="51.0" prefWidth="190.0" text="Patiotuerca" textFill="#c97c00">
                            <font>
-                              <Font size="35.0" />
+                              <Font name="System Bold" size="35.0" />
                            </font>
                         </Label>
                      </children>
@@ -38,7 +38,7 @@
                      <children>
                         <Label fx:id="volver" alignment="CENTER" layoutX="90.0" layoutY="20.0" prefHeight="60.0" prefWidth="150.0" text="Volver">
                            <font>
-                              <Font size="35.0" />
+                              <Font name="System Bold" size="35.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />

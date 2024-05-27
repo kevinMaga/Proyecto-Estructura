@@ -21,6 +21,9 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import java.util.ArrayList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
 import modelo.Tipo;
 import modelo.Vehiculo;
 
@@ -117,20 +120,26 @@ public class PaginaPrincipalController implements Initializable {
         ArrayList<Vehiculo> autos = vehiculosPorTipo(vehiculos,Tipo.AUTOS);
         Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
         for(int i=0;i<5;i++){
-            Label lbl = new Label(autos.get(i).getMarca()+" "+autos.get(i).getModelo()+" "+autos.get(i).getAño());
-            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
+            VBox v = new VBox();
+            v.setAlignment(Pos.CENTER);
+            v.setStyle("-fx-background-color: white;");
+            Label lbl = new Label(autos.get(i).getMarca()+" "+autos.get(i).getModelo());
+            Label lbl1 = new Label(String.valueOf(autos.get(i).getAño()));
+            lbl.setAlignment(Pos.CENTER);
+            lbl1.setAlignment(Pos.CENTER);
+            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+            lbl1.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
             ImageView iv=null;
             try {
                 FileInputStream f = new FileInputStream("src/main/resources/images/"+autos.get(i).getRutaFoto());
-                Image img =new Image(f,290,180,false,false);
+                Image img =new Image(f,220,150,false,false);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }
-            lbl.setGraphic(iv);
-            lbl.setContentDisplay(ContentDisplay.TOP);
-            fpMasVendidos.getChildren().add(lbl);
+            v.getChildren().addAll(iv,lbl,lbl1);
+            fpMasVendidos.getChildren().add(v);
         }
     }    
     

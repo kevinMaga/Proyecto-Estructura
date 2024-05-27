@@ -60,7 +60,7 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 85000,John Deere,850K,2020,2000,6.8L,Automática,15500kg,Santo Domingo,Cambio de aceite,MAQUINARIAS,0,johnDeere850K.jpg,Nuevo
 15000,Volkswagen,Jetta,2016,50000,1.4L,Automática,1200kg,Latacunga,Cambio de filtros;Revisión de frenos,AUTOS,7,volkswagenJetta.jpg,Usado
 45000,Audi,Q5,2018,25000,2.0L,Automática,1720kg,Guayaquil,Reparaciones;Cambio de aceite,AUTOS,2,audiQ5.jpg,Usado
-50000,Toyota,Corolla,2024,0,2.0L,Automática,1300kg,Guayaquil,Ninguno,AUTOS,30,toyotaCorolla.jpg,Nuevo
+50000,Toyota,Corolla,2024,0,2.0L,Automática,1300kg,Guayaquil,Ninguno,AUTOS,3,toyotaCorolla.jpg,Nuevo
 55000,Honda,Civic,2024,0,2.0L,Manual,1300kg,Quito,Ninguno,AUTOS,29,hondaCivic.jpg,Nuevo
 60000,BMW,3 Series,2024,0,2.0L,Automática,1570kg,Cuenca,Ninguno,AUTOS,28,bmw3Series.jpg,Nuevo
 45000,Hyundai,Elantra,2024,0,1.6L,Automática,1275kg,Esmeraldas,Ninguno,AUTOS,45,hyundaiElantra.jpg,Nuevo
