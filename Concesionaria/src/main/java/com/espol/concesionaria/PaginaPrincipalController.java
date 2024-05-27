@@ -38,7 +38,7 @@ import modelo.Vehiculo;
 public class PaginaPrincipalController implements Initializable {
     
     public static ArrayList<Vehiculo> vehiculos=new ArrayList<>();
-    public static listas.ArrayList<Marca> marcas = new listas.ArrayList<>();
+    public static ArrayList<Marca> marcas = new ArrayList<>();
     
     @FXML
     private HBox nuevos;
@@ -89,12 +89,16 @@ public class PaginaPrincipalController implements Initializable {
     private FlowPane fpMasVendidos;
     
     public static void llenarListaMarcas(){
+        marcas=new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
             String linea;
             br.readLine();
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
-                marcas.add(new Marca(info[0],info[1]));
+                Marca m = new Marca(info[0],info[1]);
+                if(!marcas.contains(m)){
+                    marcas.add(m);
+                }
             }
         }catch(IOException e){
             e.printStackTrace();

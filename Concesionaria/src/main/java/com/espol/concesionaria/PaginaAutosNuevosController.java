@@ -56,7 +56,7 @@ public class PaginaAutosNuevosController implements Initializable {
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        PaginaPrincipalController.llenarListaMarcas();
+        fpLogos.getChildren().clear();
         for(int i=0;i<PaginaPrincipalController.marcas.size();i++){
             Marca m = PaginaPrincipalController.marcas.get(i);
             ImageView iv=null;
@@ -65,6 +65,7 @@ public class PaginaAutosNuevosController implements Initializable {
                 Image img =new Image(f,150,120,true,true);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);
+                iv.setCursor(Cursor.HAND);
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }
