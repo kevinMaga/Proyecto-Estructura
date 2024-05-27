@@ -60,7 +60,6 @@ public class InicioSesionController implements Initializable {
             for(int i=0;i<usuarios.size();i++){
                 Usuario user =usuarios.get(i);
                 if(user.getContrasena().equals(TFContrasena.getText()) && user.getUsuario().equals(TFUsuario.getText())){
-                //if (user.getContrasena().contains(TFContrasena.getText() && user.getUsuario().contains(TFUsuario.getText()))){
                     usuario=usuarios.get(i);
                     if(usuario.getRol().equals(Rol.Administrador)){
                         Stage s =(Stage)BTIngresar.getScene().getWindow();

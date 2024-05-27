@@ -147,42 +147,42 @@
                               <Font name="Arial Bold" size="27.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="21.0" layoutY="85.0" prefHeight="30.0" prefWidth="92.0" promptText="Autos" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbTipo" layoutX="21.0" layoutY="85.0" prefHeight="30.0" prefWidth="92.0" promptText="Autos" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="113.0" layoutY="85.0" prefHeight="30.0" prefWidth="98.0" promptText="Marca" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbMarca" layoutX="113.0" layoutY="85.0" prefHeight="30.0" prefWidth="98.0" promptText="Marca" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="211.0" layoutY="85.0" prefHeight="30.0" prefWidth="110.0" promptText="Modelo" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbModelo" layoutX="211.0" layoutY="85.0" prefHeight="30.0" prefWidth="110.0" promptText="Modelo" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="21.0" layoutY="126.0" prefHeight="40.0" prefWidth="146.0" promptText="Precio desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbPrecioDesde" layoutX="21.0" layoutY="126.0" prefHeight="40.0" prefWidth="146.0" promptText="Precio desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="167.0" layoutY="126.0" prefHeight="40.0" prefWidth="154.0" promptText="Precio hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbPrecioHasta" layoutX="167.0" layoutY="126.0" prefHeight="40.0" prefWidth="154.0" promptText="Precio hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="21.0" layoutY="178.0" prefHeight="40.0" prefWidth="146.0" promptText="Año desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbAñoDesde" layoutX="21.0" layoutY="178.0" prefHeight="40.0" prefWidth="146.0" promptText="Año desde" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox layoutX="167.0" layoutY="178.0" prefHeight="40.0" prefWidth="155.0" promptText="Año hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbAñoHasta" layoutX="167.0" layoutY="178.0" prefHeight="40.0" prefWidth="155.0" promptText="Año hasta" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <Button layoutX="88.0" layoutY="236.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="174.0" style="-fx-background-color: #FE4040;" text="Buscar" textFill="WHITE">
+                        <Button fx:id="btnBuscar" layoutX="88.0" layoutY="236.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="174.0" style="-fx-background-color: #FE4040;" text="Buscar" textFill="WHITE">
                            <font>
                               <Font name="Calibri Bold" size="21.0" />
                            </font>
@@ -237,7 +237,7 @@
                   </HBox>
                </children>
                <padding>
-                  <Insets top="20.0" />
+                  <Insets bottom="20.0" top="20.0" />
                </padding>
             </VBox>
          </children>

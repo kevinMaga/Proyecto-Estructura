@@ -99,7 +99,7 @@ public class PaginaAutosUsadosController implements Initializable {
                 ImageView iv = null;
                 try {
                     FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutaFoto());
-                    Image img = new Image(f, 200, 90, false, false);
+                    Image img = new Image(f,200,140,true,true);
                     iv = new ImageView(img);
                     iv.setPreserveRatio(true);
                 } catch (FileNotFoundException ex) {

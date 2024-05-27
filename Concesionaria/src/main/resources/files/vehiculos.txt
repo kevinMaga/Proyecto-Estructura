@@ -55,7 +55,7 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 80000,Caterpillar,D6T,2015,4000,9.3L,Automática,20210kg,Manta,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,caterpillarD6T.jpg,Usado
 25000,Sea-Doo,GTR 230,2019,150,1494cc,Automática,376kg,Ambato,Reparaciones;Cambio de aceite,ACUATICOS,0,seadoGTR230.jpg,Nuevo
 30000,Toyota,Tacoma,2017,35000,3.5L,Automática,1950kg,Esmeraldas,Cambio de aceite;Cambio de filtros,PESADOS,4,toyotaTacoma.jpg,Usado
-19000,Suzuki,Swift,2016,40000,1.2L,Manual,950kg,Riobamba,Cambio de aceite;Reparaciones,AUTOS,9,suzukiSwift.png,Usado
+19000,Suzuki,Swift,2016,40000,1.2L,Manual,950kg,Riobamba,Cambio de aceite;Reparaciones,AUTOS,60,suzukiSwift.png,Usado
 16000,Honda,CB300R,2018,6000,286cc,Manual,143kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,5,Honda-CB300R.jpg,Usado
 85000,John Deere,850K,2020,2000,6.8L,Automática,15500kg,Santo Domingo,Cambio de aceite,MAQUINARIAS,0,johnDeere850K.jpg,Nuevo
 15000,Volkswagen,Jetta,2016,50000,1.4L,Automática,1200kg,Latacunga,Cambio de filtros;Revisión de frenos,AUTOS,7,volkswagenJetta.jpg,Usado

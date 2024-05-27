@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -109,9 +108,6 @@
                                  <font>
                                     <Font name="Arial" size="18.0" />
                                  </font>
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="h" />
-                                 </toggleGroup>
                               </RadioButton>
                               <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="160.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -122,7 +118,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="63.0" prefWidth="269.0" style="-fx-background-color: #2167ed;">
                            <children>
-                              <RadioButton fx:id="RBUsados" layoutX="45.0" layoutY="17.0" mnemonicParsing="false" text="Usados" textFill="#e8e8e8" toggleGroup="$h">
+                              <RadioButton fx:id="RBUsados" layoutX="45.0" layoutY="17.0" mnemonicParsing="false" text="Usados" textFill="#e8e8e8">
                                  <font>
                                     <Font name="Arial" size="18.0" />
                                  </font>

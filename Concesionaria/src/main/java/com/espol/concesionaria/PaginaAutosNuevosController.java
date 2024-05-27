@@ -53,41 +53,22 @@ public class PaginaAutosNuevosController implements Initializable {
     private ImageView icTAcuat;
     @FXML
     private FlowPane fpLogos;
-    
-    public static ArrayList<Marca> marcas = new ArrayList<>();
-    
-    public static void llenarListaMarcas(){
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
-            String linea;
-            br.readLine();
-            while((linea=br.readLine())!=null){
-                String[] info = linea.split(",");
-                marcas.add(new Marca(info[0],info[1]));
-            }
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-    }
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        llenarListaMarcas();
-        for(int i=0;i<marcas.size();i++){
-            Marca m = marcas.get(i);
-            Label lbl = new Label();
-            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
+        PaginaPrincipalController.llenarListaMarcas();
+        for(int i=0;i<PaginaPrincipalController.marcas.size();i++){
+            Marca m = PaginaPrincipalController.marcas.get(i);
             ImageView iv=null;
             try {
                 FileInputStream f = new FileInputStream("src/main/resources/images/"+m.getImagen());
-                Image img =new Image(f,100,63,false,false);
+                Image img =new Image(f,150,120,true,true);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }
-            lbl.setGraphic(iv);
-            lbl.setContentDisplay(ContentDisplay.TOP);
-            lbl.setCursor(Cursor.HAND);
-            lbl.setOnMouseClicked(e->{
+            iv.setOnMouseClicked(e->{
                 PaginaPorMarcaController.marca=m;
                 Stage s =(Stage) fpLogos.getScene().getWindow();
                 s.close();
@@ -97,7 +78,7 @@ public class PaginaAutosNuevosController implements Initializable {
                     ex.printStackTrace();
                 }
             });
-            fpLogos.getChildren().add(lbl);
+            fpLogos.getChildren().add(iv);
         }
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();

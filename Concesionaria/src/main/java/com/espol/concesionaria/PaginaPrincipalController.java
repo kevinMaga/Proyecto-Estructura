@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -20,10 +21,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import java.util.ArrayList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import modelo.Marca;
 import modelo.Tipo;
 import modelo.Vehiculo;
 
@@ -36,6 +38,8 @@ import modelo.Vehiculo;
 public class PaginaPrincipalController implements Initializable {
     
     public static ArrayList<Vehiculo> vehiculos=new ArrayList<>();
+    public static listas.ArrayList<Marca> marcas = new listas.ArrayList<>();
+    
     @FXML
     private HBox nuevos;
     
@@ -46,10 +50,34 @@ public class PaginaPrincipalController implements Initializable {
     private ComboBox cmbHead;
     
     @FXML
+    private ComboBox cmbTipo;
+    
+    @FXML
+    private ComboBox cmbMarca;
+    
+    @FXML
+    private ComboBox cmbModelo;
+    
+    @FXML
+    private ComboBox cmbPrecioDesde;
+    
+    @FXML
+    private ComboBox cmbPrecioHasta;
+    
+    @FXML
+    private ComboBox cmbAñoDesde;
+    
+    @FXML
+    private ComboBox cmbAñoHasta;
+    
+    @FXML
     private TextField TFHead;
     
     @FXML
     private ImageView IVBuscar;
+    
+    @FXML
+    private Button btnBuscar;
     
     @FXML
     private Label LBUser;
@@ -59,6 +87,19 @@ public class PaginaPrincipalController implements Initializable {
     
     @FXML
     private FlowPane fpMasVendidos;
+    
+    public static void llenarListaMarcas(){
+        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
+            String linea;
+            br.readLine();
+            while((linea=br.readLine())!=null){
+                String[] info = linea.split(",");
+                marcas.add(new Marca(info[0],info[1]));
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
     
     public static void cargarVehiculos(){
         ArrayList<Vehiculo> vehiculos1 = new ArrayList<>();
@@ -82,6 +123,27 @@ public class PaginaPrincipalController implements Initializable {
         
     }
     
+    private void llenarCuadroDeFiltro(){
+        cmbTipo.getItems().addAll(Tipo.ACUATICOS,Tipo.AUTOS,Tipo.MAQUINARIAS,Tipo.MOTOS,Tipo.PESADOS);        
+        for(int i=0;i<vehiculos.size();i++){
+            Vehiculo v = vehiculos.get(i);
+            if(!vehiculos.contains(v.getModelo())){
+                cmbModelo.getItems().add(v.getModelo());
+            }
+        }
+        for(int i=0;i<marcas.size();i++){
+            cmbMarca.getItems().add(marcas.get(i));
+        }
+        for(int i=0;i<31;i++){
+            cmbPrecioDesde.getItems().add(5000*i);
+            cmbPrecioHasta.getItems().add(5000*i);
+        }
+        for(int i=2005;i<2025;i++){
+            cmbAñoDesde.getItems().add(i);
+            cmbAñoHasta.getItems().add(i);
+        }
+    }
+    
     public static ArrayList<Vehiculo> vehiculosPorTipo(ArrayList<Vehiculo> vehiculos,Tipo t){
         ArrayList<Vehiculo> array = new ArrayList<>();
         for(int i=0;i<vehiculos.size();i++){
@@ -95,6 +157,9 @@ public class PaginaPrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        cargarVehiculos();
+        llenarListaMarcas();
+        llenarCuadroDeFiltro();
         LBUser.setText(InicioSesionController.usuario.getUsuario());
         cmbHead.getItems().addAll(Tipo.AUTOS,Tipo.ACUATICOS,Tipo.MAQUINARIAS,Tipo.MOTOS,Tipo.PESADOS);
         nuevos.setOnMouseClicked(e ->{
@@ -115,7 +180,6 @@ public class PaginaPrincipalController implements Initializable {
                 ex.printStackTrace();
             }
         });
-        cargarVehiculos();
         //Vehiculos mas vendidos en pagina principal
         ArrayList<Vehiculo> autos = vehiculosPorTipo(vehiculos,Tipo.AUTOS);
         Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
@@ -132,7 +196,7 @@ public class PaginaPrincipalController implements Initializable {
             ImageView iv=null;
             try {
                 FileInputStream f = new FileInputStream("src/main/resources/images/"+autos.get(i).getRutaFoto());
-                Image img =new Image(f,220,150,false,false);
+                Image img =new Image(f,220,150,true,true);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);
             } catch (FileNotFoundException ex) {
@@ -141,6 +205,16 @@ public class PaginaPrincipalController implements Initializable {
             v.getChildren().addAll(iv,lbl,lbl1);
             fpMasVendidos.getChildren().add(v);
         }
+        //Boton buscar por filtros
+        btnBuscar.setOnMouseClicked(e->{
+            Stage s =(Stage)btnBuscar.getScene().getWindow();
+            s.close();
+            try {
+                App.abrirNuevaVentana("paginaAutosUsados", 929, 628);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }    
     
     
