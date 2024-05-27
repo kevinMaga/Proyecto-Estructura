@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAdministradorController">
+   <content>
+      <VBox prefHeight="556.0" prefWidth="572.0">
+         <children>
+            <HBox prefHeight="135.0" prefWidth="562.0">
+               <children>
+                  <AnchorPane prefHeight="89.0" prefWidth="155.0">
+                     <children>
+                        <ImageView fitHeight="79.0" fitWidth="89.0" layoutX="14.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/volante.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="89.0" prefWidth="236.0">
+                     <children>
+                        <Label layoutX="68.0" layoutY="33.0" prefHeight="60.0" prefWidth="228.0" text="Patiotuerca" textFill="#c77b00">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="48.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="89.0" prefWidth="221.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="71.0" layoutX="86.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/usuario.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="LBUser" alignment="CENTER" layoutX="53.0" layoutY="70.0" prefHeight="22.0" prefWidth="116.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="17.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="441.0" prefWidth="572.0">
+               <children>
+                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="103.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/administrador/agregar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="103.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/administrador/remover.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="405.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/administrador/editar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="405.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/administrador/listado.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="LBAgregar" alignment="CENTER" layoutX="103.0" layoutY="229.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Agregar">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LBEditar" alignment="CENTER" layoutX="397.0" layoutY="229.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Editar">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LBRemover" alignment="CENTER" layoutX="110.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Remover">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="LBListado" alignment="CENTER" layoutX="397.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Listado">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="14.0" layoutY="14.0" prefHeight="63.0" prefWidth="542.0">
+                     <children>
+                        <AnchorPane prefHeight="63.0" prefWidth="275.0" style="-fx-background-color: #f22e2e;">
+                           <children>
+                              <RadioButton fx:id="RBNuevos" layoutX="45.0" layoutY="18.0" mnemonicParsing="false" text="Nuevos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="160.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/carroNuevo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="63.0" prefWidth="269.0" style="-fx-background-color: #2167ed;">
+                           <children>
+                              <RadioButton fx:id="RBUsados" layoutX="45.0" layoutY="17.0" mnemonicParsing="false" text="Usados" textFill="#e8e8e8">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="157.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../images/carro.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

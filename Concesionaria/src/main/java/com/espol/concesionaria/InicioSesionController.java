@@ -66,7 +66,7 @@ public class InicioSesionController implements Initializable {
                         Stage s =(Stage)BTIngresar.getScene().getWindow();
                         s.close();
                         try {
-                            App.abrirNuevaVentana("paginaPrincipal",929,628);
+                            App.abrirNuevaVentana("paginaAdministrador",583,558);
                         } catch (IOException ex) {
                             ex.printStackTrace();
                         }
