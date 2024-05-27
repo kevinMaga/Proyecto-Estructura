@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 
 /**
  * FXML Controller class
@@ -40,6 +41,9 @@ public class PaginaAdministradorController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         LBUser.setText(InicioSesionController.usuario.getUsuario());
+        ToggleGroup tg=new ToggleGroup();
+        RBNuevos.setToggleGroup(tg);
+        RBUsados.setToggleGroup(tg);
     }    
     
 }
