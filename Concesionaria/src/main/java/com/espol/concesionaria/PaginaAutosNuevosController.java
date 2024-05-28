@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -23,6 +24,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import listas.ArrayList;
 import modelo.Marca;
@@ -42,17 +45,10 @@ public class PaginaAutosNuevosController implements Initializable {
     @FXML
     private ImageView IVInicio;
     @FXML
-    private ImageView icTAuto;
-    @FXML
-    private ImageView icTMoto;
-    @FXML
-    private ImageView icTPesado;
-    @FXML
-    private ImageView icTMaq;
-    @FXML
-    private ImageView icTAcuat;
-    @FXML
     private FlowPane fpLogos;
+    
+    @FXML
+    private HBox hbTipos;
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -90,56 +86,35 @@ public class PaginaAutosNuevosController implements Initializable {
                 ex.printStackTrace();
             }
         });
-        icTMoto.setOnMouseClicked(e->{
-            PaginaPorTipoController.tipo=Tipo.MOTOS;
-            Stage ventanaActual = (Stage) icTAuto.getScene().getWindow();
-            ventanaActual.close();
-            try {
-                App.abrirNuevaVentana("paginaPorTipo", 929, 681);
-            } catch (IOException ex) {
-                ex.printStackTrace();
+        
+        //Llenar contenedor de tipos
+        hbTipos.getChildren().clear();
+        for(int i=0;i<PaginaPrincipalController.tipos.size();i++){
+            Tipo t = PaginaPrincipalController.tipos.get(i);
+            ImageView iv = null;
+            try(FileInputStream f = new FileInputStream("src/main/resources/images/"+t.getFoto())){
+                Image img = new Image(f,180,120,true,true);
+                iv = new ImageView(img);
+            }catch(IOException e){
             }
-        });
-        icTMaq.setOnMouseClicked(e->{
-            PaginaPorTipoController.tipo=Tipo.MAQUINARIAS;
-            Stage ventanaActual = (Stage) icTAuto.getScene().getWindow();
-            ventanaActual.close();
-            try {
-                App.abrirNuevaVentana("paginaPorTipo", 929, 681);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-        icTAcuat.setOnMouseClicked(e->{
-            PaginaPorTipoController.tipo=Tipo.ACUATICOS;
-            Stage ventanaActual = (Stage) icTAuto.getScene().getWindow();
-            ventanaActual.close();
-            try {
-                App.abrirNuevaVentana("paginaPorTipo", 929, 681);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-        icTAuto.setOnMouseClicked(e->{
-            PaginaPorTipoController.tipo=Tipo.AUTOS;
-            Stage ventanaActual = (Stage) icTAuto.getScene().getWindow();
-            ventanaActual.close();
-            try {
-                App.abrirNuevaVentana("paginaPorTipo", 929, 681);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-        icTPesado.setOnMouseClicked(e->{
-            PaginaPorTipoController.tipo=Tipo.PESADOS;
-            Stage ventanaActual = (Stage) icTAuto.getScene().getWindow();
-            ventanaActual.close();
-            try {
-                App.abrirNuevaVentana("paginaPorTipo", 929, 681);
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        });
+            VBox v = new VBox();
+            v.setAlignment(Pos.CENTER);
+            v.setStyle("-fx-background-color: white;");
+            Label lbl = new Label(t.getNombre());
+            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
+            v.getChildren().addAll(iv,lbl);
+            v.setOnMouseClicked(e->{
+                PaginaPorTipoController.tipo=t;
+                Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
+                ventanaActual.close();
+                try {
+                    App.abrirNuevaVentana("paginaPorTipo", 929, 681);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+            hbTipos.getChildren().add(v);
+        }
     }    
     
 }

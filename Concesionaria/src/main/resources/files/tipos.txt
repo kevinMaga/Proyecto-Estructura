@@ -1,0 +1,5 @@
+AUTOS,automovil.png
+MAQUINARIAS,maquinaria.png
+ACUATICOS,acuatico.png
+PESADOS,pesado.png
+MOTOS,moto.png

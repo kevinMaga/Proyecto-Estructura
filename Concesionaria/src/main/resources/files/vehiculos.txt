@@ -75,13 +75,13 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 80000,John Deere,310SL,2020,1000,4.5L,Automática,7000kg,Riobamba,Cambio de aceite;Reparaciones,MAQUINARIAS,0,johndeere310SL.jpg,Nuevo
 12000,Kawasaki,Ninja 400,2018,9000,399cc,Manual,168kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,6,kawasakiNinja400.jpg,Usado
 28000,Nissan,X-Trail,2018,35000,2.5L,Automática,1630kg,Santo Domingo,Cambio de filtros;Reparaciones,AUTOS,4,nissanXTrail.jpg,Usado
-60000,Caterpillar,420F2,2017,3000,4.4L,Automática,8800kg,Latacunga,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,caterpillar420F2.jpg,Usado
+60000,Caterpillar,420F2,2017,3000,4.4L,Automática,8800kg,Latacunga,Revisión de motor;Cambio de aceite,MAQUINARIAS,1,caterpillar420F2.jpg,Nuevo
 16000,Hyundai,Creta,2016,50000,1.6L,Automática,1300kg,Guayaquil,Cambio de aceite;Reparaciones,AUTOS,7,hyundaiCreta.jpg,Usado
 32000,BMW,X3,2018,25000,2.0L,Automática,1700kg,Quito,Revisión de frenos;Cambio de filtros,AUTOS,2,bmwX3.jpg,Usado
 23000,Ford,EcoSport,2019,30000,2.0L,Automática,1320kg,Cuenca,Reparaciones;Cambio de aceite,AUTOS,3,fordEcosport.jpg,Usado
 18000,Suzuki,Gixxer SF,2017,8000,154.9cc,Manual,148kg,Machala,Cambio de aceite;Reparaciones,MOTOS,6,suzukiGixxerSF.jpg,Usado
 90000,Volvo,EC220D,2021,1000,6.0L,Automática,22300kg,Portoviejo,Cambio de filtros;Reparaciones,MAQUINARIAS,0,volvoEC220D.jpg,Nuevo
-15000,Chevrolet,Trailblazer,2015,55000,2.8L,Automática,2000kg,Manta,Reparaciones;Cambio de aceite,AUTOS,8,chevroletTrailBlazer.jpg,Usado
+15000,Chevrolet,Trailblazer,2015,55000,2.8L,Automática,2000kg,Manta,Cambio de aceite,AUTOS,8,chevroletTrailBlazer.jpg,Nuevo
 20000,Honda,Civic,2017,40000,2.0L,Manual,1300kg,Ambato,Revisión de motor;Cambio de filtros,AUTOS,4,hondaCivic1.jpg,Usado
 35000,Ford,Ranger,2018,35000,3.2L,Automática,2100kg,Esmeraldas,Cambio de aceite;Reparaciones,PESADOS,2,fordRanger.jpg,Usado
 15000,Yamaha,MT-03,2016,10000,321cc,Manual,168kg,Riobamba,Cambio de llantas;Cambio de aceite,MOTOS,6,yamahaMT-03.jpg,Usado

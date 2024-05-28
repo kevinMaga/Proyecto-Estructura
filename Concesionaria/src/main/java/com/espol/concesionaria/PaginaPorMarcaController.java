@@ -44,7 +44,6 @@ public class PaginaPorMarcaController implements Initializable {
     public static Marca marca;
     
     public void setDatos(String tipo){
-    
     }
     /**
      * Initializes the controller class.
@@ -103,12 +102,6 @@ public class PaginaPorMarcaController implements Initializable {
             
             fpVehiculos.getChildren().add(l);
         }
-        
-        
-        
-        
-        
-        
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();

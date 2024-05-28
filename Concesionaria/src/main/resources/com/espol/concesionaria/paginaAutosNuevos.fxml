@@ -18,7 +18,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosNuevosController">
    <content>
-      <VBox prefHeight="681.0" prefWidth="929.0">
+      <VBox prefHeight="681.0" prefWidth="929.0" spacing="20.0">
          <children>
             <HBox prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <children>
@@ -67,7 +67,7 @@
                   </AnchorPane>
                </children>
                <padding>
-                  <Insets left="30.0" right="30.0" />
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
@@ -126,97 +126,10 @@
                         <Font name="System Bold" size="25.0" />
                      </font>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="163.0" prefWidth="929.0">
-                     <children>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Auto">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="icTAuto" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/automovil.png" />
-                                 </image>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Moto">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="icTMoto" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/moto.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Pesado">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="icTPesado" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/pesado.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Maquinaria">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="icTMaq" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/maquinaria.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="DEFAULT" />
-                           </cursor>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Acuatico">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="icTAcuat" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../images/acuatico.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </VBox>
-                     </children>
+                  <HBox fx:id="hbTipos" alignment="CENTER" prefHeight="163.0" prefWidth="929.0" spacing="2.0">
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
                   </HBox>
                </children>
             </VBox>

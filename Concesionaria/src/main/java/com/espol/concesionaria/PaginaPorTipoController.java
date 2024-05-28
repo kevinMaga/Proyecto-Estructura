@@ -39,37 +39,17 @@ public class PaginaPorTipoController implements Initializable {
     private HBox infoTipo;
     @FXML
     private FlowPane fpVehiculos;
-    
-    private boolean llno=true;
-    
+
     public static Tipo tipo;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String dFoto;
-        switch (tipo) {
-            case AUTOS:
-                dFoto="automovil.png";
-                break;
-            case PESADOS:
-                dFoto="pesado.png";
-                break;
-            case MOTOS:
-                dFoto="moto.png";
-                break;
-            case MAQUINARIAS:
-                dFoto="maquinaria.png";
-                break;
-            default:
-                dFoto="acuatico.png";
-                break;
-        }
         infoTipo.getChildren().clear();
         ImageView tipImg = null;
         try {
-            FileInputStream f = new FileInputStream("src/main/resources/images/" + dFoto);
+            FileInputStream f = new FileInputStream("src/main/resources/images/" + tipo.getFoto());
             Image img = new Image(f,200,140,true,true);
             tipImg = new ImageView(img);
             tipImg.setPreserveRatio(true);
@@ -78,36 +58,12 @@ public class PaginaPorTipoController implements Initializable {
         }
         infoTipo.setAlignment(Pos.CENTER_LEFT);
         infoTipo.setStyle("-fx-background-color: white;");
-        Label ltipo = new Label(tipo.toString());
+        Label ltipo = new Label(tipo.getNombre());
         ltipo.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
         ltipo.setAlignment(Pos.CENTER);
-        infoTipo.getChildren().addAll(tipImg,ltipo);
-        
-        
-        fpVehiculos.getChildren().clear();
-        ArrayList<Vehiculo> vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo);
-            for(int i = 0; i < vehiculos.size(); i++){
-                if(vehiculos.get(i).getUsadoONuevo().equals("Nuevo")){
-                    llno=false;
-                    VBox v = new VBox();
-                    v.setAlignment(Pos.CENTER);
-                    v.setStyle("-fx-background-color: white;");
-                    Label lbl = new Label(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
-                    lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
-                    ImageView iv = null;
-                    try {
-                        FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutaFoto());
-                        Image img = new Image(f,200,140,true,true);
-                        iv = new ImageView(img);
-                        iv.setPreserveRatio(true);
-                    } catch (FileNotFoundException ex) {
-                        ex.printStackTrace();
-                    }
-                    v.getChildren().addAll(iv,lbl);
-                    fpVehiculos.getChildren().add(v);
-                }
-            }
-        if(llno){
+        infoTipo.getChildren().addAll(tipImg,ltipo);  
+        PaginaAutosUsadosController.llenarVehiculosEnContenedor("Nuevo", tipo, fpVehiculos);
+        if(fpVehiculos.getChildren().isEmpty()){
             Label l = new Label("No se encontraron vehiculos");
             l.setAlignment(Pos.CENTER);
             l.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 25px;");

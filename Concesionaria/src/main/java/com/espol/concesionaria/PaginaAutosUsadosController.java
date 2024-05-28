@@ -114,7 +114,8 @@ public class PaginaAutosUsadosController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         LBAutos.setStyle("-fx-background-color:blue;");
-        llenarVehiculosEnContenedor("Usado",Tipo.AUTOS,fpVehiculos);
+        Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
+        llenarVehiculosEnContenedor("Usado",t,fpVehiculos);
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
@@ -125,44 +126,49 @@ public class PaginaAutosUsadosController implements Initializable {
             }
         });
         LBAutos.setOnMouseClicked(e->{
+            Tipo a = PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
             LBAutos.setStyle("-fx-background-color:blue;");
             LBMotos.setStyle("-fx-background-color:black;");
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",Tipo.AUTOS,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",a,fpVehiculos);
         });
         LBMotos.setOnMouseClicked(e->{
+            Tipo m = PaginaPrincipalController.encontrarTipoPorNombre("MOTOS");
             LBAutos.setStyle("-fx-background-color:black;");
             LBMotos.setStyle("-fx-background-color:blue;");
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",Tipo.MOTOS,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",m,fpVehiculos);
         });
         LBMaquinarias.setOnMouseClicked(e->{
+            Tipo maq = PaginaPrincipalController.encontrarTipoPorNombre("MAQUINARIAS");
             LBAutos.setStyle("-fx-background-color:black;");
             LBMotos.setStyle("-fx-background-color:black;");
             LBMaquinarias.setStyle("-fx-background-color:blue;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",Tipo.MAQUINARIAS,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",maq,fpVehiculos);
         });
         LBPesados.setOnMouseClicked(e->{
+            Tipo p = PaginaPrincipalController.encontrarTipoPorNombre("PESADOS");
             LBAutos.setStyle("-fx-background-color:black;");
             LBMotos.setStyle("-fx-background-color:black;");
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:blue;");
-            llenarVehiculosEnContenedor("Usado",Tipo.PESADOS,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",p,fpVehiculos);
         });
         LBAcuaticos.setOnMouseClicked(e->{
+            Tipo acua = PaginaPrincipalController.encontrarTipoPorNombre("ACUATICOS");
             LBAutos.setStyle("-fx-background-color:black;");
             LBMotos.setStyle("-fx-background-color:black;");
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:blue;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",Tipo.ACUATICOS,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",acua,fpVehiculos);
         });
         
     }    
