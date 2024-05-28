@@ -88,6 +88,8 @@ public class PaginaPrincipalController implements Initializable {
     @FXML
     private FlowPane fpMasVendidos;
     
+    
+    
     public static void llenarListaMarcas(){
         marcas=new ArrayList<>();
         try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
@@ -159,8 +161,20 @@ public class PaginaPrincipalController implements Initializable {
         return array;
     }
     
+    public static ArrayList<Vehiculo> vehiculosPorMarca(ArrayList<Vehiculo> vehiculos,Marca m){
+        ArrayList<Vehiculo> array = new ArrayList<>();
+        for(int i=0;i<vehiculos.size();i++){
+            Vehiculo v = vehiculos.get(i);
+            if(v.getMarca().equals(m.getNombre())){
+                array.add(v);
+            }
+        }
+        return array;
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         cargarVehiculos();
         llenarListaMarcas();
         llenarCuadroDeFiltro();

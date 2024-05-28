@@ -137,7 +137,7 @@
                               </Label>
                               <ImageView fx:id="icTAuto" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/sedan.png" />
+                                    <Image url="@../../../images/automovil.png" />
                                  </image>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
@@ -157,7 +157,7 @@
                               </Label>
                               <ImageView fx:id="icTMoto" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/kawasakiNinja650.png" />
+                                    <Image url="@../../../images/moto.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -174,7 +174,7 @@
                               </Label>
                               <ImageView fx:id="icTPesado" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/camion.png" />
+                                    <Image url="@../../../images/pesado.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -191,7 +191,7 @@
                               </Label>
                               <ImageView fx:id="icTMaq" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/johnDeere850K.png" />
+                                    <Image url="@../../../images/maquinaria.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -208,7 +208,7 @@
                               </Label>
                               <ImageView fx:id="icTAcuat" fitHeight="126.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../images/yamahaWaveRunnerVX.png" />
+                                    <Image url="@../../../images/acuatico.png" />
                                  </image>
                               </ImageView>
                            </children>

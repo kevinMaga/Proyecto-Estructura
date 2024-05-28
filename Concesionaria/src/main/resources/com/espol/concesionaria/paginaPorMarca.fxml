@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -59,6 +60,8 @@
                   </AnchorPane>
                </children>
             </HBox>
+            <HBox fx:id="infoMarca" prefHeight="100.0" prefWidth="200.0" />
+            <FlowPane fx:id="fpVehiculos" prefHeight="200.0" prefWidth="200.0" />
          </children></VBox>
         
    </content>
