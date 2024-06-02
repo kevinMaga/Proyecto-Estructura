@@ -17,8 +17,8 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 60000,Volvo,EC210D,2016,2500,5.7L,Automática,21000kg,Machala,Cambio de aceite;Reparaciones,MAQUINARIAS,1,volvoEC210D.png,Usado
 20000,Yamaha,WaveRunner VX,2019,100,1049cc,Automática,355kg,Portoviejo,Reparaciones;Revisión de motor,ACUATICOS,0,yamahaWaveRunnerVX.png;yamahaWaveRunnerVX1.jpg;yamahaWaveRunnerVX2.jpg,Nuevo
 28000,Kia,Sportage,2017,40000,2.0L,Automática,1540kg,Manta,Cambio de aceite;Reparaciones,AUTOS,4,kiaSportage.png;kiaSportage1.jpg;kiaSportage2.jpg;kiaSportage3.jpg,Usado
-15000,Ford,EcoSport,2016,60000,1.5L,Manual,1300kg,Ambato,Cambio de aceite;Cambio de filtros,AUTOS,9,fordEcoSport.png,Usado
-37000,BMW,3 Series,2019,25000,2.0L,Automática,1570kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,2,BMW3Series.jpg,Usado
+15000,Ford,EcoSport,2016,60000,1.5L,Manual,1300kg,Ambato,Cambio de aceite;Cambio de filtros,AUTOS,9,fordEcoSport.png;fordEcoSport1.png;fordEcoSport2.png;fordEcoSpor3.png,Usado
+37000,BMW,3 Series,2019,25000,2.0L,Automática,1570kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,2,BMW3Series.jpg;BMW3Series1.jpg;BMW3Series2.jpg;BMW3Series3.png,Usado
 45000,Chevrolet,Tahoe,2018,30000,5.3L,Automática,2500kg,Riobamba,Cambio de aceite;Reparaciones,PESADOS,1,chevroletTahoe.png,Usado
 22000,Suzuki,GSX-S750,2019,5000,749cc,Manual,213kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,suzukiGSX-S750.jpg,Usado
 80000,Komatsu,PC200-8,2015,4000,6.7L,Automática,19200kg,Santo Domingo,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,komatsuPC200-8.png,Usado
