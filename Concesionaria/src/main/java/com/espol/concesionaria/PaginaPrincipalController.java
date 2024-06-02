@@ -136,13 +136,18 @@ public class PaginaPrincipalController implements Initializable {
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
                 String[] lista=info[9].split(";");
+                String[] listaF =info[12].split(";");
                 ArrayList<String> accidentesOServicios = new ArrayList<>();
+                ArrayList<String> listaFotos = new ArrayList<>();
                 for(int i=0;i<lista.length;i++){
                     accidentesOServicios.add(lista[i]);
                 }
+                for(int i=0;i<listaF.length;i++){
+                    listaFotos.add(listaF[i]);
+                }
                 Tipo t =encontrarTipoPorNombre(info[10]);
                 vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),info[1],info[2],Integer.valueOf(info[3]),info[4],
-                info[5],info[6],info[7],info[8],accidentesOServicios,t,Integer.valueOf(info[11]),info[12],info[13]));
+                info[5],info[6],info[7],info[8],accidentesOServicios,t,Integer.valueOf(info[11]),listaFotos,info[13]));
             }
         }catch(IOException e){
             e.printStackTrace();
@@ -241,7 +246,7 @@ public class PaginaPrincipalController implements Initializable {
             lbl1.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
             ImageView iv=null;
             try {
-                FileInputStream f = new FileInputStream("src/main/resources/images/"+autos.get(i).getRutaFoto());
+                FileInputStream f = new FileInputStream("src/main/resources/images/"+autos.get(i).getRutasFotos().get(0));
                 Image img =new Image(f,220,150,true,true);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);

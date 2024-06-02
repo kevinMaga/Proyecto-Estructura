@@ -25,10 +25,10 @@ public class Vehiculo{
     private ArrayList<String> accidentesOServicios;
     private Tipo tipo;
     private int cantidadVentas;
-    private String rutaFoto;
+    private ArrayList<String> rutasFotos;
     private String usadoONuevo;
 
-    public Vehiculo(double precio, String marca, String modelo, int año, String kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayList<String> accidentesOServicios, Tipo tipo, int cantidadVentas, String rutaFoto, String usadoONuevo) {
+    public Vehiculo(double precio, String marca, String modelo, int año, String kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayList<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayList<String> rutasFotos, String usadoONuevo) {
         this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
@@ -41,7 +41,7 @@ public class Vehiculo{
         this.accidentesOServicios = accidentesOServicios;
         this.tipo = tipo;
         this.cantidadVentas = cantidadVentas;
-        this.rutaFoto = rutaFoto;
+        this.rutasFotos = rutasFotos;
         this.usadoONuevo = usadoONuevo;
     }
 
@@ -141,12 +141,12 @@ public class Vehiculo{
         this.cantidadVentas = cantidadVentas;
     }
 
-    public String getRutaFoto() {
-        return rutaFoto;
+    public ArrayList<String> getRutasFotos() {
+        return rutasFotos;
     }
 
-    public void setRutaFoto(String rutaFoto) {
-        this.rutaFoto = rutaFoto;
+    public void setRutasFotos(ArrayList<String> rutasFotos) {
+        this.rutasFotos = rutasFotos;
     }
 
     public String getUsadoONuevo() {
@@ -156,5 +156,5 @@ public class Vehiculo{
     public void setUsadoONuevo(String usadoONuevo) {
         this.usadoONuevo = usadoONuevo;
     }
-    
+
 }

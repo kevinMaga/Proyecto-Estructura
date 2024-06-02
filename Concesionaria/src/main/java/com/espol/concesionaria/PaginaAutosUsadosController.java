@@ -98,7 +98,7 @@ public class PaginaAutosUsadosController implements Initializable {
                 lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
                 ImageView iv = null;
                 try {
-                    FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutaFoto());
+                    FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutasFotos().get(0));
                     Image img = new Image(f,200,140,true,true);
                     iv = new ImageView(img);
                     iv.setPreserveRatio(true);
