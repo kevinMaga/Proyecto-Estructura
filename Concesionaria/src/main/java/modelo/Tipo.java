@@ -30,4 +30,9 @@ public class Tipo {
         this.foto = foto;
     }
     
+    @Override
+    public String toString(){
+        return this.nombre;
+    }
+    
 }

@@ -20,3 +20,5 @@ Suzuki,suzuki.png
 Bobcat,bobcat.png
 Mazda,mazda.png
 Volvo,volvo.png
+Kia,kia.jpg
+Sea-Doo,seaDoo.png

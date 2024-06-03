@@ -10,12 +10,12 @@ import static java.nio.file.Files.size;
  *
  * @author Justin Roldan
  */
-public class ArrayList<E> implements List<E>{
+public class ArrayListJR<E> implements List<E>{
     public int effectiveSize = 0;
     public int CAPACITY = 100;
     public E[] elements = null;
     
-    public ArrayList(){
+    public ArrayListJR(){
         this.elements = (E[]) new Object[CAPACITY];
         
     }

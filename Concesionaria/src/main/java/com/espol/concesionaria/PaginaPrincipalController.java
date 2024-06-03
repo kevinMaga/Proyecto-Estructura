@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,6 +23,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import listas.ArrayListJR;
 import modelo.Marca;
 import modelo.Tipo;
 import modelo.Vehiculo;
@@ -37,9 +36,10 @@ import modelo.Vehiculo;
  */
 public class PaginaPrincipalController implements Initializable {
     
-    public static ArrayList<Vehiculo> vehiculos;
-    public static ArrayList<Marca> marcas;
-    public static ArrayList<Tipo> tipos;
+    public static ArrayListJR<Vehiculo> vehiculos;
+    public static ArrayListJR<Marca> marcas;
+    public static ArrayListJR<Tipo> tipos;
+    public static ArrayListJR<Vehiculo> listaFiltrada;
     @FXML
     private HBox nuevos;
     
@@ -87,6 +87,7 @@ public class PaginaPrincipalController implements Initializable {
     
     @FXML
     private FlowPane fpMasVendidos;
+   
     
     public static void llenarListaMarcas(){
         try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
@@ -95,13 +96,86 @@ public class PaginaPrincipalController implements Initializable {
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
                 Marca m = new Marca(info[0],info[1]);
-                if(!marcas.contains(m)){
-                    marcas.add(m);
-                }
+                marcas.add(m);
             }
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+    public static void llenarListaTipos(){
+        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/tipos.txt"))){
+            String linea;
+            while((linea=br.readLine())!=null){
+                String[] info = linea.split(",");
+                Tipo t = new Tipo(info[0],info[1]);
+                tipos.add(t);
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void filtrarVehiculos(){
+        ArrayListJR<Vehiculo> lista = vehiculos;
+        if(cmbTipo.getValue()!=null){
+            lista=vehiculosPorTipo(vehiculos, cmbTipo.getValue());
+        }
+        if(cmbMarca.getValue()!=null){
+            lista=vehiculosPorMarca(lista, cmbMarca.getValue());
+        }
+        if(cmbModelo.getValue()!=null){
+            lista=vehiculosPorModelo(lista, cmbModelo.getValue());
+        }
+        if(cmbPrecioDesde.getValue()!=null){
+            lista=vehiculosPorValor(lista, (int) cmbPrecioDesde.getValue(),"desde");
+        }
+        if(cmbPrecioHasta.getValue()!=null){
+            lista=vehiculosPorValor(lista, (int) cmbPrecioHasta.getValue(),"hasta");
+        }
+        if(cmbAñoDesde.getValue()!=null){
+            lista=vehiculosPorValor(lista,(int)cmbAñoDesde.getValue(),"desde");
+        }
+        if(cmbAñoHasta.getValue()!=null){
+            lista=vehiculosPorValor(lista,(int)cmbAñoHasta.getValue(),"hasta");
+        }
+        listaFiltrada=lista;
+    }
+    
+    public static <E> ArrayListJR<Vehiculo> vehiculosPorValor(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
+        ArrayListJR<Vehiculo> vehiculosPrecio = new ArrayListJR<>();
+        if(limite.equals("desde")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getPrecio()>=precio){
+                    vehiculosPrecio.add(vehiculos.get(i));
+                }
+            }
+        }else if(limite.equals("hasta")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getPrecio()<=precio){
+                    vehiculosPrecio.add(vehiculos.get(i));
+                }
+            }
+        }
+        return vehiculosPrecio;
+    }
+    
+    public static <E> ArrayListJR<Vehiculo> vehiculosPorModelo(ArrayListJR<Vehiculo> vehiculos,E modelo){
+        ArrayListJR<Vehiculo> vehiculosPorModelo = new ArrayListJR<>();
+        for(int i=0;i<vehiculos.size();i++){
+            if(vehiculos.get(i).getModelo().equals(modelo))
+                vehiculosPorModelo.add(vehiculos.get(i));
+        }
+        return vehiculosPorModelo;
+    }
+    
+    public static <E> ArrayListJR<Vehiculo> vehiculosPorMarca(ArrayListJR<Vehiculo> vehiculos,E m){
+        ArrayListJR<Vehiculo> array = new ArrayListJR<>();
+        for(int i=0;i<vehiculos.size();i++){
+            if(vehiculos.get(i).getMarca().equals(m)){
+                array.add(vehiculos.get(i));
+            }
+        }
+        return array;
     }
     
     public static Tipo encontrarTipoPorNombre(String nombre){
@@ -113,23 +187,18 @@ public class PaginaPrincipalController implements Initializable {
         return null;
     }
     
-    public static void llenarListaTipos(){
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/tipos.txt"))){
-            String linea;
-            while((linea=br.readLine())!=null){
-                String[] info = linea.split(",");
-                Tipo t = new Tipo(info[0],info[1]);
-                if(!tipos.contains(t)){
-                    tipos.add(t);
-                }
+    public static Marca encontrarMarcaPorNombre(String nombre){
+        for(int i =0;i<marcas.size();i++){
+            if(marcas.get(i).getNombre().equals(nombre)){
+                return marcas.get(i);
             }
-        }catch(IOException e){
-            e.printStackTrace();
         }
+        return null;
     }
+   
     
     public static void cargarVehiculos(){
-        ArrayList<Vehiculo> vehiculos1 = new ArrayList<>();
+        ArrayListJR<Vehiculo> vehiculos1 = new ArrayListJR<>();
         try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/vehiculos.txt"))){
             String linea;
             br.readLine();
@@ -137,8 +206,8 @@ public class PaginaPrincipalController implements Initializable {
                 String[] info = linea.split(",");
                 String[] lista=info[9].split(";");
                 String[] listaF =info[12].split(";");
-                ArrayList<String> accidentesOServicios = new ArrayList<>();
-                ArrayList<String> listaFotos = new ArrayList<>();
+                ArrayListJR<String> accidentesOServicios = new ArrayListJR<>();
+                ArrayListJR<String> listaFotos = new ArrayListJR<>();
                 for(int i=0;i<lista.length;i++){
                     accidentesOServicios.add(lista[i]);
                 }
@@ -146,7 +215,8 @@ public class PaginaPrincipalController implements Initializable {
                     listaFotos.add(listaF[i]);
                 }
                 Tipo t =encontrarTipoPorNombre(info[10]);
-                vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),info[1],info[2],Integer.valueOf(info[3]),info[4],
+                Marca m =encontrarMarcaPorNombre(info[1]);
+                vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),m,info[2],Integer.valueOf(info[3]),info[4],
                 info[5],info[6],info[7],info[8],accidentesOServicios,t,Integer.valueOf(info[11]),listaFotos,info[13]));
             }
         }catch(IOException e){
@@ -158,17 +228,19 @@ public class PaginaPrincipalController implements Initializable {
     
     private void llenarCuadroDeFiltro(){
         for(int i=0;i<tipos.size();i++){
-            cmbHead.getItems().add(tipos.get(i).getNombre());
-            cmbTipo.getItems().add(tipos.get(i).getNombre());
+            if(!cmbHead.getItems().contains(tipos.get(i)) && !cmbTipo.getItems().contains(tipos.get(i))){
+                cmbHead.getItems().add(tipos.get(i));
+                cmbTipo.getItems().add(tipos.get(i));
+            }
         }
         for(int i=0;i<vehiculos.size();i++){
             Vehiculo v = vehiculos.get(i);
-            if(!vehiculos.contains(v.getModelo())){
+            if(!cmbModelo.getItems().contains(v.getModelo()))
                 cmbModelo.getItems().add(v.getModelo());
-            }
         }
         for(int i=0;i<marcas.size();i++){
-            cmbMarca.getItems().add(marcas.get(i).getNombre());
+            if(!cmbMarca.getItems().contains(marcas.get(i)))
+                cmbMarca.getItems().add(marcas.get(i));
         }
         for(int i=0;i<31;i++){
             cmbPrecioDesde.getItems().add(5000*i);
@@ -180,8 +252,8 @@ public class PaginaPrincipalController implements Initializable {
         }
     }
     
-    public static ArrayList<Vehiculo> vehiculosPorTipo(ArrayList<Vehiculo> vehiculos,Tipo t){
-        ArrayList<Vehiculo> array = new ArrayList<>();
+    public static <E> ArrayListJR<Vehiculo> vehiculosPorTipo(ArrayListJR<Vehiculo> vehiculos,E t){
+        ArrayListJR<Vehiculo> array = new ArrayListJR<>();
         for(int i=0;i<vehiculos.size();i++){
             Vehiculo v = vehiculos.get(i);
             if(v.getTipo().equals(t)){
@@ -191,26 +263,18 @@ public class PaginaPrincipalController implements Initializable {
         return array;
     }
     
-    public static ArrayList<Vehiculo> vehiculosPorMarca(ArrayList<Vehiculo> vehiculos,Marca m){
-        ArrayList<Vehiculo> array = new ArrayList<>();
-        for(int i=0;i<vehiculos.size();i++){
-            Vehiculo v = vehiculos.get(i);
-            if(v.getMarca().equals(m.getNombre())){
-                array.add(v);
-            }
-        }
-        return array;
-    }
-    
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        tipos=new ArrayList<>();
-        vehiculos = new ArrayList<>();
-        marcas= new ArrayList<>();
+        tipos=new ArrayListJR<>();
+        vehiculos = new ArrayListJR<>();
+        marcas= new ArrayListJR<>();   
         llenarListaTipos();
-        cargarVehiculos();
         llenarListaMarcas();
+        cargarVehiculos(); 
         llenarCuadroDeFiltro();
+        listaFiltrada=vehiculos;
+        System.out.println(marcas.size());
         LBUser.setText(InicioSesionController.usuario.getUsuario());
         nuevos.setOnMouseClicked(e ->{
             Stage ventanaActual = (Stage) nuevos.getScene().getWindow();
@@ -232,8 +296,8 @@ public class PaginaPrincipalController implements Initializable {
         });
         //Vehiculos mas vendidos en pagina principal
         Tipo t = encontrarTipoPorNombre("AUTOS");
-        ArrayList<Vehiculo> autos = vehiculosPorTipo(vehiculos,t);
-        Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
+        ArrayListJR<Vehiculo> autos = vehiculosPorTipo(vehiculos,t);
+        //Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
         for(int i=0;i<5;i++){
             VBox v = new VBox();
             v.setAlignment(Pos.CENTER);
@@ -258,6 +322,7 @@ public class PaginaPrincipalController implements Initializable {
         }
         //Boton buscar por filtros
         btnBuscar.setOnMouseClicked(e->{
+            filtrarVehiculos();
             Stage s =(Stage)btnBuscar.getScene().getWindow();
             s.close();
             try {

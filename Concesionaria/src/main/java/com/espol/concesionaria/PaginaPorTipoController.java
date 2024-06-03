@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,7 +61,7 @@ public class PaginaPorTipoController implements Initializable {
         ltipo.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
         ltipo.setAlignment(Pos.CENTER);
         infoTipo.getChildren().addAll(tipImg,ltipo);  
-        PaginaAutosUsadosController.llenarVehiculosEnContenedor("Nuevo", tipo, fpVehiculos);
+        PaginaAutosUsadosController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo));
         if(fpVehiculos.getChildren().isEmpty()){
             Label l = new Label("No se encontraron vehiculos");
             l.setAlignment(Pos.CENTER);

@@ -30,4 +30,9 @@ public class Marca {
         this.imagen = imagen;
     }
     
+    @Override
+    public String toString(){
+        return this.nombre;
+    }
+    
 }

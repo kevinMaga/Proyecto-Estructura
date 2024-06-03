@@ -147,17 +147,17 @@
                               <Font name="Arial Bold" size="27.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cmbTipo" layoutX="21.0" layoutY="85.0" prefHeight="30.0" prefWidth="92.0" promptText="Autos" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbTipo" layoutX="7.0" layoutY="85.0" prefHeight="30.0" prefWidth="117.0" promptText="Vehiculos" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox fx:id="cmbMarca" layoutX="113.0" layoutY="85.0" prefHeight="30.0" prefWidth="98.0" promptText="Marca" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbMarca" layoutX="122.0" layoutY="85.0" prefHeight="30.0" prefWidth="98.0" promptText="Marca" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </ComboBox>
-                        <ComboBox fx:id="cmbModelo" layoutX="211.0" layoutY="85.0" prefHeight="30.0" prefWidth="110.0" promptText="Modelo" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
+                        <ComboBox fx:id="cmbModelo" layoutX="217.0" layoutY="85.0" prefHeight="30.0" prefWidth="110.0" promptText="Modelo" style="-fx-background-color: white; -fx-border-color: black; -fx-font-family: &quot;Calibri&quot;; -fx-font-size: 15;">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

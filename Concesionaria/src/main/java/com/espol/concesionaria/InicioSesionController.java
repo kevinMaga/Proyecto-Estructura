@@ -17,7 +17,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import listas.ArrayList;
+import listas.ArrayListJR;
 import modelo.Rol;
  
 /**
@@ -33,8 +33,8 @@ public class InicioSesionController implements Initializable {
     private TextField TFContrasena;
     @FXML
     private Button BTIngresar;
-    public static ArrayList<Usuario> cargarUsuarios(){
-        ArrayList<Usuario> usuarios = new ArrayList<>();
+    public static ArrayListJR<Usuario> cargarUsuarios(){
+        ArrayListJR<Usuario> usuarios = new ArrayListJR<>();
         try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/usuarios.txt"))){
             br.readLine();
             String linea;
@@ -55,7 +55,7 @@ public class InicioSesionController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ArrayList<Usuario> usuarios = cargarUsuarios();
+        ArrayListJR<Usuario> usuarios = cargarUsuarios();
         BTIngresar.setOnAction(e ->{
             for(int i=0;i<usuarios.size();i++){
                 Usuario user =usuarios.get(i);

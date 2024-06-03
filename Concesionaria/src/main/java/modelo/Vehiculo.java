@@ -4,7 +4,7 @@
  */
 package modelo;
 
-import java.util.ArrayList;
+import listas.ArrayListJR;
 
 
 /**
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Vehiculo{
     private double precio;
-    private String marca;
+    private Marca marca;
     private String modelo;
     private int año;
     private String kilometraje;
@@ -22,13 +22,13 @@ public class Vehiculo{
     private String transmisión;
     private String peso;
     private String ubicacionActualVehiculo;
-    private ArrayList<String> accidentesOServicios;
+    private ArrayListJR<String> accidentesOServicios;
     private Tipo tipo;
     private int cantidadVentas;
-    private ArrayList<String> rutasFotos;
+    private ArrayListJR<String> rutasFotos;
     private String usadoONuevo;
 
-    public Vehiculo(double precio, String marca, String modelo, int año, String kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayList<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayList<String> rutasFotos, String usadoONuevo) {
+    public Vehiculo(double precio, Marca marca, String modelo, int año, String kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
         this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
@@ -53,11 +53,11 @@ public class Vehiculo{
         this.precio = precio;
     }
 
-    public String getMarca() {
+    public Marca getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
+    public void setMarca(Marca marca) {
         this.marca = marca;
     }
 
@@ -117,11 +117,11 @@ public class Vehiculo{
         this.ubicacionActualVehiculo = ubicacionActualVehiculo;
     }
 
-    public ArrayList<String> getAccidentesOServicios() {
+    public ArrayListJR<String> getAccidentesOServicios() {
         return accidentesOServicios;
     }
 
-    public void setAccidentesOServicios(ArrayList<String> accidentesOServicios) {
+    public void setAccidentesOServicios(ArrayListJR<String> accidentesOServicios) {
         this.accidentesOServicios = accidentesOServicios;
     }
 
@@ -141,11 +141,11 @@ public class Vehiculo{
         this.cantidadVentas = cantidadVentas;
     }
 
-    public ArrayList<String> getRutasFotos() {
+    public ArrayListJR<String> getRutasFotos() {
         return rutasFotos;
     }
 
-    public void setRutasFotos(ArrayList<String> rutasFotos) {
+    public void setRutasFotos(ArrayListJR<String> rutasFotos) {
         this.rutasFotos = rutasFotos;
     }
 
@@ -156,5 +156,5 @@ public class Vehiculo{
     public void setUsadoONuevo(String usadoONuevo) {
         this.usadoONuevo = usadoONuevo;
     }
-
+    
 }

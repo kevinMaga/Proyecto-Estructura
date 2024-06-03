@@ -1,5 +1,4 @@
 precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentesOServicios,tipo,cantidadVentas,foto,usadoONuevo
-18000,Honda,Civic,2018,20000,2.0L,Manual,1200kg,Quito,Revisión de frenos;Cambio de aceite,AUTOS,3,hondaCivic.jpg;hondaCivic1.jpg;hondaCivic2.jpg;hondaCivic3.jpg;hondaCivic4.jpg,Usado
 30000,Ford,F-150,2020,10000,3.5L,Automática,2200kg,Cuenca,Reparaciones;Cambio de filtros,PESADOS,2,fordF-150.jpg;fordF-1501.jpg;fordF-1502.jpg;fordF-1503.jpg,Usado
 15000,Yamaha,YZF-R3,2017,5000,321cc,Manual,169kg,Loja,Cambio de cadena;Cambio de aceite,MOTOS,8,yamahaYZF-R3.jpg;yamahaYZF-R31.jpg;yamahaYZF-R32.jpg;yamahaYZF-R33.jpg,Usado
 50000,Caterpillar,320D,2015,3000,6.4L,Automática,21000kg,Machala,Revisión hidráulica;Cambio de aceite,MAQUINARIAS,1,caterpillar320D.jpg;caterpillar320D1.jpg;caterpillar320D2.jpg;caterpillar320D3.jpg,Usado
@@ -33,6 +32,7 @@ precio,marca,modelo,año,Kilometraje,motor,transmision,peso,ubicacion,accidentes
 40000,Audi,A4,2018,30000,2.0L,Automática,1600kg,Esmeraldas,Revisión de motor;Cambio de filtros,AUTOS,1,audiA4.jpeg,Usado
 25000,Honda,CR-V,2019,25000,2.4L,Automática,1500kg,Riobamba,Ninguno,AUTOS,5,hondaCRV.jpg,Usado
 18000,Yamaha,MT-07,2019,6000,689cc,Manual,182kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,yamahaMT07.jfif,Usado
+17000,Yamaha,MT-07,2022,6000,689cc,Manual,182kg,Ibarra,Revisión de frenos;Cambio de aceite,MOTOS,4,yamahaMT07.jfif,Usado
 90000,John Deere,410L,2020,1500,4.5L,Automática,8135kg,Santo Domingo,Cambio de aceite;Cambio de filtros,MAQUINARIAS,0,johnDeere410L.jpg,Nuevo
 16000,Hyundai,Elantra,2016,45000,1.8L,Automática,1275kg,Latacunga,Cambio de aceite;Reparaciones,AUTOS,8,hyundaiElantra.jpg,Usado
 35000,Toyota,RAV4,2018,30000,2.5L,Automática,1650kg,Guayaquil,Revisión de motor;Cambio de filtros,AUTOS,3,toyotaRAV4.jpeg,Usado

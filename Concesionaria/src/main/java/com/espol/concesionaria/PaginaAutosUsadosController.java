@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -23,6 +22,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import listas.ArrayListJR;
 import modelo.Tipo;
 import modelo.Vehiculo;
 
@@ -32,7 +32,6 @@ import modelo.Vehiculo;
  * @author Kevin
  */
 public class PaginaAutosUsadosController implements Initializable {
-
     @FXML
     private HBox head;
     @FXML
@@ -86,9 +85,8 @@ public class PaginaAutosUsadosController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    public static void llenarVehiculosEnContenedor(String usadoONuevo,Tipo t,FlowPane fpVehiculos){
+    public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
         fpVehiculos.getChildren().clear();
-        ArrayList<Vehiculo> vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, t);
         for(int i = 0; i < vehiculos.size(); i++){
             if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
                 VBox v = new VBox();
@@ -111,11 +109,10 @@ public class PaginaAutosUsadosController implements Initializable {
             }
         }
     }
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        LBAutos.setStyle("-fx-background-color:blue;");
-        Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
-        llenarVehiculosEnContenedor("Usado",t,fpVehiculos);
+        llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.listaFiltrada);
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
@@ -132,7 +129,7 @@ public class PaginaAutosUsadosController implements Initializable {
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",a,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, a));
         });
         LBMotos.setOnMouseClicked(e->{
             Tipo m = PaginaPrincipalController.encontrarTipoPorNombre("MOTOS");
@@ -141,7 +138,7 @@ public class PaginaAutosUsadosController implements Initializable {
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",m,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, m));
         });
         LBMaquinarias.setOnMouseClicked(e->{
             Tipo maq = PaginaPrincipalController.encontrarTipoPorNombre("MAQUINARIAS");
@@ -150,7 +147,7 @@ public class PaginaAutosUsadosController implements Initializable {
             LBMaquinarias.setStyle("-fx-background-color:blue;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",maq,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, maq));
         });
         LBPesados.setOnMouseClicked(e->{
             Tipo p = PaginaPrincipalController.encontrarTipoPorNombre("PESADOS");
@@ -159,7 +156,7 @@ public class PaginaAutosUsadosController implements Initializable {
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:black;");
             LBPesados.setStyle("-fx-background-color:blue;");
-            llenarVehiculosEnContenedor("Usado",p,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, p));
         });
         LBAcuaticos.setOnMouseClicked(e->{
             Tipo acua = PaginaPrincipalController.encontrarTipoPorNombre("ACUATICOS");
@@ -168,7 +165,7 @@ public class PaginaAutosUsadosController implements Initializable {
             LBMaquinarias.setStyle("-fx-background-color:black;");
             LBAcuaticos.setStyle("-fx-background-color:blue;");
             LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",acua,fpVehiculos);
+            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, acua));
         });
         
     }    
