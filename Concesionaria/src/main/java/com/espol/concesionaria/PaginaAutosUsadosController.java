@@ -85,34 +85,24 @@ public class PaginaAutosUsadosController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
-        fpVehiculos.getChildren().clear();
-        for(int i = 0; i < vehiculos.size(); i++){
-            if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
-                VBox v = new VBox();
-                v.setAlignment(Pos.CENTER);
-                v.setStyle("-fx-background-color: white;");
-                Label lbl = new Label(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
-                lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
-                ImageView iv = null;
-                try {
-                    FileInputStream f = new FileInputStream("src/main/resources/images/" + vehiculos.get(i).getRutasFotos().get(0));
-                    Image img = new Image(f,200,140,true,true);
-                    iv = new ImageView(img);
-                    iv.setPreserveRatio(true);
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
-                }
-                
-                v.getChildren().addAll(iv,lbl);
-                fpVehiculos.getChildren().add(v);
-            }
-        }
+    
+    private void cambiarColorLabel(String color,Label label){
+        LBAutos.setStyle("-fx-background-color:black;");
+        LBMotos.setStyle("-fx-background-color:black;");
+        LBMaquinarias.setStyle("-fx-background-color:black;");
+        LBAcuaticos.setStyle("-fx-background-color:black;");
+        LBPesados.setStyle("-fx-background-color:black;");
+        label.setStyle("fx-background-color:"+color+";");
     }
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.listaFiltrada);
+        LBAutos.setStyle("-fx-background-color:black;");
+        LBMotos.setStyle("-fx-background-color:black;");
+        LBMaquinarias.setStyle("-fx-background-color:black;");
+        LBAcuaticos.setStyle("-fx-background-color:black;");
+        LBPesados.setStyle("-fx-background-color:black;");
+        PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.listaFiltrada);
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
@@ -124,48 +114,28 @@ public class PaginaAutosUsadosController implements Initializable {
         });
         LBAutos.setOnMouseClicked(e->{
             Tipo a = PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
-            LBAutos.setStyle("-fx-background-color:blue;");
-            LBMotos.setStyle("-fx-background-color:black;");
-            LBMaquinarias.setStyle("-fx-background-color:black;");
-            LBAcuaticos.setStyle("-fx-background-color:black;");
-            LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, a));
+            cambiarColorLabel("blue",LBAutos);
+            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, a));
         });
         LBMotos.setOnMouseClicked(e->{
             Tipo m = PaginaPrincipalController.encontrarTipoPorNombre("MOTOS");
-            LBAutos.setStyle("-fx-background-color:black;");
-            LBMotos.setStyle("-fx-background-color:blue;");
-            LBMaquinarias.setStyle("-fx-background-color:black;");
-            LBAcuaticos.setStyle("-fx-background-color:black;");
-            LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, m));
+            cambiarColorLabel("blue",LBMotos);
+            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, m));
         });
         LBMaquinarias.setOnMouseClicked(e->{
             Tipo maq = PaginaPrincipalController.encontrarTipoPorNombre("MAQUINARIAS");
-            LBAutos.setStyle("-fx-background-color:black;");
-            LBMotos.setStyle("-fx-background-color:black;");
-            LBMaquinarias.setStyle("-fx-background-color:blue;");
-            LBAcuaticos.setStyle("-fx-background-color:black;");
-            LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, maq));
+            cambiarColorLabel("blue",LBMaquinarias);
+            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, maq));
         });
         LBPesados.setOnMouseClicked(e->{
             Tipo p = PaginaPrincipalController.encontrarTipoPorNombre("PESADOS");
-            LBAutos.setStyle("-fx-background-color:black;");
-            LBMotos.setStyle("-fx-background-color:black;");
-            LBMaquinarias.setStyle("-fx-background-color:black;");
-            LBAcuaticos.setStyle("-fx-background-color:black;");
-            LBPesados.setStyle("-fx-background-color:blue;");
-            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, p));
+            cambiarColorLabel("blue",LBPesados);
+            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, p));
         });
         LBAcuaticos.setOnMouseClicked(e->{
             Tipo acua = PaginaPrincipalController.encontrarTipoPorNombre("ACUATICOS");
-            LBAutos.setStyle("-fx-background-color:black;");
-            LBMotos.setStyle("-fx-background-color:black;");
-            LBMaquinarias.setStyle("-fx-background-color:black;");
-            LBAcuaticos.setStyle("-fx-background-color:blue;");
-            LBPesados.setStyle("-fx-background-color:black;");
-            llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, acua));
+            cambiarColorLabel("blue",LBAcuaticos);
+            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, acua));
         });
         
     }    

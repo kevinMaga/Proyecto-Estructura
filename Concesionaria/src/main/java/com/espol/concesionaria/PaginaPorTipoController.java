@@ -46,22 +46,9 @@ public class PaginaPorTipoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         infoTipo.getChildren().clear();
-        ImageView tipImg = null;
-        try {
-            FileInputStream f = new FileInputStream("src/main/resources/images/" + tipo.getFoto());
-            Image img = new Image(f,200,140,true,true);
-            tipImg = new ImageView(img);
-            tipImg.setPreserveRatio(true);
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        infoTipo.setAlignment(Pos.CENTER_LEFT);
-        infoTipo.setStyle("-fx-background-color: white;");
-        Label ltipo = new Label(tipo.getNombre());
-        ltipo.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
-        ltipo.setAlignment(Pos.CENTER);
-        infoTipo.getChildren().addAll(tipImg,ltipo);  
-        PaginaAutosUsadosController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo));
+        VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+tipo.getFoto(), tipo.getNombre());
+        infoTipo.getChildren().add(v);  
+        PaginaPrincipalController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo));
         if(fpVehiculos.getChildren().isEmpty()){
             Label l = new Label("No se encontraron vehiculos");
             l.setAlignment(Pos.CENTER);

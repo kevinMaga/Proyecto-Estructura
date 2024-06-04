@@ -57,7 +57,7 @@ public class PaginaAutosNuevosController implements Initializable {
             Marca m = PaginaPrincipalController.marcas.get(i);
             ImageView iv=null;
             try {
-                FileInputStream f = new FileInputStream("src/main/resources/images/"+m.getImagen());
+                FileInputStream f = new FileInputStream(App.pathImages+m.getImagen());
                 Image img =new Image(f,150,120,true,true);
                 iv = new ImageView(img);
                 iv.setPreserveRatio(true);
@@ -91,18 +91,7 @@ public class PaginaAutosNuevosController implements Initializable {
         hbTipos.getChildren().clear();
         for(int i=0;i<PaginaPrincipalController.tipos.size();i++){
             Tipo t = PaginaPrincipalController.tipos.get(i);
-            ImageView iv = null;
-            try(FileInputStream f = new FileInputStream("src/main/resources/images/"+t.getFoto())){
-                Image img = new Image(f,180,120,true,true);
-                iv = new ImageView(img);
-            }catch(IOException e){
-            }
-            VBox v = new VBox();
-            v.setAlignment(Pos.CENTER);
-            v.setStyle("-fx-background-color: white;");
-            Label lbl = new Label(t.getNombre());
-            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
-            v.getChildren().addAll(iv,lbl);
+            VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+t.getFoto(), t.getNombre());
             v.setOnMouseClicked(e->{
                 PaginaPorTipoController.tipo=t;
                 Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();

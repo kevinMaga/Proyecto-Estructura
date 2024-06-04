@@ -51,7 +51,7 @@ public class PaginaAgregarVehiculoController implements Initializable{
     private void guardarImagen(File imagenFile) {
         try {
             Path sourcePath = Paths.get(imagenFile.getAbsolutePath());
-            String destino = "src/main/resources/images/"; // Ruta específica donde deseas guardar las imágenes
+            String destino = App.pathImages; // Ruta específica donde deseas guardar las imágenes
             File destinoFile = new File(destino + imagenFile.getName());
             Files.copy(sourcePath, destinoFile.toPath());
             // Puedes mostrar un mensaje de éxito o realizar otras acciones aquí

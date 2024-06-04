@@ -39,38 +39,20 @@ public class PaginaPorMarcaController implements Initializable {
     @FXML
     private FlowPane fpVehiculos;
     
-    private boolean llno=true;
-    
     public static Marca marca;
-    
-    public void setDatos(String tipo){
-    }
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         infoMarca.getChildren().clear();
-        ImageView marcImg = null;
-        try {
-            FileInputStream f = new FileInputStream("src/main/resources/images/" + marca.getImagen());
-            Image img = new Image(f,200,140,true,true);
-            marcImg = new ImageView(img);
-            marcImg.setPreserveRatio(true);
-            
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        infoMarca.setAlignment(Pos.CENTER_LEFT);
-        infoMarca.setStyle("-fx-background-color: white;");
-        Label brand = new Label(marca.getNombre());
-        brand.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 10px; -fx-background-color: white; -fx-border-radius: 3px;");
-        brand.setAlignment(Pos.CENTER);
-        infoMarca.getChildren().addAll(marcImg,brand);
+        VBox v=PaginaPrincipalController.contenedorParaImagenes(App.pathImages+marca.getImagen(), marca.getNombre());
+        infoMarca.getChildren().add(v); 
         fpVehiculos.getChildren().clear();
         ArrayListJR<Vehiculo> ve=PaginaPrincipalController.vehiculos;
         ArrayListJR<Vehiculo> vehiculosPorMarca=PaginaPrincipalController.vehiculosPorMarca(ve, marca);
-        PaginaAutosUsadosController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos, vehiculosPorMarca);
+        PaginaPrincipalController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos, vehiculosPorMarca);
         if(fpVehiculos.getChildren().isEmpty()){
             Label l = new Label("No se encontraron vehiculos");
             l.setAlignment(Pos.CENTER);

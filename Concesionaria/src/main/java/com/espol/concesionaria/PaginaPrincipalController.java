@@ -90,7 +90,7 @@ public class PaginaPrincipalController implements Initializable {
    
     
     public static void llenarListaMarcas(){
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/marcas.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"marcas.txt"))){
             String linea;
             br.readLine();
             while((linea=br.readLine())!=null){
@@ -102,8 +102,19 @@ public class PaginaPrincipalController implements Initializable {
             e.printStackTrace();
         }
     }
+    
+     public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
+        fpVehiculos.getChildren().clear();
+        for(int i = 0; i < vehiculos.size(); i++){
+            if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
+                VBox v = contenedorParaImagenes(App.pathImages+vehiculos.get(i).getRutasFotos().get(0),vehiculos.get(i).getMarca()+" "+vehiculos.get(i).getModelo());
+                fpVehiculos.getChildren().add(v);
+            }
+        }
+    }
+     
     public static void llenarListaTipos(){
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/tipos.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"tipos.txt"))){
             String linea;
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
@@ -141,7 +152,28 @@ public class PaginaPrincipalController implements Initializable {
         listaFiltrada=lista;
     }
     
-    public static <E> ArrayListJR<Vehiculo> vehiculosPorValor(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
+    public static VBox contenedorParaImagenes(String ruta,String contenido){
+        VBox v;
+        v = new VBox();
+        v.setAlignment(Pos.CENTER);
+        v.setStyle("-fx-background-color: white;");
+        Label lbl = new Label(contenido);
+        lbl.setAlignment(Pos.CENTER);
+        lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+        ImageView iv=null;
+        try {
+            FileInputStream f = new FileInputStream(ruta);
+            Image img =new Image(f,220,150,true,true);
+            iv = new ImageView(img);
+            iv.setPreserveRatio(true);
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        v.getChildren().addAll(iv,lbl);
+        return v;
+    }
+    
+    public static ArrayListJR<Vehiculo> vehiculosPorValor(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
         ArrayListJR<Vehiculo> vehiculosPrecio = new ArrayListJR<>();
         if(limite.equals("desde")){
             for(int i=0;i<vehiculos.size();i++){
@@ -199,7 +231,7 @@ public class PaginaPrincipalController implements Initializable {
     
     public static void cargarVehiculos(){
         ArrayListJR<Vehiculo> vehiculos1 = new ArrayListJR<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/vehiculos.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"vehiculos.txt"))){
             String linea;
             br.readLine();
             while((linea=br.readLine())!=null){
@@ -274,7 +306,6 @@ public class PaginaPrincipalController implements Initializable {
         cargarVehiculos(); 
         llenarCuadroDeFiltro();
         listaFiltrada=vehiculos;
-        System.out.println(marcas.size());
         LBUser.setText(InicioSesionController.usuario.getUsuario());
         nuevos.setOnMouseClicked(e ->{
             Stage ventanaActual = (Stage) nuevos.getScene().getWindow();
@@ -299,25 +330,7 @@ public class PaginaPrincipalController implements Initializable {
         ArrayListJR<Vehiculo> autos = vehiculosPorTipo(vehiculos,t);
         //Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
         for(int i=0;i<5;i++){
-            VBox v = new VBox();
-            v.setAlignment(Pos.CENTER);
-            v.setStyle("-fx-background-color: white;");
-            Label lbl = new Label(autos.get(i).getMarca()+" "+autos.get(i).getModelo());
-            Label lbl1 = new Label(String.valueOf(autos.get(i).getAño()));
-            lbl.setAlignment(Pos.CENTER);
-            lbl1.setAlignment(Pos.CENTER);
-            lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
-            lbl1.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
-            ImageView iv=null;
-            try {
-                FileInputStream f = new FileInputStream("src/main/resources/images/"+autos.get(i).getRutasFotos().get(0));
-                Image img =new Image(f,220,150,true,true);
-                iv = new ImageView(img);
-                iv.setPreserveRatio(true);
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            }
-            v.getChildren().addAll(iv,lbl,lbl1);
+            VBox v =contenedorParaImagenes(App.pathImages+autos.get(i).getRutasFotos().get(0),autos.get(i).getMarca()+" "+autos.get(i).getModelo());
             fpMasVendidos.getChildren().add(v);
         }
         //Boton buscar por filtros
