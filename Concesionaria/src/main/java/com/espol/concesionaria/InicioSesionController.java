@@ -35,7 +35,7 @@ public class InicioSesionController implements Initializable {
     private Button BTIngresar;
     public static ArrayListJR<Usuario> cargarUsuarios(){
         ArrayListJR<Usuario> usuarios = new ArrayListJR<>();
-        try(BufferedReader br = new BufferedReader(new FileReader("src/main/resources/files/usuarios.txt"))){
+        try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"usuarios.txt"))){
             br.readLine();
             String linea;
             while((linea=br.readLine())!=null){

@@ -14,11 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
    <content>
-      <VBox prefHeight="722.0" prefWidth="930.0" spacing="15.0">
+      <VBox prefHeight="722.0" prefWidth="1000.0">
          <children>
-            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
+            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <children>
                   <AnchorPane prefHeight="86.0" prefWidth="288.0">
                      <children>

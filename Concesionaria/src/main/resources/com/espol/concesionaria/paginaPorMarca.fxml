@@ -14,7 +14,7 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaPorMarcaController">
    <content>
-      <VBox prefHeight="681.0" prefWidth="910.0">
+      <VBox prefHeight="681.0" prefWidth="929.0">
          <children>
             <HBox prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <padding>
@@ -63,7 +63,17 @@
             <HBox fx:id="infoMarca" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #40FED0;">
                <padding>
                   <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
-               </padding></HBox>
+               </padding>
+               <children>
+                  <Label fx:id="lblMarca" alignment="CENTER" prefHeight="51.0" prefWidth="873.0" text="Volver">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children></HBox>
             <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="40.0" prefHeight="497.0" prefWidth="910.0" vgap="40.0" />
          </children></VBox>
         

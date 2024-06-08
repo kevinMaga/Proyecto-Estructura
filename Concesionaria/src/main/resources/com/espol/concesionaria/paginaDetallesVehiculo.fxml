@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="687.0" prefWidth="834.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaDetallesVehiculoController">
+   <children>
+      <HBox fx:id="head" prefHeight="102.0" prefWidth="833.0" style="-fx-background-color: #FFC15A;">
+         <children>
+            <AnchorPane prefHeight="102.0" prefWidth="678.0">
+               <children>
+                  <ImageView fitHeight="61.0" fitWidth="52.0" layoutX="31.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/volante.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets left="30.0" right="30.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="lblNombre" layoutX="29.0" layoutY="102.0" prefHeight="54.0" prefWidth="456.0" text="Patiotuerca">
+         <font>
+            <Font name="Times New Roman Bold" size="39.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDetalles" layoutX="29.0" layoutY="156.0" prefHeight="48.0" prefWidth="310.0" text="Label" />
+      <Label fx:id="lblPrecio" layoutX="570.0" layoutY="105.0" prefHeight="48.0" prefWidth="226.0" text="Label" />
+      <AnchorPane layoutX="103.0" layoutY="242.0" prefHeight="355.0" prefWidth="617.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fx:id="imgVehiculo" fitHeight="338.0" fitWidth="653.0" layoutX="8.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/457227.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="avanzar" fitHeight="48.0" fitWidth="71.0" layoutX="665.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/siguiente.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="retroceder" fitHeight="48.0" fitWidth="71.0" layoutX="617.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true" rotate="-180.0">
+         <image>
+            <Image url="@../../../images/siguiente.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblEstado" layoutX="570.0" layoutY="162.0" prefHeight="36.0" prefWidth="226.0" text="Label" />
+   </children>
+</AnchorPane>

@@ -119,6 +119,14 @@ public class PaginaPrincipalController implements Initializable {
                     VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
                     ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
                     +a.getUsadoONuevo(),"$ "+a.getPrecio());
+                    v.setOnMouseClicked(e->{
+                        PaginaDetallesVehiculoController.v=a;
+                        try {
+                            App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                        } catch (IOException ex) {
+                            ex.printStackTrace();
+                        }
+                    });
                     fpVehiculos.getChildren().add(v);
                 }           
             }
@@ -351,7 +359,7 @@ public class PaginaPrincipalController implements Initializable {
             Stage ventanaActual = (Stage) nuevos.getScene().getWindow();
             ventanaActual.close();
             try {
-                App.abrirNuevaVentana("paginaAutosNuevos", 929, 681);
+                App.abrirNuevaVentana("paginaAutosNuevos", 1129, 720);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -360,7 +368,7 @@ public class PaginaPrincipalController implements Initializable {
             Stage ventanaActual = (Stage) usados.getScene().getWindow();
             ventanaActual.close();
             try {
-                App.abrirNuevaVentana("paginaAutosUsados", 929, 681);
+                App.abrirNuevaVentana("paginaAutosUsados", 929, 722);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -385,8 +393,16 @@ public class PaginaPrincipalController implements Initializable {
         for(int i=0;i<6;i++){
             Vehiculo a =autos.get(i);
             VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
-                    ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
+                    ,a.getAño() + "   "+a.getKilometraje()+" kms . "+a.getUbicacionActualVehiculo()+"\n"
                     +a.getUsadoONuevo(),"$ "+a.getPrecio());
+            v.setOnMouseClicked(e->{
+                PaginaDetallesVehiculoController.v=a;
+                try {
+                    App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
             fpMasVendidos.getChildren().add(v);
         }
         //Boton buscar por filtros
@@ -395,7 +411,7 @@ public class PaginaPrincipalController implements Initializable {
             Stage s =(Stage)btnBuscar.getScene().getWindow();
             s.close();
             try {
-                App.abrirNuevaVentana("paginaAutosUsados", 929, 628);
+                App.abrirNuevaVentana("paginaAutosUsados", 929, 722);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

@@ -40,6 +40,9 @@ public class PaginaPorMarcaController implements Initializable {
     private FlowPane fpVehiculos;
     
     public static Marca marca;
+    
+    @FXML
+    private Label lblMarca;
    
     /**
      * Initializes the controller class.
@@ -47,8 +50,8 @@ public class PaginaPorMarcaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         infoMarca.getChildren().clear();
-        VBox v=PaginaPrincipalController.contenedorParaImagenes(App.pathImages+marca.getImagen(), "","","");
-        infoMarca.getChildren().add(v); 
+        lblMarca.setText(marca.getNombre());
+        infoMarca.getChildren().add(lblMarca); 
         fpVehiculos.getChildren().clear();
         ArrayListJR<Vehiculo> ve=PaginaPrincipalController.vehiculos;
         ArrayListJR<Vehiculo> vehiculosPorMarca=PaginaPrincipalController.vehiculosPorMarca(ve, marca);
@@ -73,7 +76,7 @@ public class PaginaPorMarcaController implements Initializable {
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
             try {
-                App.abrirNuevaVentana("paginaAutosNuevos", 929, 681);
+                App.abrirNuevaVentana("paginaAutosNuevos", 1129, 720);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

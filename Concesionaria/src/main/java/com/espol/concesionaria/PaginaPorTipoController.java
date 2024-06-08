@@ -40,14 +40,17 @@ public class PaginaPorTipoController implements Initializable {
     private FlowPane fpVehiculos;
 
     public static Tipo tipo;
+    
+    @FXML
+    private Label lblTipo;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         infoTipo.getChildren().clear();
-        VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+tipo.getFoto(), tipo.getNombre(),"","");
-        infoTipo.getChildren().add(v);  
+        lblTipo.setText(tipo.getNombre());
+        infoTipo.getChildren().add(lblTipo);  
         PaginaPrincipalController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo));
         if(fpVehiculos.getChildren().isEmpty()){
             Label l = new Label("No se encontraron vehiculos");
@@ -70,7 +73,7 @@ public class PaginaPorTipoController implements Initializable {
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
             try {
-                App.abrirNuevaVentana("paginaAutosNuevos", 929, 681);
+                App.abrirNuevaVentana("paginaAutosNuevos", 1129, 720);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

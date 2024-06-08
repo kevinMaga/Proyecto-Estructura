@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,9 +15,9 @@
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaVehiculosOrdenamientoController">
    <content>
-      <VBox prefHeight="722.0" prefWidth="930.0" spacing="15.0">
+      <VBox prefHeight="722.0" prefWidth="930.0" style="-fx-background-color: white;">
          <children>
-            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
+            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <children>
                   <AnchorPane prefHeight="98.0" prefWidth="688.0">
                      <children>
@@ -53,7 +52,7 @@
             </HBox>
             <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="66.0" prefWidth="930.0" spacing="10.0" style="-fx-background-color: pink;">
+                  <HBox alignment="CENTER" prefHeight="87.0" prefWidth="930.0" spacing="10.0" style="-fx-background-color: #57A3C4;">
                      <children>
                         <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -72,7 +71,7 @@
                   </HBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" style="-fx-background-color: white;">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
@@ -117,21 +116,18 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <VBox alignment="CENTER" prefHeight="422.0" prefWidth="271.0" spacing="20.0" style="-fx-background-color: black;">
+                  <VBox alignment="CENTER" prefHeight="422.0" prefWidth="271.0" spacing="20.0" style="-fx-background-color: white;">
                      <padding>
                         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
                      </padding>
                      <children>
-                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="149.0" text="Ordenar por: " textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="149.0" text="Ordenar por: " textFill="#bc0000">
                            <font>
                               <Font name="Bernard MT Condensed" size="27.0" />
                            </font>
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
-                           <effect>
-                              <Glow />
-                           </effect>
                         </Label>
                         <ComboBox fx:id="cmbOrdenar" prefWidth="150.0" />
                      </children>
