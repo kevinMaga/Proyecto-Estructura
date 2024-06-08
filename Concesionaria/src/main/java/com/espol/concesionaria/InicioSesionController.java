@@ -18,7 +18,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import listas.ArrayListJR;
-import modelo.Rol;
  
 /**
 * FXML Controller class
@@ -40,7 +39,7 @@ public class InicioSesionController implements Initializable {
             String linea;
             while((linea=br.readLine())!=null){
                 String[] datos = linea.split(",");
-                Usuario user = new Usuario(datos[0],datos[1],Rol.valueOf(datos[2]));
+                Usuario user = new Usuario(datos[0],datos[1],datos[2],datos[3]);
                 usuario=user;
                 usuarios.add(user);
             }
@@ -61,22 +60,12 @@ public class InicioSesionController implements Initializable {
                 Usuario user =usuarios.get(i);
                 if(user.getContrasena().equals(TFContrasena.getText()) && user.getUsuario().equals(TFUsuario.getText())){
                     usuario=usuarios.get(i);
-                    if(usuario.getRol().equals(Rol.Administrador)){
-                        Stage s =(Stage)BTIngresar.getScene().getWindow();
-                        s.close();
-                        try {
-                            App.abrirNuevaVentana("paginaAdministrador",650,600);
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
-                    }else{
-                        Stage s =(Stage)BTIngresar.getScene().getWindow();
-                        s.close();
-                        try {
-                            App.abrirNuevaVentana("paginaPrincipal",929,628);
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
+                    Stage s =(Stage)BTIngresar.getScene().getWindow();
+                    s.close();
+                    try {
+                        App.abrirNuevaVentana("paginaPrincipal",929,628);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
                     }
                 }
             }

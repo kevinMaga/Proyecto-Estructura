@@ -2,9 +2,11 @@
 package com.espol.concesionaria;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
@@ -94,6 +96,9 @@ public class PaginaPrincipalController implements Initializable {
     
     @FXML
     private FlowPane fpMasVendidos;
+    
+    @FXML
+    private HBox administrar;
    
     
     public static void llenarListaMarcas(){
@@ -108,6 +113,25 @@ public class PaginaPrincipalController implements Initializable {
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+    
+    public static void escribirArchivo(String rutaArchivo, String texto) {
+        try (BufferedWriter bufferEscritor = new BufferedWriter(new FileWriter(rutaArchivo,true))) {
+            bufferEscritor.write(texto+"\n");
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el archivo: " + e.getMessage());
+        }
+    }
+    public static String concatenarArrayList(ArrayListJR<String> lista) {
+        String resultado = "";
+        for (int i=0;i<lista.size();i++) {
+            String frase = lista.get(i);
+            resultado += frase + ";";
+        }
+        if (!resultado.isEmpty()) {
+            resultado = resultado.substring(0, resultado.length() - 1);
+        }
+        return resultado;
     }
     
     public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
@@ -354,7 +378,7 @@ public class PaginaPrincipalController implements Initializable {
         cargarVehiculos(); 
         llenarCuadroDeFiltro();
         listaFiltrada=vehiculos;
-        LBUser.setText(InicioSesionController.usuario.getUsuario());
+        LBUser.setText(InicioSesionController.usuario.getNombre()+" "+InicioSesionController.usuario.getApellido());
         nuevos.setOnMouseClicked(e ->{
             Stage ventanaActual = (Stage) nuevos.getScene().getWindow();
             ventanaActual.close();
@@ -369,6 +393,15 @@ public class PaginaPrincipalController implements Initializable {
             ventanaActual.close();
             try {
                 App.abrirNuevaVentana("paginaAutosUsados", 929, 722);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        administrar.setOnMouseClicked(e->{
+            Stage ventanaActual = (Stage) usados.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaAdministrador", 929, 722);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

@@ -51,7 +51,7 @@ public class PaginaAdministradorController implements Initializable {
             
             if(RBNuevos.isSelected()){
                 try {
-                    App.abrirNuevaVentana("paginaAgregarVehiculo", 778, 613);
+                    App.abrirNuevaVentana("paginaAgregarVehiculo", 807, 719);
                     Stage s =(Stage)LBAgregar.getScene().getWindow();
             s.close();
                 } catch (IOException ex) {

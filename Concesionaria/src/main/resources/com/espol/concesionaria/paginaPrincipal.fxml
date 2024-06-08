@@ -117,6 +117,26 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
+                  <HBox fx:id="administrar" alignment="CENTER" prefHeight="62.0" prefWidth="503.0" spacing="10.0" style="-fx-background-color: #F1FC5F;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/carroAdmin.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="175.0" text="Administrar Vehículos" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="19.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
                </children>
                <padding>
                   <Insets left="30.0" right="30.0" />

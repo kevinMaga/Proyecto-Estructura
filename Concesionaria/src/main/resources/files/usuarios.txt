@@ -1,4 +1,4 @@
-usuario,contrasena,tipo
-kevin17,maga17,Administrador
-justin2,roldan2,Cliente
-cesar3,delgado3,Administrador
+usuario,contrasena,Nombre,Apellido
+kevin17,maga17,Kevin,Magallanes
+justin2,roldan2,Justyn,Roldan
+cesar3,delgado3,Cesar,Delgado

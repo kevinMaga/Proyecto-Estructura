@@ -4,8 +4,6 @@
  */
 package modelo;
 
-import modelo.Rol;
-
 /**
  *
  * @author Kevin
@@ -13,22 +11,46 @@ import modelo.Rol;
 public class Usuario {
     private String usuario;
     private String contrasena;
-    private Rol rol;
-    public Usuario(String usuario, String contrasena, Rol rol){
+    private String nombre;
+    private String Apellido;
+
+    public Usuario(String usuario, String contrasena, String nombre, String Apellido) {
         this.usuario = usuario;
         this.contrasena = contrasena;
-        this.rol = rol;
+        this.nombre = nombre;
+        this.Apellido = Apellido;
     }
+
     public String getUsuario() {
         return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getContrasena() {
         return contrasena;
     }
 
-    public Rol getRol() {
-        return rol;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
     }
     
 }
