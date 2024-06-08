@@ -4,13 +4,16 @@
  */
 package com.espol.concesionaria;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -44,6 +47,87 @@ public class PaginaAdministradorController implements Initializable {
         ToggleGroup tg=new ToggleGroup();
         RBNuevos.setToggleGroup(tg);
         RBUsados.setToggleGroup(tg);
+        LBAgregar.setOnMouseClicked(e->{
+            
+            if(RBNuevos.isSelected()){
+                try {
+                    App.abrirNuevaVentana("paginaAgregarVehiculo", 778, 613);
+                    Stage s =(Stage)LBAgregar.getScene().getWindow();
+            s.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }else if(RBUsados.isSelected()){
+                try {
+                    App.abrirNuevaVentana("paginaAgregarVehiculo", 778, 613);
+                    Stage s =(Stage)LBAgregar.getScene().getWindow();
+            s.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }else{
+               // Mostrar alerta
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Selección requerida");
+                alert.setHeaderText(null);
+                alert.setContentText("Debe seleccionar una opción (Nuevos o Usados) antes de continuar.");
+                alert.showAndWait(); 
+            }  
+        });
+        
+        LBEditar.setOnMouseClicked(e -> {
+            if (RBNuevos.isSelected()) {
+                try {
+                    App.abrirNuevaVentana("paginaEditar", 778, 613);
+                    Stage s1 = (Stage) LBEditar.getScene().getWindow();
+                    s1.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else if (RBUsados.isSelected()) {
+                try {
+                    App.abrirNuevaVentana("paginaEditar", 778, 613);
+                    Stage s1 = (Stage) LBEditar.getScene().getWindow();
+                    s1.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                // Mostrar alerta
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Selección requerida");
+                alert.setHeaderText(null);
+                alert.setContentText("Debe seleccionar una opción (Nuevos o Usados) antes de continuar.");
+                alert.showAndWait();
+            }
+        });
+        LBRemover.setOnMouseClicked(e -> {
+           if (RBNuevos.isSelected()) {
+                try {
+                    App.abrirNuevaVentana("paginaRemover", 778, 613);
+                    Stage s2 = (Stage) LBEditar.getScene().getWindow();
+                    s2.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                } 
+            } else if (RBUsados.isSelected()) {
+                try {
+                    App.abrirNuevaVentana("paginaRemover", 778, 613);
+                    Stage s2 = (Stage) LBEditar.getScene().getWindow();
+                    s2.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                // Mostrar alerta
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Selección requerida");
+                alert.setHeaderText(null);
+                alert.setContentText("Debe seleccionar una opción (Nuevos o Usados) antes de continuar.");
+                alert.showAndWait();
+            } 
+        
+        });
     }    
     
 }

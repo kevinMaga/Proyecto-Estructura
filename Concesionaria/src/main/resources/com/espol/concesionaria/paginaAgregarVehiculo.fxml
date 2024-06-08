@@ -11,11 +11,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="778.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.espol.concesionaria.PaginaAgregarVehiculoController">
+<AnchorPane id="AnchorPane" prefHeight="613.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAgregarVehiculoController">
    <children>
       <HBox alignment="CENTER" prefHeight="82.0" prefWidth="778.0" style="-fx-background-color: #FFC15A;">
          <children>
@@ -32,7 +30,7 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </HBox>
-      <Label fx:id="titulo1" alignment="CENTER" layoutX="34.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Precio:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Precio:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -40,7 +38,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo11" alignment="CENTER" layoutX="34.0" layoutY="161.0" prefHeight="31.0" prefWidth="66.0" text="Marca:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="161.0" prefHeight="31.0" prefWidth="66.0" text="Marca:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -48,10 +46,10 @@
             <Bloom />
          </effect>
       </Label>
-      <TextField layoutX="100.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="100.0" layoutY="163.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="100.0" layoutY="208.0" prefHeight="26.0" prefWidth="88.0" />
-      <Label fx:id="titulo111" alignment="CENTER" layoutX="34.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Modelo:" textFill="#180000">
+      <TextField fx:id="TFPrecio" layoutX="100.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFMarca" layoutX="100.0" layoutY="163.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFModelo" layoutX="100.0" layoutY="208.0" prefHeight="26.0" prefWidth="88.0" />
+      <Label alignment="CENTER" layoutX="34.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Modelo:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -59,7 +57,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo1111" alignment="CENTER" layoutX="34.0" layoutY="251.0" prefHeight="31.0" prefWidth="66.0" text="Año:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="34.0" layoutY="251.0" prefHeight="31.0" prefWidth="66.0" text="Año:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -67,8 +65,8 @@
             <Bloom />
          </effect>
       </Label>
-      <TextField layoutX="100.0" layoutY="253.0" prefHeight="26.0" prefWidth="88.0" />
-      <Label fx:id="titulo11111" alignment="CENTER" layoutX="14.0" layoutY="292.0" prefHeight="31.0" prefWidth="88.0" text="Kilometraje:" textFill="#180000">
+      <TextField fx:id="TFAno" layoutX="100.0" layoutY="253.0" prefHeight="26.0" prefWidth="88.0" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="292.0" prefHeight="31.0" prefWidth="88.0" text="Kilometraje:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -76,8 +74,8 @@
             <Bloom />
          </effect>
       </Label>
-      <TextField layoutX="100.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
-      <Label fx:id="titulo12" alignment="CENTER" layoutX="265.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Motor:" textFill="#180000">
+      <TextField fx:id="TFKilometraje" layoutX="100.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
+      <Label alignment="CENTER" layoutX="265.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Motor:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -85,7 +83,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo13" alignment="CENTER" layoutX="250.0" layoutY="160.0" prefHeight="31.0" prefWidth="81.0" text="Trasmisión:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="250.0" layoutY="160.0" prefHeight="31.0" prefWidth="81.0" text="Trasmisión:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -93,7 +91,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo14" alignment="CENTER" layoutX="265.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Peso:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="265.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Peso:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -101,7 +99,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo15" alignment="CENTER" layoutX="249.0" layoutY="250.0" prefHeight="31.0" prefWidth="82.0" text="Ubicación:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="249.0" layoutY="250.0" prefHeight="31.0" prefWidth="82.0" text="Ubicación:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -109,7 +107,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo151" alignment="CENTER" layoutX="249.0" layoutY="292.0" prefHeight="31.0" prefWidth="82.0" text="Tipo:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="249.0" layoutY="292.0" prefHeight="31.0" prefWidth="82.0" text="Tipo:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -117,7 +115,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo152" alignment="CENTER" layoutX="471.0" layoutY="118.0" prefHeight="31.0" prefWidth="125.0" text="Cantidad de ventas:" textFill="#180000">
+      <Label alignment="CENTER" layoutX="471.0" layoutY="118.0" prefHeight="31.0" prefWidth="125.0" text="Cantidad de ventas:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -125,7 +123,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo131" alignment="CENTER" layoutX="477.0" layoutY="161.0" prefHeight="31.0" prefWidth="81.0" text="Trasmisión:" textFill="#180000">
+      <Label fx:id="titulo132" alignment="CENTER" layoutX="477.0" layoutY="161.0" prefHeight="31.0" prefWidth="81.0" text="U/N:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -133,7 +131,7 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo132" alignment="CENTER" layoutX="477.0" layoutY="205.0" prefHeight="31.0" prefWidth="81.0" text="U/N:" textFill="#180000">
+      <Label fx:id="titulo133" alignment="CENTER" layoutX="508.0" layoutY="204.0" prefHeight="31.0" prefWidth="147.0" text="Accidentes o servicios:" textFill="#180000">
          <font>
             <Font name="Bernard MT Condensed" size="16.0" />
          </font>
@@ -141,17 +139,9 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="titulo133" alignment="CENTER" layoutX="508.0" layoutY="250.0" prefHeight="31.0" prefWidth="147.0" text="Accidentes o servicios:" textFill="#180000">
-         <font>
-            <Font name="Bernard MT Condensed" size="16.0" />
-         </font>
-         <effect>
-            <Bloom />
-         </effect>
-      </Label>
-      <Spinner layoutX="515.0" layoutY="294.0" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: white;" />
-      <Button layoutX="603.0" layoutY="294.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="47.0" style="-fx-background-color: black;" textFill="#cc0707" />
-      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="617.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true">
+      <Spinner fx:id="SPAccidente" layoutX="515.0" layoutY="249.0" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: white;" />
+      <Button layoutX="603.0" layoutY="249.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="47.0" style="-fx-background-color: black;" textFill="#cc0707" />
+      <ImageView fitHeight="20.0" fitWidth="21.0" layoutX="617.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/click.png" />
          </image>
@@ -159,25 +149,14 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <VBox alignment="CENTER" layoutX="515.0" layoutY="336.0" prefHeight="231.0" prefWidth="239.0" spacing="10.0">
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
-      <TextField layoutX="332.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="332.0" layoutY="162.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="332.0" layoutY="207.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="332.0" layoutY="252.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="332.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="597.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="597.0" layoutY="163.0" prefHeight="26.0" prefWidth="88.0" />
-      <TextField layoutX="597.0" layoutY="207.0" prefHeight="26.0" prefWidth="88.0" />
-      <ImageView fx:id="i" fitHeight="182.0" fitWidth="190.0" layoutX="63.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/agregarImagen.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="titulo121" alignment="CENTER" layoutX="67.0" layoutY="362.0" prefHeight="31.0" prefWidth="174.0" text="Agrega imagenes">
+      <TextField fx:id="TFMotor" layoutX="332.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFTransmision" layoutX="332.0" layoutY="162.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFPeso" layoutX="332.0" layoutY="207.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFUbicacion" layoutX="332.0" layoutY="252.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFTipo" layoutX="332.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFCantidad" layoutX="597.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+      <TextField fx:id="TFUN" layoutX="597.0" layoutY="164.0" prefHeight="26.0" prefWidth="88.0" />
+      <Label alignment="CENTER" layoutX="279.0" layoutY="334.0" prefHeight="31.0" prefWidth="194.0" text="Seleccionar imagenes">
          <font>
             <Font name="Bernard MT Condensed" size="22.0" />
          </font>
@@ -185,13 +164,29 @@
             <Bloom />
          </effect>
       </Label>
-      <Label fx:id="mensajeImagen" alignment="CENTER" layoutX="309.0" layoutY="377.0" prefHeight="133.0" prefWidth="165.0" text=" " textFill="#180000">
+      <HBox layoutX="125.0" layoutY="371.0" prefHeight="166.0" prefWidth="502.0">
+         <children>
+            <ImageView fx:id="IVVehiculo1" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/agregarImagen.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IVVehiculo2" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/agregarImagen.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="IVVehiculo3" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/agregarImagen.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label fx:id="LBGuardar" alignment="CENTER" layoutX="327.0" layoutY="556.0" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #FFC15A; -fx-background-radius: 10;" text="Guardar" textAlignment="CENTER">
          <font>
-            <Font name="Arial Bold" size="18.0" />
+            <Font name="Arial" size="18.0" />
          </font>
-         <effect>
-            <Bloom />
-         </effect>
       </Label>
    </children>
 </AnchorPane>

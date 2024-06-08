@@ -12,27 +12,66 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import listas.ArrayListJR;
 
 public class PaginaAgregarVehiculoController implements Initializable{
 
-    @FXML
-    private HBox hb;
     
     
-    private List<File> selectedFiles;
+    /*private List<File> selectedFiles;
     
-    @FXML
     private ImageView i;
     
+    private Label mensajeImagen;*/
     @FXML
-    private Label mensajeImagen;
+    private Label titulo;
+    @FXML
+    private TextField TFPrecio;
+    @FXML
+    private TextField TFMarca;
+    @FXML
+    private TextField TFModelo;
+    @FXML
+    private TextField TFAno;
+    @FXML
+    private TextField TFKilometraje;
+    @FXML
+    private Label titulo132;
+    @FXML
+    private Label titulo133;
+    @FXML
+    private Spinner<?> SPAccidente;
+    @FXML
+    private TextField TFMotor;
+    @FXML
+    private TextField TFTransmision;
+    @FXML
+    private TextField TFPeso;
+    @FXML
+    private TextField TFUbicacion;
+    @FXML
+    private TextField TFTipo;
+    @FXML
+    private TextField TFCantidad;
+    @FXML
+    private TextField TFUN;
+    @FXML
+    private ImageView IVVehiculo1;
+    @FXML
+    private ImageView IVVehiculo2;
+    @FXML
+    private ImageView IVVehiculo3;
+    @FXML
+    private Label LBGuardar;
 
-    @FXML
-    private void agregarImagen() {
+   /* private void agregarImagen() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Seleccionar Imagen");
         fileChooser.getExtensionFilters().addAll(
@@ -59,12 +98,25 @@ public class PaginaAgregarVehiculoController implements Initializable{
             e.printStackTrace();
             // Manejo de errores
         }
+    }*/
+    private void updateImages() {
+        String marca = TFMarca.getText();
+        if ("Ford".equalsIgnoreCase(marca)) {
+            IVVehiculo1.setImage(new Image(getClass().getResource("/images/ford1.png").toExternalForm()));
+            IVVehiculo2.setImage(new Image(getClass().getResource("/images/ford2.png").toExternalForm()));
+            IVVehiculo3.setImage(new Image(getClass().getResource("/images/ford3.png").toExternalForm()));
+        } else {
+            IVVehiculo1.setImage(new Image(getClass().getResource("/images/agregarImagen.png").toExternalForm()));
+            IVVehiculo2.setImage(new Image(getClass().getResource("/images/agregarImagen.png").toExternalForm()));
+            IVVehiculo3.setImage(new Image(getClass().getResource("/images/agregarImagen.png").toExternalForm()));
+        }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        i.setOnMouseClicked(e->{
+        // Add a listener to the TFMarca TextField to detect changes
+        TFMarca.addEventHandler(KeyEvent.KEY_RELEASED, event -> updateImages());
+        /*i.setOnMouseClicked(e->{
             agregarImagen();
-        });
+        });*/
     }
 }
