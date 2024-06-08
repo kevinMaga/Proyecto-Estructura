@@ -16,7 +16,7 @@
    <content>
       <VBox prefHeight="681.0" prefWidth="910.0">
          <children>
-            <HBox prefHeight="102.0" prefWidth="927.0">
+            <HBox prefHeight="102.0" prefWidth="927.0" style="-fx-background-color: #FFC15A;">
                <padding>
                   <Insets left="30.0" right="30.0" />
                </padding>
@@ -60,8 +60,14 @@
                   </AnchorPane>
                </children>
             </HBox>
-            <HBox fx:id="infoTipo" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" />
-            <FlowPane fx:id="fpVehiculos" prefHeight="200.0" prefWidth="200.0" />
+            <HBox fx:id="infoTipo" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #40FED0;">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+               </padding></HBox>
+            <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="40.0" prefHeight="492.0" prefWidth="910.0" vgap="40.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding></FlowPane>
          </children></VBox>
         
    </content>

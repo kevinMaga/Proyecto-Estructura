@@ -33,43 +33,7 @@ import modelo.Vehiculo;
  */
 public class PaginaAutosUsadosController implements Initializable {
     @FXML
-    private HBox head;
-    @FXML
-    private ComboBox<?> cmbHead1;
-    @FXML
-    private TextField TFHead1;
-    @FXML
-    private ImageView IVBuscar1;
-    @FXML
-    private HBox menu;
-    @FXML
     private ImageView IVInicio;
-    @FXML
-    private HBox filtro;
-    @FXML
-    private TextField TFDesde1;
-    @FXML
-    private TextField TFHasta1;
-    @FXML
-    private ImageView IVBuscarPrecio1;
-    @FXML
-    private TextField TFDesde2;
-    @FXML
-    private TextField TFHasta2;
-    @FXML
-    private ImageView IVBuscarPrecio2;
-    @FXML
-    private Label LMarcas;
-    @FXML
-    private Label LProvincias;
-    @FXML
-    private TextField TFDesde3;
-    @FXML
-    private TextField TFHasta3;
-    @FXML
-    private ImageView IVBuscarPrecio3;
-    @FXML
-    private Label LTransmision;
     @FXML
     private Label LBAutos;
     @FXML
@@ -92,7 +56,7 @@ public class PaginaAutosUsadosController implements Initializable {
         LBMaquinarias.setStyle("-fx-background-color:black;");
         LBAcuaticos.setStyle("-fx-background-color:black;");
         LBPesados.setStyle("-fx-background-color:black;");
-        label.setStyle("fx-background-color:"+color+";");
+        label.setStyle("-fx-background-color:"+color+";");
     }
    
     @Override

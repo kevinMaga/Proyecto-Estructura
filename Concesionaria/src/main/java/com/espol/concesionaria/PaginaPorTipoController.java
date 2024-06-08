@@ -46,7 +46,7 @@ public class PaginaPorTipoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         infoTipo.getChildren().clear();
-        VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+tipo.getFoto(), tipo.getNombre());
+        VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+tipo.getFoto(), tipo.getNombre(),"","");
         infoTipo.getChildren().add(v);  
         PaginaPrincipalController.llenarVehiculosEnContenedor("Nuevo", fpVehiculos,PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, tipo));
         if(fpVehiculos.getChildren().isEmpty()){

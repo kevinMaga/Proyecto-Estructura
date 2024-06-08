@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="929.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaVehiculosOrdenamientoController">
+   <content>
+      <VBox prefHeight="722.0" prefWidth="930.0" spacing="15.0">
+         <children>
+            <HBox fx:id="head" prefHeight="102.0" prefWidth="927.0">
+               <children>
+                  <AnchorPane prefHeight="98.0" prefWidth="688.0">
+                     <children>
+                        <ImageView fitHeight="61.0" fitWidth="52.0" layoutX="31.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/volante.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="35.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="98.0" prefWidth="253.0">
+                     <children>
+                        <ImageView fx:id="IVInicio" fitHeight="36.0" fitWidth="41.0" layoutX="180.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/Inicio.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </HBox>
+            <HBox fx:id="menu" prefHeight="66.0" prefWidth="930.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="66.0" prefWidth="930.0" spacing="10.0" style="-fx-background-color: pink;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/carro.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="119.0" text="Vehículos" textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label fx:id="LBAutos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Autos" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="LBMotos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Motos" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="LBPesados" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Pesados" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="LBMaquinarias" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Maquinarias" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="LBAcuaticos" alignment="CENTER" prefHeight="41.0" prefWidth="131.0" style="-fx-background-color: black;" text="Acuaticos" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <VBox alignment="CENTER" prefHeight="422.0" prefWidth="271.0" spacing="20.0" style="-fx-background-color: black;">
+                     <padding>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="149.0" text="Ordenar por: " textFill="WHITE">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="27.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <effect>
+                              <Glow />
+                           </effect>
+                        </Label>
+                        <ComboBox fx:id="cmbOrdenar" prefWidth="150.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="426.0" prefWidth="930.0">
+               <children>
+                  <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="40.0" prefHeight="422.0" prefWidth="929.0" vgap="40.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

@@ -91,7 +91,7 @@ public class PaginaAutosNuevosController implements Initializable {
         hbTipos.getChildren().clear();
         for(int i=0;i<PaginaPrincipalController.tipos.size();i++){
             Tipo t = PaginaPrincipalController.tipos.get(i);
-            VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+t.getFoto(), t.getNombre());
+            VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages+t.getFoto(), t.getNombre(),"","");
             v.setOnMouseClicked(e->{
                 PaginaPorTipoController.tipo=t;
                 Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();

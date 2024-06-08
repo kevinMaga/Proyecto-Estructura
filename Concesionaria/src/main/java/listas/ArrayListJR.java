@@ -171,6 +171,11 @@ public class ArrayListJR<E> implements List<E>{
     public int size() {
         return effectiveSize;
     }
+
+    @Override
+    public void clear() {
+        effectiveSize=0;
+    }
     
    
     

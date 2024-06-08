@@ -20,4 +20,5 @@ public interface List<E> {
     public boolean removeFirst();
     public boolean removeLast();
     public int size();
+    public void clear();
 }

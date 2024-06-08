@@ -17,7 +17,7 @@ public class Vehiculo{
     private Marca marca;
     private String modelo;
     private int año;
-    private String kilometraje;
+    private int kilometraje;
     private String motor;
     private String transmisión;
     private String peso;
@@ -28,7 +28,7 @@ public class Vehiculo{
     private ArrayListJR<String> rutasFotos;
     private String usadoONuevo;
 
-    public Vehiculo(double precio, Marca marca, String modelo, int año, String kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
+    public Vehiculo(double precio, Marca marca, String modelo, int año, int kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
         this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
@@ -77,11 +77,11 @@ public class Vehiculo{
         this.año = año;
     }
 
-    public String getKilometraje() {
+    public int getKilometraje() {
         return kilometraje;
     }
 
-    public void setKilometraje(String kilometraje) {
+    public void setKilometraje(int kilometraje) {
         this.kilometraje = kilometraje;
     }
 

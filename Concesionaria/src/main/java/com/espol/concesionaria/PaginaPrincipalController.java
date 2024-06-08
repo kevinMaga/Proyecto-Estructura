@@ -7,7 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.ResourceBundle;
+import java.util.TreeMap;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -80,6 +84,9 @@ public class PaginaPrincipalController implements Initializable {
     private Button btnBuscar;
     
     @FXML
+    private Button btnVerMas;
+    
+    @FXML
     private Label LBUser;
     
     @FXML
@@ -103,12 +110,26 @@ public class PaginaPrincipalController implements Initializable {
         }
     }
     
-     public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
+    public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
         fpVehiculos.getChildren().clear();
-        for(int i = 0; i < vehiculos.size(); i++){
-            if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
-                VBox v = contenedorParaImagenes(App.pathImages+vehiculos.get(i).getRutasFotos().get(0),vehiculos.get(i).getMarca()+" "+vehiculos.get(i).getModelo());
-                fpVehiculos.getChildren().add(v);
+        if (usadoONuevo.equals("Usado") || usadoONuevo.equals("Nuevo")) {
+            for(int i = 0; i < vehiculos.size(); i++){
+                if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
+                    Vehiculo a = vehiculos.get(i);
+                    VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
+                    ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
+                    +a.getUsadoONuevo(),"$ "+a.getPrecio());
+                    fpVehiculos.getChildren().add(v);
+                }           
+            }
+        }
+        else{
+            for(int i = 0; i < vehiculos.size(); i++){
+                Vehiculo a = vehiculos.get(i);
+                VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
+                    ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
+                    +a.getUsadoONuevo(),"$ "+a.getPrecio());
+                fpVehiculos.getChildren().add(v);        
             }
         }
     }
@@ -152,14 +173,20 @@ public class PaginaPrincipalController implements Initializable {
         listaFiltrada=lista;
     }
     
-    public static VBox contenedorParaImagenes(String ruta,String contenido){
+    public static VBox contenedorParaImagenes(String ruta,String contenido1,String contenido2,String contenido3){
         VBox v;
         v = new VBox();
         v.setAlignment(Pos.CENTER);
         v.setStyle("-fx-background-color: white;");
-        Label lbl = new Label(contenido);
+        Label lbl = new Label(contenido1);
         lbl.setAlignment(Pos.CENTER);
         lbl.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+        Label lbl1 = new Label(contenido2);
+        lbl1.setAlignment(Pos.CENTER);
+        lbl1.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-text-fill: #757575; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+        Label lb2 = new Label(contenido3);
+        lb2.setAlignment(Pos.CENTER);
+        lb2.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
         ImageView iv=null;
         try {
             FileInputStream f = new FileInputStream(ruta);
@@ -169,8 +196,21 @@ public class PaginaPrincipalController implements Initializable {
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        v.getChildren().addAll(iv,lbl);
+        v.getChildren().addAll(iv,lbl,lbl1,lb2);
         return v;
+    }
+    
+    
+    public static <T> void ordenar(ArrayListJR<T> elementos, Comparator<T> comparador) {
+        PriorityQueue<T> colaPrioridad = new PriorityQueue<>(comparador);
+        for (int i=0;i<elementos.size();i++) {
+            T elemento = elementos.get(i);
+            colaPrioridad.offer(elemento);
+        }
+        elementos.clear();
+        while (!colaPrioridad.isEmpty()) {
+            elementos.add(colaPrioridad.poll());
+        }
     }
     
     public static ArrayListJR<Vehiculo> vehiculosPorValor(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
@@ -248,7 +288,7 @@ public class PaginaPrincipalController implements Initializable {
                 }
                 Tipo t =encontrarTipoPorNombre(info[10]);
                 Marca m =encontrarMarcaPorNombre(info[1]);
-                vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),m,info[2],Integer.valueOf(info[3]),info[4],
+                vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),m,info[2],Integer.valueOf(info[3]),Integer.valueOf(info[4]),
                 info[5],info[6],info[7],info[8],accidentesOServicios,t,Integer.valueOf(info[11]),listaFotos,info[13]));
             }
         }catch(IOException e){
@@ -325,12 +365,28 @@ public class PaginaPrincipalController implements Initializable {
                 ex.printStackTrace();
             }
         });
+        btnVerMas.setOnMouseClicked(e->{
+            Stage ventanaActual = (Stage) usados.getScene().getWindow();
+            ventanaActual.close();
+            PaginaVehiculosOrdenamientoController.ordenamiento="Cantidad de Ventas";
+            try {
+                App.abrirNuevaVentana("paginaVehiculosOrdenamiento", 929, 722);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
         //Vehiculos mas vendidos en pagina principal
         Tipo t = encontrarTipoPorNombre("AUTOS");
         ArrayListJR<Vehiculo> autos = vehiculosPorTipo(vehiculos,t);
-        //Collections.sort(autos,(a1,a2)->Integer.compare(a2.getCantidadVentas(), a1.getCantidadVentas()));
-        for(int i=0;i<5;i++){
-            VBox v =contenedorParaImagenes(App.pathImages+autos.get(i).getRutasFotos().get(0),autos.get(i).getMarca()+" "+autos.get(i).getModelo());
+        Comparator<Vehiculo> c =(v1,v2)->{
+            return v2.getCantidadVentas()-v1.getCantidadVentas();
+        };
+        ordenar(autos,c);
+        for(int i=0;i<6;i++){
+            Vehiculo a =autos.get(i);
+            VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
+                    ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
+                    +a.getUsadoONuevo(),"$ "+a.getPrecio());
             fpMasVendidos.getChildren().add(v);
         }
         //Boton buscar por filtros

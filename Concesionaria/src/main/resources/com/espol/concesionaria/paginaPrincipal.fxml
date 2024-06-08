@@ -218,14 +218,14 @@
                         </Label>
                      </children>
                   </HBox>
-                  <FlowPane fx:id="fpMasVendidos" alignment="CENTER" hgap="30.0" prefHeight="200.0" prefWidth="200.0" vgap="30.0">
+                  <FlowPane fx:id="fpMasVendidos" alignment="CENTER" hgap="40.0" prefHeight="200.0" prefWidth="200.0" vgap="40.0">
                      <padding>
                         <Insets bottom="30.0" top="30.0" />
                      </padding>
                   </FlowPane>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" style="-fx-background-color: white; -fx-background-radius: 40;" text="Ver más">
+                        <Button fx:id="btnVerMas" mnemonicParsing="false" prefHeight="46.0" prefWidth="146.0" style="-fx-background-color: white; -fx-background-radius: 40;" text="Ver más">
                            <font>
                               <Font name="Calibri Bold" size="18.0" />
                            </font>
