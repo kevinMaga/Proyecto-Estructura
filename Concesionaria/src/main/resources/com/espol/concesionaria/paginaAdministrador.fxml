@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
@@ -16,7 +15,7 @@
    <content>
       <VBox alignment="CENTER" fillWidth="false" prefHeight="600.0" prefWidth="650.0">
          <children>
-            <HBox prefHeight="135.0" prefWidth="562.0">
+            <HBox prefHeight="58.0" prefWidth="555.0">
                <children>
                   <AnchorPane prefHeight="89.0" prefWidth="155.0">
                      <children>
@@ -104,30 +103,30 @@
                      <children>
                         <AnchorPane prefHeight="63.0" prefWidth="275.0" style="-fx-background-color: #f22e2e;">
                            <children>
-                              <RadioButton fx:id="RBNuevos" layoutX="45.0" layoutY="18.0" mnemonicParsing="false" text="Nuevos" textFill="WHITE">
-                                 <font>
-                                    <Font name="Arial" size="18.0" />
-                                 </font>
-                              </RadioButton>
                               <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="160.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/carroNuevo.png" />
                                  </image>
                               </ImageView>
+                              <Label layoutX="57.0" layoutY="14.0" prefHeight="34.0" prefWidth="93.0" text="Nuevos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="63.0" prefWidth="269.0" style="-fx-background-color: #2167ed;">
                            <children>
-                              <RadioButton fx:id="RBUsados" layoutX="45.0" layoutY="17.0" mnemonicParsing="false" text="Usados" textFill="#e8e8e8">
-                                 <font>
-                                    <Font name="Arial" size="18.0" />
-                                 </font>
-                              </RadioButton>
                               <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="157.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/carro.png" />
                                  </image>
                               </ImageView>
+                              <Label layoutX="63.0" layoutY="16.0" prefHeight="34.0" prefWidth="93.0" text="Usados" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial Bold" size="24.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
                      </children>

@@ -1,34 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="426.0" prefWidth="566.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.espol.concesionaria.PaginaEditarController">
-   <children>
-      <AnchorPane prefHeight="77.0" prefWidth="566.0" style="-fx-background-color: #FFC15A;">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.espol.concesionaria.PaginaEditarController">
+   <content>
+      <VBox prefHeight="700.0" prefWidth="800.0">
          <children>
-            <Label fx:id="LBVolver" alignment="CENTER" layoutX="23.0" layoutY="22.0" prefHeight="40.0" prefWidth="102.0" style="-fx-border-radius: 5; -fx-border-color: #000;" text="Volver">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="168.0" layoutY="4.0" prefHeight="70.0" prefWidth="265.0" style="-fx-background-color: #FFC15A;" text="Editar Vehículo">
-               <font>
-                  <Font name="Arial" size="36.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="IVInicio" fitHeight="56.0" fitWidth="65.0" layoutX="482.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/Inicio.png" />
-               </image>
-            </ImageView>
+            <AnchorPane prefHeight="98.0" prefWidth="622.0" style="-fx-background-color: #FFC15A;">
+               <children>
+                  <Label fx:id="LBVolver" alignment="CENTER" layoutX="32.0" layoutY="19.0" prefHeight="60.0" prefWidth="150.0" text="Volver">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="IVInicio" fitHeight="44.0" fitWidth="40.0" layoutX="720.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Inicio.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="titulo" alignment="CENTER" layoutX="285.0" layoutY="23.0" prefHeight="52.0" prefWidth="230.0" text="Editar" textFill="#180000">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="34.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <VBox fx:id="vehicleContainer" prefHeight="709.0" prefWidth="800.0" spacing="20.0">
+               <padding>
+                  <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+               </padding>
+            </VBox>
          </children>
-      </AnchorPane>
-      <VBox fx:id="vehicleContainer" layoutX="103.0" layoutY="122.0" prefHeight="271.0" prefWidth="384.0" />
-   </children>
-</AnchorPane>
+      </VBox>
+   </content>
+</ScrollPane>

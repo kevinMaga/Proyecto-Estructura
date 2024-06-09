@@ -98,13 +98,11 @@ public class PaginaAgregarVehiculoController implements Initializable {
         String LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String DIGITOS = "0123456789";
         Random RANDOM = new Random();
-        // Generar las tres letras
         String placa = "";
         for (int i = 0; i < 3; i++) {
             placa += LETRAS.charAt(RANDOM.nextInt(LETRAS.length()));
         }
         placa += '-';
-        // Generar los tres dígitos
         for (int i = 0; i < 3; i++) {
             placa += DIGITOS.charAt(RANDOM.nextInt(DIGITOS.length()));
         }
