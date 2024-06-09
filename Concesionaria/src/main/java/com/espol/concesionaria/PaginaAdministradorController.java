@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -19,7 +20,6 @@ import javafx.stage.Stage;
  */
 public class PaginaAdministradorController implements Initializable {
 
-    @FXML
     private Label LBUser;
     @FXML
     private Label LBAgregar;
@@ -29,6 +29,8 @@ public class PaginaAdministradorController implements Initializable {
     private Label LBRemover;
     @FXML
     private Label LBListado;
+    @FXML
+    private ImageView IVInicio;
 
     /**
      * Initializes the controller class.
@@ -36,7 +38,6 @@ public class PaginaAdministradorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        LBUser.setText(InicioSesionController.usuario.getUsuario());
         LBAgregar.setOnMouseClicked(e->{
             try {
                 App.abrirNuevaVentana("paginaAgregarVehiculo", 807, 719);
@@ -64,6 +65,15 @@ public class PaginaAdministradorController implements Initializable {
             } catch (IOException ex) {
                 ex.printStackTrace();
             } 
+        });
+        IVInicio.setOnMouseClicked(e->{
+            Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaPrincipal", 929, 681);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         });
     }    
     

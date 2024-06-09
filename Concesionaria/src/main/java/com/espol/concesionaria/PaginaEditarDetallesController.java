@@ -1,15 +1,28 @@
 package com.espol.concesionaria;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
+import java.util.UUID;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import listas.ArrayListJR;
 import modelo.Vehiculo;
 
@@ -70,22 +83,118 @@ public class PaginaEditarDetallesController implements Initializable {
     private Label volver;
     @FXML
     private ImageView IVInicio;
-    
-    
+
+    private File archivoVehiculo1;
+    private File archivoVehiculo2;
+    private File archivoVehiculo3;
+    private ArrayListJR<String> fotos = new ArrayListJR<>();
+    private ArrayListJR<String> fotosOriginales = new ArrayListJR<>();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        IVInicio.setOnMouseClicked(e -> {
+            Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaPrincipal", 929, 681);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        volver.setOnMouseClicked(e -> {
+            Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaEditar", 800, 700);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        lbImagen1.setOnMouseClicked(evento -> {
+            FileChooser selectorArchivos = new FileChooser();
+            archivoVehiculo1 = selectorArchivos.showOpenDialog((Stage) IVVehiculo1.getScene().getWindow());
+            if (archivoVehiculo1 != null) {
+                try {
+                    Image imagen = new Image(archivoVehiculo1.toURI().toString());
+                    IVVehiculo1.setImage(imagen);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        lbImagen2.setOnMouseClicked(evento -> {
+            FileChooser selectorArchivos = new FileChooser();
+            archivoVehiculo2 = selectorArchivos.showOpenDialog((Stage) IVVehiculo2.getScene().getWindow());
+            if (archivoVehiculo2 != null) {
+                try {
+                    Image imagen = new Image(archivoVehiculo2.toURI().toString());
+                    IVVehiculo2.setImage(imagen);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+        lbImagen3.setOnMouseClicked(evento -> {
+            FileChooser selectorArchivos = new FileChooser();
+            archivoVehiculo3 = selectorArchivos.showOpenDialog((Stage) IVVehiculo3.getScene().getWindow());
+            if (archivoVehiculo3 != null) {
+                try {
+                    Image imagen = new Image(archivoVehiculo3.toURI().toString());
+                    IVVehiculo3.setImage(imagen);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+
         Vehiculo v = PaginaEditarController.vehiculo;
         try {
             llenarCampos(v);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
-        LBGuardar.setOnMouseClicked(event -> guardarCambios(v));
-    }    
-    
+
+        LBGuardar.setOnMouseClicked(event -> {
+            PaginaAgregarVehiculoController.mostrarAlerta("Vehiculo Editado", "Se ha editado el vehiculo correctamente", Alert.AlertType.INFORMATION);
+            Stage s = (Stage) lbImagen1.getScene().getWindow();
+            s.close();
+            try {
+                guardarCambios(v);
+                App.abrirNuevaVentana("paginaAdministrador", 650, 600);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+    }
+
+    private void guardarArchivo(File archivoAGuardar) throws IOException {
+        String nombreArchivo = archivoAGuardar.getName();
+        String nombreAleatorio = generarNombreAleatorio(nombreArchivo);
+        fotos.add(nombreAleatorio);
+        String rutaDirectorio = App.pathImages; // Reemplaza la ruta con tu ruta real
+        Path directorio = Paths.get(rutaDirectorio);
+        if (!Files.exists(directorio)) {
+            Files.createDirectories(directorio);
+        }
+        Path rutaDestino = Paths.get(rutaDirectorio, nombreAleatorio);
+        Files.copy(archivoAGuardar.toPath(), rutaDestino);
+    }
+
+    private String generarNombreAleatorio(String nombreOriginal) {
+        String extension = "";
+        int indicePunto = nombreOriginal.lastIndexOf('.');
+        if (indicePunto >= 0) {
+            extension = nombreOriginal.substring(indicePunto);
+        }
+        String nombreAleatorio = UUID.randomUUID().toString().replace("-", "") + extension;
+        return nombreAleatorio;
+    }
+
     private void llenarCampos(Vehiculo v) throws FileNotFoundException {
-        
         TFPrecio.setText(String.valueOf(v.getPrecio()));
         TFMarca.setText(v.getMarca().toString());
         TFModelo.setText(v.getModelo());
@@ -104,13 +213,19 @@ public class PaginaEditarDetallesController implements Initializable {
         if (v.getAccidentesOServicios().size() > 2) a3.setText(v.getAccidentesOServicios().get(2));
         if (v.getAccidentesOServicios().size() > 3) a4.setText(v.getAccidentesOServicios().get(3));
         if (v.getAccidentesOServicios().size() > 4) a5.setText(v.getAccidentesOServicios().get(4));
-        
-        if (v.getRutasFotos().size() > 0) IVVehiculo1.setImage(new Image(new FileInputStream(App.pathImages+v.getRutasFotos().get(0))));
-        if (v.getRutasFotos().size() > 1) IVVehiculo2.setImage(new Image(new FileInputStream(App.pathImages+v.getRutasFotos().get(1))));
-        if (v.getRutasFotos().size() > 2) IVVehiculo3.setImage(new Image(new FileInputStream(App.pathImages+v.getRutasFotos().get(2))));
+
+        fotosOriginales.clear();
+        fotosOriginales.addAll(v.getRutasFotos());
+
+        if (v.getRutasFotos().size() > 0)
+            IVVehiculo1.setImage(new Image(new FileInputStream(App.pathImages + v.getRutasFotos().get(0))));
+        if (v.getRutasFotos().size() > 1)
+            IVVehiculo2.setImage(new Image(new FileInputStream(App.pathImages + v.getRutasFotos().get(1))));
+        if (v.getRutasFotos().size() > 2)
+            IVVehiculo3.setImage(new Image(new FileInputStream(App.pathImages + v.getRutasFotos().get(2))));
     }
 
-    private void guardarCambios(Vehiculo v) {
+    private void guardarCambios(Vehiculo v) throws IOException {
         v.setPrecio(Double.valueOf(TFPrecio.getText()));
         v.setMarca(PaginaPrincipalController.encontrarMarcaPorNombre(TFMarca.getText()));
         v.setModelo(TFModelo.getText());
@@ -129,11 +244,63 @@ public class PaginaEditarDetallesController implements Initializable {
         if (!a3.getText().isEmpty()) v.getAccidentesOServicios().add(a3.getText());
         if (!a4.getText().isEmpty()) v.getAccidentesOServicios().add(a4.getText());
         if (!a5.getText().isEmpty()) v.getAccidentesOServicios().add(a5.getText());
+
         ArrayListJR<Vehiculo> vehiculos = PaginaPrincipalController.vehiculos;
-        for(int i=0;i<vehiculos.size();i++){
-            if(vehiculos.get(i).equals(v)){
+        for (int i = 0; i < vehiculos.size(); i++) {
+            if (vehiculos.get(i).equals(v)) {
                 PaginaPrincipalController.vehiculos.set(i, v);
             }
+        }
+
+        // Guardar nuevas imágenes si se seleccionaron
+        if (archivoVehiculo1 != null) {
+            guardarArchivo(archivoVehiculo1);
+        }
+        if (archivoVehiculo2 != null) {
+            guardarArchivo(archivoVehiculo2);
+        }
+        if (archivoVehiculo3 != null) {
+            guardarArchivo(archivoVehiculo3);
+        }
+
+        // Actualizar rutas de fotos en el objeto Vehiculo
+        v.getRutasFotos().clear();
+        if (!fotos.isEmpty()) {
+            v.getRutasFotos().addAll(fotos);
+        } else {
+            v.getRutasFotos().addAll(fotosOriginales);
+        }
+
+        // Guardar los cambios en el archivo
+        File archivo = new File(App.pathFiles + "vehiculos.txt");
+
+        ArrayListJR<String> lineas = new ArrayListJR<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            br.readLine();
+            while ((linea = br.readLine()) != null) {
+                String[] info = linea.split(",");
+                if (info[0].equals(v.getPlaca())) {
+                    String nuevaLinea = v.getPlaca() + "," + v.getPrecio() + "," + v.getMarca().toString()
+                            + "," + v.getModelo() + "," + v.getAño() + "," + v.getKilometraje() + "," + v.getMotor() + ","
+                            + v.getTransmisión() + "," + v.getPeso() + "," + v.getUbicacionActualVehiculo() + "," + PaginaPrincipalController.concatenarArrayList(v.getAccidentesOServicios())
+                            + "," + v.getTipo().toString() + "," + v.getCantidadVentas() + "," + PaginaPrincipalController.concatenarArrayList(v.getRutasFotos()) + ","
+                            + v.getUsadoONuevo();
+                    linea = nuevaLinea;
+                }
+                lineas.add(linea);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        // Escribir todas las líneas de nuevo en el archivo
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
+            for (int i = 0; i < lineas.size(); i++) {
+                String linea = lineas.get(i);
+                bw.write(linea + "\n");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }

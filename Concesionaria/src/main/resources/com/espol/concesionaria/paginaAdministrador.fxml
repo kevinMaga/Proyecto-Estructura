@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -37,22 +35,11 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="89.0" prefWidth="221.0">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="71.0" layoutX="86.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="IVInicio" fitHeight="60.0" fitWidth="60.0" layoutX="52.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../images/usuario.png" />
+                              <Image url="@../../../images/Inicio.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="LBUser" alignment="CENTER" layoutX="53.0" layoutY="70.0" prefHeight="22.0" prefWidth="116.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Iniciar Sesión" textFill="WHITE">
-                           <font>
-                              <Font name="Bernard MT Condensed" size="17.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <effect>
-                              <Glow />
-                           </effect>
-                        </Label>
                      </children>
                   </AnchorPane>
                </children>

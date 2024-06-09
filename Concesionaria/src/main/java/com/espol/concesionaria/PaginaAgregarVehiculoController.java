@@ -160,7 +160,7 @@ public class PaginaAgregarVehiculoController implements Initializable {
         return nombreAleatorio;
     }
 
-    private void mostrarAlerta(String title, String message,AlertType t) {
+    public static void mostrarAlerta(String title, String message,AlertType t) {
         Alert alerta = new Alert(t);
         alerta.setTitle(title);
         alerta.setHeaderText(null);

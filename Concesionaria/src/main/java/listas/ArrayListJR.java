@@ -177,7 +177,15 @@ public class ArrayListJR<E> implements List<E>{
         effectiveSize=0;
     }
     
-   
+    public boolean addAll(List<? extends E> c) {
+        if(isFull()){
+            addCapacity();
+        }
+        for (int i = 0; i < c.size(); i++) {
+            elements[effectiveSize++] = c.get(i);
+        }
+        return !c.isEmpty();
+    }
     
-    
+ 
 }
