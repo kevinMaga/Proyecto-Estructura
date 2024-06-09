@@ -41,12 +41,13 @@ public class PaginaEditarController implements Initializable {
     private ImageView IVInicio;
     @FXML
     private VBox vehicleContainer;
+    public static Vehiculo vehiculo;
 
     /**
      * Initializes the controller class.
      */
     
-    private VBox contenedorParaImagenesUsuario(String ruta,String contenido1,String contenido2,String contenido3){
+    private VBox contenedorParaImagenesUsuario(String ruta,String contenido1,String contenido2,String contenido3,Vehiculo veh){
         VBox v;
         v = new VBox();
         v.setPadding(new Insets(20,20,20,20));
@@ -86,6 +87,16 @@ public class PaginaEditarController implements Initializable {
         shadow.setOffsetX(2);
         shadow.setOffsetY(2);
         editButton.setEffect(shadow);
+        editButton.setOnAction(e->{
+            vehiculo=veh;
+            Stage s =(Stage)LBVolver.getScene().getWindow();
+            s.close();
+            try {
+                App.abrirNuevaVentana("paginaEditarDetalles", 807, 719);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
         v.getChildren().addAll(iv,lbl,lbl1,lb2,editButton);
         return v;
     }
@@ -103,7 +114,7 @@ public class PaginaEditarController implements Initializable {
                     Vehiculo a = vehiculos1.get(j);
                     VBox v =contenedorParaImagenesUsuario(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
                     ,a.getAño() + "   "+a.getKilometraje()+" kms . "+a.getUbicacionActualVehiculo()+"\n"
-                    +a.getUsadoONuevo(),"$ "+a.getPrecio());
+                    +a.getUsadoONuevo(),"$ "+a.getPrecio(),a);
                     vehicleContainer.getChildren().add(v);
                 }
             }

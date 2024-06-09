@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane id="AnchorPane" prefHeight="719.0" prefWidth="807.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAgregarVehiculoController">
    <children>
       <Label alignment="CENTER" layoutX="34.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Precio:" textFill="#180000">
@@ -136,7 +137,7 @@
             <Bloom />
          </effect>
       </Label>
-      <HBox layoutX="107.0" layoutY="514.0" prefHeight="166.0" prefWidth="502.0">
+      <HBox layoutX="50.0" layoutY="513.0" prefHeight="166.0" prefWidth="502.0">
          <children>
             <ImageView fx:id="IVVehiculo1" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="IVVehiculo2" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true" />
@@ -186,7 +187,7 @@
                   <Bloom />
                </effect>
             </Label>
-            <ImageView fx:id="IVInicio" fitHeight="44.0" fitWidth="40.0" layoutX="770.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="IVInicio" fitHeight="44.0" fitWidth="40.0" layoutX="734.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/Inicio.png" />
                </image>

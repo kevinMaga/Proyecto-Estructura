@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaEditarDetallesController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="719.0" prefWidth="807.0">
+         <children>
+            <Label alignment="CENTER" layoutX="34.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Precio:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="34.0" layoutY="161.0" prefHeight="31.0" prefWidth="66.0" text="Marca:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <TextField fx:id="TFPrecio" layoutX="100.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFMarca" layoutX="100.0" layoutY="163.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFModelo" layoutX="100.0" layoutY="208.0" prefHeight="26.0" prefWidth="88.0" />
+            <Label alignment="CENTER" layoutX="34.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Modelo:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="34.0" layoutY="251.0" prefHeight="31.0" prefWidth="66.0" text="Año:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <TextField fx:id="TFAño" layoutX="100.0" layoutY="253.0" prefHeight="26.0" prefWidth="88.0" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="292.0" prefHeight="31.0" prefWidth="88.0" text="Kilometraje:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <TextField fx:id="TFKilometraje" layoutX="100.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
+            <Label alignment="CENTER" layoutX="265.0" layoutY="118.0" prefHeight="31.0" prefWidth="66.0" text="Motor:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="250.0" layoutY="160.0" prefHeight="31.0" prefWidth="81.0" text="Trasmisión:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="265.0" layoutY="205.0" prefHeight="31.0" prefWidth="66.0" text="Peso:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="249.0" layoutY="250.0" prefHeight="31.0" prefWidth="82.0" text="Ubicación:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="249.0" layoutY="292.0" prefHeight="31.0" prefWidth="82.0" text="Tipo:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label alignment="CENTER" layoutX="471.0" layoutY="118.0" prefHeight="31.0" prefWidth="125.0" text="Cantidad de ventas:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="titulo132" alignment="CENTER" layoutX="477.0" layoutY="161.0" prefHeight="31.0" prefWidth="81.0" text="U/N:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <Label fx:id="titulo133" alignment="CENTER" layoutX="508.0" layoutY="204.0" prefHeight="31.0" prefWidth="147.0" text="Accidentes o servicios:" textFill="#180000">
+               <font>
+                  <Font name="Bernard MT Condensed" size="16.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <TextField fx:id="TFMotor" layoutX="332.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFTransmision" layoutX="332.0" layoutY="162.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFPeso" layoutX="332.0" layoutY="207.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFUbicacion" layoutX="332.0" layoutY="252.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFTipo" layoutX="332.0" layoutY="295.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFCantidadVentas" layoutX="597.0" layoutY="120.0" prefHeight="26.0" prefWidth="88.0" />
+            <TextField fx:id="TFUN" layoutX="597.0" layoutY="164.0" prefHeight="26.0" prefWidth="88.0" />
+            <Label alignment="CENTER" layoutX="290.0" layoutY="426.0" prefHeight="31.0" prefWidth="194.0" text="Seleccionar imagenes">
+               <font>
+                  <Font name="Bernard MT Condensed" size="22.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+            </Label>
+            <HBox layoutX="34.0" layoutY="512.0" prefHeight="166.0" prefWidth="502.0">
+               <children>
+                  <ImageView fx:id="IVVehiculo1" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="IVVehiculo2" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="IVVehiculo3" fitHeight="166.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </HBox>
+            <Label fx:id="LBGuardar" alignment="CENTER" layoutX="326.0" layoutY="673.0" prefHeight="31.0" prefWidth="98.0" style="-fx-background-color: #FFC15A; -fx-background-radius: 10;" text="Guardar" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbImagen1" alignment="CENTER" layoutX="114.0" layoutY="473.0" prefHeight="31.0" prefWidth="147.0" style="-fx-background-color: #FFC15A; -fx-background-radius: 10;" text="Agregar Imagen" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbImagen2" alignment="CENTER" layoutX="314.0" layoutY="473.0" prefHeight="31.0" prefWidth="147.0" style="-fx-background-color: #FFC15A; -fx-background-radius: 10;" text="Agregar Imagen" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbImagen3" alignment="CENTER" layoutX="523.0" layoutY="473.0" prefHeight="31.0" prefWidth="147.0" style="-fx-background-color: #FFC15A; -fx-background-radius: 10;" text="Agregar Imagen" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="a1" layoutX="508.0" layoutY="238.0" prefHeight="26.0" prefWidth="292.0" />
+            <TextField fx:id="a2" layoutX="508.0" layoutY="269.0" prefHeight="26.0" prefWidth="292.0" />
+            <TextField fx:id="a3" layoutX="508.0" layoutY="308.0" prefHeight="26.0" prefWidth="292.0" />
+            <TextField fx:id="a4" layoutX="508.0" layoutY="346.0" prefHeight="26.0" prefWidth="292.0" />
+            <TextField fx:id="a5" layoutX="509.0" layoutY="382.0" prefHeight="26.0" prefWidth="292.0" />
+            <AnchorPane prefHeight="90.0" prefWidth="884.0" style="-fx-background-color: #FFC15A;">
+               <children>
+                  <Label fx:id="volver" alignment="CENTER" layoutX="53.0" layoutY="9.0" prefHeight="60.0" prefWidth="150.0" text="Volver">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="titulo" alignment="CENTER" layoutX="289.0" layoutY="13.0" prefHeight="52.0" prefWidth="305.0" text="Editar Detalles" textFill="#180000">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="34.0" />
+                     </font>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </Label>
+                  <ImageView fx:id="IVInicio" fitHeight="44.0" fitWidth="40.0" layoutX="731.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/Inicio.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

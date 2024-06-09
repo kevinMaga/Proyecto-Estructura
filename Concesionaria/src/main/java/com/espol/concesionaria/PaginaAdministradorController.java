@@ -49,7 +49,7 @@ public class PaginaAdministradorController implements Initializable {
         
         LBEditar.setOnMouseClicked(e -> {
             try {
-                App.abrirNuevaVentana("paginaEditar", 800, 700);
+                App.abrirNuevaVentana("paginaEditar", 800, 719);
                 Stage s1 = (Stage) LBEditar.getScene().getWindow();
                 s1.close();
             } catch (IOException ex) {
