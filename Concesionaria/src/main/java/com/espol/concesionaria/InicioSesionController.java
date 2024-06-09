@@ -6,9 +6,14 @@ package com.espol.concesionaria;
  
 import modelo.Usuario;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +37,33 @@ public class InicioSesionController implements Initializable {
     private TextField TFContrasena;
     @FXML
     private Button BTIngresar;
+    
+    public static String generarPlacaAleatoria() {
+        // Lista de letras permitidas en una placa
+        String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        // Generador de números aleatorios
+        Random rand = new Random();
+        // Inicializar una cadena para la placa
+        StringBuilder placa = new StringBuilder();
+
+        // Generar las tres primeras letras de la placa
+        for (int i = 0; i < 3; i++) {
+            // Obtener un índice aleatorio para seleccionar una letra de la lista
+            int index = rand.nextInt(letras.length());
+            // Agregar la letra seleccionada a la placa
+            placa.append(letras.charAt(index));
+        }
+
+        // Generar los tres últimos dígitos de la placa
+        for (int i = 0; i < 3; i++) {
+            // Generar un número aleatorio entre 0 y 9
+            int numero = rand.nextInt(10);
+            // Agregar el número generado a la placa
+            placa.append(numero);
+        }
+        return placa.toString();
+}
+    
     public static ArrayListJR<Usuario> cargarUsuarios(){
         ArrayListJR<Usuario> usuarios = new ArrayListJR<>();
         try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"usuarios.txt"))){
@@ -39,7 +71,12 @@ public class InicioSesionController implements Initializable {
             String linea;
             while((linea=br.readLine())!=null){
                 String[] datos = linea.split(",");
-                Usuario user = new Usuario(datos[0],datos[1],datos[2],datos[3]);
+                String[] info = datos[4].split(";");
+                ArrayListJR<String> placas = new ArrayListJR<>();
+                for(String s:info){
+                    placas.add(s);
+                }
+                Usuario user = new Usuario(datos[0],datos[1],datos[2],datos[3],placas);
                 usuario=user;
                 usuarios.add(user);
             }
@@ -52,6 +89,7 @@ public class InicioSesionController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ArrayListJR<Usuario> usuarios = cargarUsuarios();

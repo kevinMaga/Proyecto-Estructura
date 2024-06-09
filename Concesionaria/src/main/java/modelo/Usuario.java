@@ -4,6 +4,8 @@
  */
 package modelo;
 
+import listas.ArrayListJR;
+
 /**
  *
  * @author Kevin
@@ -13,12 +15,14 @@ public class Usuario {
     private String contrasena;
     private String nombre;
     private String Apellido;
+    private ArrayListJR<String> placas;
 
-    public Usuario(String usuario, String contrasena, String nombre, String Apellido) {
+    public Usuario(String usuario, String contrasena, String nombre, String Apellido, ArrayListJR<String> placas) {
         this.usuario = usuario;
         this.contrasena = contrasena;
         this.nombre = nombre;
         this.Apellido = Apellido;
+        this.placas = placas;
     }
 
     public String getUsuario() {
@@ -52,5 +56,14 @@ public class Usuario {
     public void setApellido(String Apellido) {
         this.Apellido = Apellido;
     }
-    
+
+    public ArrayListJR<String> getPlacas() {
+        return placas;
+    }
+
+    public void setPlacas(ArrayListJR<String> placas) {
+        this.placas = placas;
+    }
+
+   
 }

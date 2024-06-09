@@ -308,8 +308,8 @@ public class PaginaPrincipalController implements Initializable {
             br.readLine();
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
-                String[] lista=info[9].split(";");
-                String[] listaF =info[12].split(";");
+                String[] lista=info[10].split(";");
+                String[] listaF =info[13].split(";");
                 ArrayListJR<String> accidentesOServicios = new ArrayListJR<>();
                 ArrayListJR<String> listaFotos = new ArrayListJR<>();
                 for(int i=0;i<lista.length;i++){
@@ -318,10 +318,10 @@ public class PaginaPrincipalController implements Initializable {
                 for(int i=0;i<listaF.length;i++){
                     listaFotos.add(listaF[i]);
                 }
-                Tipo t =encontrarTipoPorNombre(info[10]);
-                Marca m =encontrarMarcaPorNombre(info[1]);
-                vehiculos1.add(new Vehiculo(Double.valueOf(info[0]),m,info[2],Integer.valueOf(info[3]),Integer.valueOf(info[4]),
-                info[5],info[6],info[7],info[8],accidentesOServicios,t,Integer.valueOf(info[11]),listaFotos,info[13]));
+                Tipo t =encontrarTipoPorNombre(info[11]);
+                Marca m =encontrarMarcaPorNombre(info[2]);
+                vehiculos1.add(new Vehiculo(info[0],Double.valueOf(info[1]),m,info[3],Integer.valueOf(info[4]),Integer.valueOf(info[5]),
+                info[6],info[7],info[8],info[9],accidentesOServicios,t,Integer.valueOf(info[12]),listaFotos,info[14]));
             }
         }catch(IOException e){
             e.printStackTrace();
@@ -377,6 +377,7 @@ public class PaginaPrincipalController implements Initializable {
         llenarListaMarcas();
         cargarVehiculos(); 
         llenarCuadroDeFiltro();
+        
         listaFiltrada=vehiculos;
         LBUser.setText(InicioSesionController.usuario.getNombre()+" "+InicioSesionController.usuario.getApellido());
         nuevos.setOnMouseClicked(e ->{
@@ -401,7 +402,7 @@ public class PaginaPrincipalController implements Initializable {
             Stage ventanaActual = (Stage) usados.getScene().getWindow();
             ventanaActual.close();
             try {
-                App.abrirNuevaVentana("paginaAdministrador", 929, 722);
+                App.abrirNuevaVentana("paginaAdministrador", 650, 600);
             } catch (IOException ex) {
                 ex.printStackTrace();
             }

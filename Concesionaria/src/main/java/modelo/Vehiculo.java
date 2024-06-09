@@ -27,8 +27,10 @@ public class Vehiculo{
     private int cantidadVentas;
     private ArrayListJR<String> rutasFotos;
     private String usadoONuevo;
+    private String placa;
 
-    public Vehiculo(double precio, Marca marca, String modelo, int año, int kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
+    public Vehiculo(String placa,double precio, Marca marca, String modelo, int año, int kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
+        this.placa=placa;
         this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
@@ -155,6 +157,14 @@ public class Vehiculo{
 
     public void setUsadoONuevo(String usadoONuevo) {
         this.usadoONuevo = usadoONuevo;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
     
 }
