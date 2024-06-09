@@ -12,6 +12,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.UUID;
 import javafx.fxml.FXML;
@@ -26,9 +27,6 @@ import javafx.stage.Stage;
 import listas.ArrayListJR;
 import modelo.Vehiculo;
 
-/**
- * FXML Controller class
- */
 public class PaginaEditarDetallesController implements Initializable {
 
     @FXML
@@ -87,8 +85,8 @@ public class PaginaEditarDetallesController implements Initializable {
     private File archivoVehiculo1;
     private File archivoVehiculo2;
     private File archivoVehiculo3;
-    private ArrayListJR<String> fotos = new ArrayListJR<>();
-    private ArrayListJR<String> fotosOriginales = new ArrayListJR<>();
+
+    private Vehiculo vehiculo;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -119,6 +117,7 @@ public class PaginaEditarDetallesController implements Initializable {
                 try {
                     Image imagen = new Image(archivoVehiculo1.toURI().toString());
                     IVVehiculo1.setImage(imagen);
+                    guardarArchivo(archivoVehiculo1, 0);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -132,6 +131,7 @@ public class PaginaEditarDetallesController implements Initializable {
                 try {
                     Image imagen = new Image(archivoVehiculo2.toURI().toString());
                     IVVehiculo2.setImage(imagen);
+                    guardarArchivo(archivoVehiculo2, 1);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -145,15 +145,16 @@ public class PaginaEditarDetallesController implements Initializable {
                 try {
                     Image imagen = new Image(archivoVehiculo3.toURI().toString());
                     IVVehiculo3.setImage(imagen);
+                    guardarArchivo(archivoVehiculo3, 2);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
         });
 
-        Vehiculo v = PaginaEditarController.vehiculo;
+        vehiculo = PaginaEditarController.vehiculo;
         try {
-            llenarCampos(v);
+            llenarCampos(vehiculo);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         }
@@ -163,7 +164,7 @@ public class PaginaEditarDetallesController implements Initializable {
             Stage s = (Stage) lbImagen1.getScene().getWindow();
             s.close();
             try {
-                guardarCambios(v);
+                guardarCambios(vehiculo);
                 App.abrirNuevaVentana("paginaAdministrador", 650, 600);
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -171,10 +172,9 @@ public class PaginaEditarDetallesController implements Initializable {
         });
     }
 
-    private void guardarArchivo(File archivoAGuardar) throws IOException {
+    private void guardarArchivo(File archivoAGuardar, int index) throws IOException {
         String nombreArchivo = archivoAGuardar.getName();
         String nombreAleatorio = generarNombreAleatorio(nombreArchivo);
-        fotos.add(nombreAleatorio);
         String rutaDirectorio = App.pathImages; // Reemplaza la ruta con tu ruta real
         Path directorio = Paths.get(rutaDirectorio);
         if (!Files.exists(directorio)) {
@@ -182,6 +182,13 @@ public class PaginaEditarDetallesController implements Initializable {
         }
         Path rutaDestino = Paths.get(rutaDirectorio, nombreAleatorio);
         Files.copy(archivoAGuardar.toPath(), rutaDestino);
+        
+        // Actualizar la lista de rutas de imágenes del vehículo
+        if (vehiculo.getRutasFotos().size() > index) {
+            vehiculo.getRutasFotos().set(index, nombreAleatorio);
+        } else {
+            vehiculo.getRutasFotos().add(nombreAleatorio);
+        }
     }
 
     private String generarNombreAleatorio(String nombreOriginal) {
@@ -213,9 +220,6 @@ public class PaginaEditarDetallesController implements Initializable {
         if (v.getAccidentesOServicios().size() > 2) a3.setText(v.getAccidentesOServicios().get(2));
         if (v.getAccidentesOServicios().size() > 3) a4.setText(v.getAccidentesOServicios().get(3));
         if (v.getAccidentesOServicios().size() > 4) a5.setText(v.getAccidentesOServicios().get(4));
-
-        fotosOriginales.clear();
-        fotosOriginales.addAll(v.getRutasFotos());
 
         if (v.getRutasFotos().size() > 0)
             IVVehiculo1.setImage(new Image(new FileInputStream(App.pathImages + v.getRutasFotos().get(0))));
@@ -252,32 +256,12 @@ public class PaginaEditarDetallesController implements Initializable {
             }
         }
 
-        // Guardar nuevas imágenes si se seleccionaron
-        if (archivoVehiculo1 != null) {
-            guardarArchivo(archivoVehiculo1);
-        }
-        if (archivoVehiculo2 != null) {
-            guardarArchivo(archivoVehiculo2);
-        }
-        if (archivoVehiculo3 != null) {
-            guardarArchivo(archivoVehiculo3);
-        }
-
-        // Actualizar rutas de fotos en el objeto Vehiculo
-        v.getRutasFotos().clear();
-        if (!fotos.isEmpty()) {
-            v.getRutasFotos().addAll(fotos);
-        } else {
-            v.getRutasFotos().addAll(fotosOriginales);
-        }
-
         // Guardar los cambios en el archivo
         File archivo = new File(App.pathFiles + "vehiculos.txt");
 
         ArrayListJR<String> lineas = new ArrayListJR<>();
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
             String linea;
-            br.readLine();
             while ((linea = br.readLine()) != null) {
                 String[] info = linea.split(",");
                 if (info[0].equals(v.getPlaca())) {
@@ -293,6 +277,7 @@ public class PaginaEditarDetallesController implements Initializable {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+
         // Escribir todas las líneas de nuevo en el archivo
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
             for (int i = 0; i < lineas.size(); i++) {
@@ -303,4 +288,5 @@ public class PaginaEditarDetallesController implements Initializable {
             ex.printStackTrace();
         }
     }
+
 }

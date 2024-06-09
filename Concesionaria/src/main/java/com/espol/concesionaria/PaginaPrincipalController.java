@@ -305,7 +305,6 @@ public class PaginaPrincipalController implements Initializable {
         ArrayListJR<Vehiculo> vehiculos1 = new ArrayListJR<>();
         try(BufferedReader br = new BufferedReader(new FileReader(App.pathFiles+"vehiculos.txt"))){
             String linea;
-            br.readLine();
             while((linea=br.readLine())!=null){
                 String[] info = linea.split(",");
                 String[] lista=info[10].split(";");
