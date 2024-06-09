@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaEditarController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="426.0" prefWidth="566.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.espol.concesionaria.PaginaEditarController">
+   <children>
+      <AnchorPane prefHeight="77.0" prefWidth="566.0" style="-fx-background-color: #FFC15A;">
+         <children>
+            <Label fx:id="LBVolver" alignment="CENTER" layoutX="23.0" layoutY="22.0" prefHeight="40.0" prefWidth="102.0" style="-fx-border-radius: 5; -fx-border-color: #000;" text="Volver">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="168.0" layoutY="4.0" prefHeight="70.0" prefWidth="265.0" style="-fx-background-color: #FFC15A;" text="Editar Vehículo">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="IVInicio" fitHeight="56.0" fitWidth="65.0" layoutX="482.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/Inicio.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="vehicleContainer" layoutX="103.0" layoutY="122.0" prefHeight="271.0" prefWidth="384.0" />
+   </children>
 </AnchorPane>

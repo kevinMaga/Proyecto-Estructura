@@ -38,7 +38,7 @@ import modelo.Vehiculo;
 /**
  * FXML Controller class
  * estop esnubsunsduasuasdadssdadsasddasads
- * @author Justin Roldan
+ * @author Kevin Magallanes
  */
 public class PaginaPrincipalController implements Initializable {
     

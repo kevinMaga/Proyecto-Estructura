@@ -78,7 +78,7 @@ public class PaginaAdministradorController implements Initializable {
         LBEditar.setOnMouseClicked(e -> {
             if (RBNuevos.isSelected()) {
                 try {
-                    App.abrirNuevaVentana("paginaEditar", 778, 613);
+                    App.abrirNuevaVentana("paginaEditar", 566, 426);
                     Stage s1 = (Stage) LBEditar.getScene().getWindow();
                     s1.close();
                 } catch (IOException ex) {
@@ -86,7 +86,7 @@ public class PaginaAdministradorController implements Initializable {
                 }
             } else if (RBUsados.isSelected()) {
                 try {
-                    App.abrirNuevaVentana("paginaEditar", 778, 613);
+                    App.abrirNuevaVentana("paginaEditar", 566, 426);
                     Stage s1 = (Stage) LBEditar.getScene().getWindow();
                     s1.close();
                 } catch (IOException ex) {
