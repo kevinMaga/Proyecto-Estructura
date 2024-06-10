@@ -6,6 +6,7 @@ package com.espol.concesionaria;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +27,8 @@ import modelo.Vehiculo;
  * @author Justin Roldan
  */
 public class AutosNuevosController implements Initializable {
-
+    @FXML
+    private ImageView IVClick;
     @FXML
     private ImageView IVInicio;
     @FXML
@@ -67,11 +69,7 @@ public class AutosNuevosController implements Initializable {
      */
     private ArrayListJR<Vehiculo> vehicles = new ArrayListJR<>();
     @FXML
-    private HBox head;
-    @FXML
-    private HBox menu;
-    @FXML
-    private HBox filtro;
+    private Label volver;
     private void limpiarCampos() {
         TFPrecioDesde.clear();
         TFPrecioHasta.clear();
@@ -184,8 +182,7 @@ public class AutosNuevosController implements Initializable {
                 vehicles1 =PaginaPrincipalController.vehiculosPorPrecio(vehicles1, Integer.valueOf(TFPrecioHasta.getText()), "hasta");
             }
             for (int i = 0; i < vehicles1.size(); i++) {
-                final int j = i;
-                Vehiculo a = vehicles1.get(j);
+                Vehiculo a = vehicles1.get(i);
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
@@ -217,8 +214,7 @@ public class AutosNuevosController implements Initializable {
             
             }
             for (int i = 0; i < vehicles1.size(); i++) {
-                final int j = i;
-                Vehiculo a = vehicles1.get(j);
+                Vehiculo a = vehicles1.get(i);
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
@@ -233,7 +229,43 @@ public class AutosNuevosController implements Initializable {
                 fpVehiculos.getChildren().add(v);
             }
         });
-        
+        IVClick.setOnMouseClicked(E->{
+            fpVehiculos.getChildren().clear();
+            limpiarCampos();
+            ArrayListJR<Vehiculo> vehicles1=vehicles;
+            Comparator<Vehiculo> c =(v1,v2)->{
+                return v2.getAccidentesOServicios().size()-v1.getAccidentesOServicios().size();
+            };
+            PaginaPrincipalController.ordenar(vehicles1, c);
+            for (int i = 0; i < vehicles1.size(); i++) {
+                Vehiculo a = vehicles1.get(i);
+                int nAS = a.getAccidentesOServicios().size();
+                if(a.getAccidentesOServicios().get(0).equals("Ninguno")){
+                    nAS=0;
+                }
+                VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
+                         a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
+                        + a.getUsadoONuevo()+"\tA/S: " +nAS, "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
+                fpVehiculos.getChildren().add(v);
+            }
+        });
+        volver.setOnMouseClicked(e->{
+            Stage ventanaActual = (Stage) IVClick.getScene().getWindow();
+            ventanaActual.close();
+            try {
+                App.abrirNuevaVentana("paginaAutosNuevos", 1129, 720);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     } 
     
 }

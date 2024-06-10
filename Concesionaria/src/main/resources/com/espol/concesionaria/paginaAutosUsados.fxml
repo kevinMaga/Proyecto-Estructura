@@ -136,7 +136,7 @@
             </HBox>
             <HBox prefHeight="426.0" prefWidth="930.0">
                <children>
-                  <VBox prefHeight="398.0" prefWidth="234.0" spacing="13.0">
+                  <VBox prefHeight="454.0" prefWidth="262.0" spacing="13.0">
                      <children>
                         <HBox prefHeight="36.0" prefWidth="407.0">
                            <children>
@@ -214,6 +214,47 @@
                               </ImageView>
                            </children>
                         </HBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <Label prefHeight="16.0" prefWidth="206.0" text="Ordenar por numero de">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="16.0" prefWidth="152.0" text="Accidentes o servicios">
+                                       <font>
+                                          <Font name="Arial Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="39.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/filtrar.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="IVClick" fitHeight="81.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../images/clickHere.png" />
+                                             </image>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

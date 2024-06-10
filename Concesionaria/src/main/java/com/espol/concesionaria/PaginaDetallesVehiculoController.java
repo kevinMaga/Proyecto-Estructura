@@ -38,6 +38,11 @@ public class PaginaDetallesVehiculoController implements Initializable {
     private Label lblDetalles;
     
     @FXML
+    private Label lblDetalles1;
+    @FXML
+    private Label lblDetalles2;
+    
+    @FXML
     private Label lblEstado;
     
     @FXML
@@ -51,6 +56,9 @@ public class PaginaDetallesVehiculoController implements Initializable {
     
     @FXML
     private ImageView retroceder;
+    
+    @FXML
+    private ImageView IVAS;
    
     
     public static Vehiculo v;
@@ -73,10 +81,18 @@ public class PaginaDetallesVehiculoController implements Initializable {
         lblPrecio.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 20px; -fx-text-fill: black; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
         lblDetalles.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-text-fill: #757575; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
         lblEstado.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-text-fill: #757575; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+        lblDetalles1.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-text-fill: #757575; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
+        lblDetalles2.setStyle("-fx-font-family: 'Arial'; -fx-font-size: 16px; -fx-text-fill: #757575; -fx-padding: 4px; -fx-background-color: white; -fx-border-radius: 3px;");
         lblNombre.setText(v.getMarca()+" "+v.getModelo());
         lblDetalles.setText(v.getAño() + "   "+v.getKilometraje()+" kms . "+v.getUbicacionActualVehiculo());
+        lblDetalles1.setText("Motor: "+v.getMotor()+"\n"+"Peso: "+v.getPeso()+"\n"+"Transmisión: "+v.getTransmisión());
+        lblDetalles2.setText("Accidentes o servicios: ");
         lblPrecio.setText("$ "+v.getPrecio());
-        lblEstado.setText(v.getUsadoONuevo());
+        int nAS = v.getAccidentesOServicios().size();
+        if (v.getAccidentesOServicios().get(0).equals("Ninguno")) {
+            nAS = 0;
+        }
+        lblEstado.setText(v.getUsadoONuevo()+"\t | A/S: "+nAS);
         avanzar.setOnMouseClicked(e->{
             Image img=null;
             try {
@@ -98,7 +114,13 @@ public class PaginaDetallesVehiculoController implements Initializable {
             }
             imgVehiculo.setImage(img);
         });
-
+        IVAS.setOnMouseClicked(e->{
+            try {
+                App.abrirNuevaVentana("detallesAS", 370, 480);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }    
     
 }

@@ -50,10 +50,6 @@ public class PaginaVehiculosOrdenamientoController implements Initializable {
     @FXML
     private ComboBox cmbOrdenar;
     public static String ordenamiento=null;
-    @FXML
-    private HBox head;
-    @FXML
-    private HBox menu;
     
     private void cambiarColorLabel(String color,Label label){
         LBAutos.setStyle("-fx-background-color:black;");
