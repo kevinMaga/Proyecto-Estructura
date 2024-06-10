@@ -29,6 +29,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import listas.ArrayListCircular;
 import listas.ArrayListJR;
 import modelo.Marca;
 import modelo.Tipo;
@@ -123,6 +124,17 @@ public class PaginaPrincipalController implements Initializable {
         }
     }
     public static String concatenarArrayList(ArrayListJR<String> lista) {
+        String resultado = "";
+        for (int i=0;i<lista.size();i++) {
+            String frase = lista.get(i);
+            resultado += frase + ";";
+        }
+        if (!resultado.isEmpty()) {
+            resultado = resultado.substring(0, resultado.length() - 1);
+        }
+        return resultado;
+    }
+    public static String concatenarArrayList(ArrayListCircular<String> lista) {
         String resultado = "";
         for (int i=0;i<lista.size();i++) {
             String frase = lista.get(i);
@@ -349,7 +361,7 @@ public class PaginaPrincipalController implements Initializable {
                 String[] lista=info[10].split(";");
                 String[] listaF =info[13].split(";");
                 ArrayListJR<String> accidentesOServicios = new ArrayListJR<>();
-                ArrayListJR<String> listaFotos = new ArrayListJR<>();
+                ArrayListCircular<String> listaFotos = new ArrayListCircular<>();
                 for(int i=0;i<lista.length;i++){
                     accidentesOServicios.add(lista[i]);
                 }

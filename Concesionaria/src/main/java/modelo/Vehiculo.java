@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import listas.ArrayListCircular;
 import listas.ArrayListJR;
 
 
@@ -25,11 +26,11 @@ public class Vehiculo{
     private ArrayListJR<String> accidentesOServicios;
     private Tipo tipo;
     private int cantidadVentas;
-    private ArrayListJR<String> rutasFotos;
+    private ArrayListCircular<String> rutasFotos;
     private String usadoONuevo;
     private String placa;
 
-    public Vehiculo(String placa,double precio, Marca marca, String modelo, int año, int kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListJR<String> rutasFotos, String usadoONuevo) {
+    public Vehiculo(String placa,double precio, Marca marca, String modelo, int año, int kilometraje, String motor, String transmisión, String peso, String ubicacionActualVehiculo, ArrayListJR<String> accidentesOServicios, Tipo tipo, int cantidadVentas, ArrayListCircular<String> rutasFotos, String usadoONuevo) {
         this.placa=placa;
         this.precio = precio;
         this.marca = marca;
@@ -143,11 +144,11 @@ public class Vehiculo{
         this.cantidadVentas = cantidadVentas;
     }
 
-    public ArrayListJR<String> getRutasFotos() {
+    public ArrayListCircular<String> getRutasFotos() {
         return rutasFotos;
     }
 
-    public void setRutasFotos(ArrayListJR<String> rutasFotos) {
+    public void setRutasFotos(ArrayListCircular<String> rutasFotos) {
         this.rutasFotos = rutasFotos;
     }
 
@@ -166,5 +167,6 @@ public class Vehiculo{
     public void setPlaca(String placa) {
         this.placa = placa;
     }
-    
+
+   
 }

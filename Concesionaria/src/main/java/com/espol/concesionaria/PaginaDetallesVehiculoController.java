@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import listas.ArrayListCircular;
 import listas.ArrayListJR;
 import modelo.Vehiculo;
 
@@ -59,7 +60,7 @@ public class PaginaDetallesVehiculoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         Image img1=null;
         try {
-            ArrayListJR<String> rutas = v.getRutasFotos();
+            ArrayListCircular<String> rutas = v.getRutasFotos();
             img1 = new Image(new FileInputStream(App.pathImages+rutas.get(0)));
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
@@ -74,23 +75,21 @@ public class PaginaDetallesVehiculoController implements Initializable {
         lblPrecio.setText("$ "+v.getPrecio());
         lblEstado.setText(v.getUsadoONuevo());
         avanzar.setOnMouseClicked(e->{
-            indice = (indice + 1) % v.getRutasFotos().size();
             Image img=null;
             try {
-                ArrayListJR<String> rutas = v.getRutasFotos();
-                img = new Image(new FileInputStream(App.pathImages+rutas.get(indice)));
+                ArrayListCircular<String> rutas = v.getRutasFotos();
+                img = new Image(new FileInputStream(App.pathImages+rutas.getNext()));
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }
             imgVehiculo.setImage(img);
         });
 
-        retroceder.setOnMouseClicked(e->{
-            indice = (indice - 1 + v.getRutasFotos().size()) % v.getRutasFotos().size();
+        retroceder.setOnMouseClicked(e->{         
             Image img=null;
             try {
-                ArrayListJR<String> rutas = v.getRutasFotos();
-                img = new Image(new FileInputStream(App.pathImages+rutas.get(indice)));
+                ArrayListCircular<String> rutas = v.getRutasFotos();
+                img = new Image(new FileInputStream(App.pathImages+rutas.getPrevious()));
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
             }

@@ -1,21 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package listas;
 
-import static java.nio.file.Files.size;
+package listas;
 
 /**
  *
  * @author Justin Roldan
  */
-public class ArrayListJR<E> implements List<E>{
+public class ArrayListCircular<E> implements List<E>{
     private int effectiveSize = 0;
     private int CAPACITY = 100;
     private E[] elements = null;
+    private int currentIndex =0;
     
-    public ArrayListJR(){
+    public ArrayListCircular(){
         this.elements = (E[]) new Object[CAPACITY];
         
     }
@@ -186,6 +182,19 @@ public class ArrayListJR<E> implements List<E>{
         }
         return !c.isEmpty();
     }
-    
- 
+    public E getNext() {
+        if (effectiveSize == 0) {
+            return null;
+        }
+        currentIndex = (currentIndex + 1) % effectiveSize;
+        return elements[currentIndex];
+    }
+
+    public E getPrevious() {
+        if (effectiveSize == 0) {
+            return null;
+        }
+        currentIndex = (currentIndex - 1 + effectiveSize) % effectiveSize;
+        return elements[currentIndex];
+    }
 }

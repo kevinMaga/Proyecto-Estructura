@@ -28,6 +28,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import listas.ArrayListCircular;
 import listas.ArrayListJR;
 import modelo.Marca;
 import modelo.Tipo;
@@ -92,7 +93,7 @@ public class PaginaAgregarVehiculoController implements Initializable {
     private File archivoVehiculo1;
     private File archivoVehiculo2;
     private File archivoVehiculo3;
-    private ArrayListJR<String> fotos=new ArrayListJR<>();
+    private ArrayListCircular<String> fotos=new ArrayListCircular<>();
     
     private static String generarPlaca() {
         String LETRAS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
