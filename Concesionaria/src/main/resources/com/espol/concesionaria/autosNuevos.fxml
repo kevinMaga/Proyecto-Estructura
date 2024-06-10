@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.PaginaAutosUsadosController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="722.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.espol.concesionaria.AutosNuevosController">
    <content>
       <VBox prefHeight="722.0" prefWidth="1000.0">
          <children>
@@ -78,7 +78,7 @@
                               <Image url="@../../../images/carro.png" />
                            </image>
                         </ImageView>
-                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="54.0" text="Usados" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="47.0" prefWidth="66.0" text="Nuevos" textFill="WHITE">
                            <font>
                               <Font name="Bernard MT Condensed" size="19.0" />
                            </font>
@@ -234,7 +234,10 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
                   </VBox>
-                  <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="20.0" prefHeight="398.0" prefWidth="696.0" vgap="20.0" />
+                  <FlowPane fx:id="fpVehiculos" alignment="CENTER" hgap="20.0" prefHeight="398.0" prefWidth="696.0" vgap="20.0">
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding></FlowPane>
                </children>
             </HBox>
          </children>

@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.espol.concesionaria;
-
-import static com.espol.concesionaria.PaginaPrincipalController.vehiculos;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,6 +17,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -30,6 +30,7 @@ import javafx.stage.Stage;
 import listas.ArrayListJR;
 import modelo.Marca;
 import modelo.Tipo;
+import modelo.Vehiculo;
 
 /**
  * FXML Controller class
@@ -49,10 +50,56 @@ public class PaginaAutosNuevosController implements Initializable {
     
     @FXML
     private HBox hbTipos;
+    
+    @FXML
+    private ComboBox cmbTipo;
+    @FXML
+    private ComboBox cmbMarca;
+    @FXML
+    private ComboBox cmbModelo;
+    @FXML
+    private Button btnBuscar;
+    
+    public static ArrayListJR<Vehiculo> listaFiltrada;
+    private void llenarCuadroDeFiltro(){
+        ArrayListJR<Tipo> tipos=PaginaPrincipalController.tipos;
+        for(int i=0;i<tipos.size();i++){
+            if(!cmbTipo.getItems().contains(tipos.get(i))){
+                cmbTipo.getItems().add(tipos.get(i));
+            }
+        }
+        ArrayListJR<Vehiculo> vehiculos = PaginaPrincipalController.vehiculos;
+        for(int i=0;i<vehiculos.size();i++){
+            Vehiculo v = vehiculos.get(i);
+            if(!cmbModelo.getItems().contains(v.getModelo()))
+                cmbModelo.getItems().add(v.getModelo());
+        }
+        ArrayListJR<Marca> marcas =PaginaPrincipalController.marcas;
+        for(int i=0;i<marcas.size();i++){
+            if(!cmbMarca.getItems().contains(marcas.get(i)))
+                cmbMarca.getItems().add(marcas.get(i));
+        }
+    }
+    public void filtrarVehiculos(){
+        ArrayListJR<Vehiculo> lista = PaginaPrincipalController.vehiculos;
+        ArrayListJR<Vehiculo> vehiculos = PaginaPrincipalController.vehiculos;
+        if(cmbTipo.getValue()!=null){
+            lista=PaginaPrincipalController.vehiculosPorTipo(vehiculos, cmbTipo.getValue());
+        }
+        if(cmbMarca.getValue()!=null){
+            lista=PaginaPrincipalController.vehiculosPorMarca(lista, cmbMarca.getValue());
+        }
+        if(cmbModelo.getValue()!=null){
+            lista=PaginaPrincipalController.vehiculosPorModelo(lista, cmbModelo.getValue());
+        }
+        listaFiltrada=lista;
+    }
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        llenarCuadroDeFiltro();
         fpLogos.getChildren().clear();
+        listaFiltrada=PaginaPrincipalController.vehiculos;
         for(int i=0;i<PaginaPrincipalController.marcas.size();i++){
             Marca m = PaginaPrincipalController.marcas.get(i);
             ImageView iv=null;
@@ -104,6 +151,16 @@ public class PaginaAutosNuevosController implements Initializable {
             });
             hbTipos.getChildren().add(v);
         }
+        btnBuscar.setOnMouseClicked(e->{
+            filtrarVehiculos();
+            Stage s =(Stage)btnBuscar.getScene().getWindow();
+            s.close();
+            try {
+                App.abrirNuevaVentana("autosNuevos", 1000, 722);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
     }    
     
 }
