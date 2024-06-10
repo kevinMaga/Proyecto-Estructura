@@ -20,7 +20,6 @@ import javafx.stage.Stage;
  */
 public class PaginaAdministradorController implements Initializable {
 
-    private Label LBUser;
     @FXML
     private Label LBAgregar;
     @FXML
@@ -28,9 +27,13 @@ public class PaginaAdministradorController implements Initializable {
     @FXML
     private Label LBRemover;
     @FXML
-    private Label LBListado;
-    @FXML
     private ImageView IVInicio;
+    @FXML
+    private ImageView IVAgregar;
+    @FXML
+    private ImageView IVRemover;
+    @FXML
+    private ImageView IVEditar;
 
     /**
      * Initializes the controller class.
@@ -58,6 +61,34 @@ public class PaginaAdministradorController implements Initializable {
             }
         });
         LBRemover.setOnMouseClicked(e -> {
+           try {
+                App.abrirNuevaVentana("paginaRemover", 778, 613);
+                Stage s2 = (Stage) LBEditar.getScene().getWindow();
+                s2.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            } 
+        });
+        IVAgregar.setOnMouseClicked(e->{
+            try {
+                App.abrirNuevaVentana("paginaAgregarVehiculo", 807, 719);
+                Stage s =(Stage)LBAgregar.getScene().getWindow();
+                s.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        
+        IVEditar.setOnMouseClicked(e -> {
+            try {
+                App.abrirNuevaVentana("paginaEditar", 800, 719);
+                Stage s1 = (Stage) LBEditar.getScene().getWindow();
+                s1.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        });
+        IVRemover.setOnMouseClicked(e -> {
            try {
                 App.abrirNuevaVentana("paginaRemover", 778, 613);
                 Stage s2 = (Stage) LBEditar.getScene().getWindow();

@@ -52,9 +52,6 @@ public class PaginaPrincipalController implements Initializable {
     
     @FXML
     private HBox usados;
-
-    @FXML
-    private ComboBox cmbHead;
     
     @FXML
     private ComboBox cmbTipo;
@@ -77,11 +74,6 @@ public class PaginaPrincipalController implements Initializable {
     @FXML
     private ComboBox cmbAñoHasta;
     
-    @FXML
-    private TextField TFHead;
-    
-    @FXML
-    private ImageView IVBuscar;
     
     @FXML
     private Button btnBuscar;
@@ -92,8 +84,6 @@ public class PaginaPrincipalController implements Initializable {
     @FXML
     private Label LBUser;
     
-    @FXML
-    private Label LBVende;
     
     @FXML
     private FlowPane fpMasVendidos;
@@ -194,6 +184,12 @@ public class PaginaPrincipalController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    private HBox head;
+    @FXML
+    private HBox menu;
+    @FXML
+    private HBox filtro;
     
     public void filtrarVehiculos(){
         ArrayListJR<Vehiculo> lista = vehiculos;
@@ -382,8 +378,7 @@ public class PaginaPrincipalController implements Initializable {
     
     private void llenarCuadroDeFiltro(){
         for(int i=0;i<tipos.size();i++){
-            if(!cmbHead.getItems().contains(tipos.get(i)) && !cmbTipo.getItems().contains(tipos.get(i))){
-                cmbHead.getItems().add(tipos.get(i));
+            if(!cmbTipo.getItems().contains(tipos.get(i))){
                 cmbTipo.getItems().add(tipos.get(i));
             }
         }

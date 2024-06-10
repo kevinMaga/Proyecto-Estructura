@@ -26,7 +26,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="89.0" prefWidth="236.0">
                      <children>
-                        <Label layoutX="68.0" layoutY="33.0" prefHeight="60.0" prefWidth="228.0" text="Patiotuerca" textFill="#c77b00">
+                        <Label alignment="CENTER" layoutX="68.0" layoutY="33.0" prefHeight="60.0" prefWidth="228.0" text="AviCars" textFill="#c77b00">
                            <font>
                               <Font name="Bernard MT Condensed" size="48.0" />
                            </font>
@@ -46,24 +46,19 @@
             </HBox>
             <AnchorPane prefHeight="441.0" prefWidth="572.0">
                <children>
-                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="103.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="IVAgregar" fitHeight="111.0" fitWidth="111.0" layoutX="103.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/agregar.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="103.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="IVRemover" fitHeight="111.0" fitWidth="111.0" layoutX="238.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/remover.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="405.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="IVEditar" fitHeight="111.0" fitWidth="111.0" layoutX="405.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/editar.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="111.0" fitWidth="111.0" layoutX="405.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/listado.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="LBAgregar" alignment="CENTER" layoutX="103.0" layoutY="229.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Agregar">
@@ -76,12 +71,7 @@
                         <Font name="Arial" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="LBRemover" alignment="CENTER" layoutX="110.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Remover">
-                     <font>
-                        <Font name="Arial" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="LBListado" alignment="CENTER" layoutX="397.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Listado">
+                  <Label fx:id="LBRemover" alignment="CENTER" layoutX="245.0" layoutY="395.0" prefHeight="29.0" prefWidth="97.0" style="-fx-background-color: #ff8a8a; -fx-background-radius: 10;" text="Remover">
                      <font>
                         <Font name="Arial" size="18.0" />
                      </font>

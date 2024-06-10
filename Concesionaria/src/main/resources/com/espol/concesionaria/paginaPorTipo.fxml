@@ -28,7 +28,7 @@
                               <Image url="@../../../images/volante.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
+                        <Label alignment="CENTER" layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="AviCars" textFill="#c97c00">
                            <font>
                               <Font size="35.0" />
                            </font>

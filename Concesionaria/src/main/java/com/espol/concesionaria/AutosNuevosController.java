@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import listas.ArrayListJR;
@@ -65,6 +66,12 @@ public class AutosNuevosController implements Initializable {
      * Initializes the controller class.
      */
     private ArrayListJR<Vehiculo> vehicles = new ArrayListJR<>();
+    @FXML
+    private HBox head;
+    @FXML
+    private HBox menu;
+    @FXML
+    private HBox filtro;
     private void limpiarCampos() {
         TFPrecioDesde.clear();
         TFPrecioHasta.clear();

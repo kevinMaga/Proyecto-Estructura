@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import listas.ArrayListCircular;
 import listas.ArrayListJR;
@@ -55,6 +56,8 @@ public class PaginaDetallesVehiculoController implements Initializable {
     public static Vehiculo v;
     
     private int indice=0;
+    @FXML
+    private HBox head;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

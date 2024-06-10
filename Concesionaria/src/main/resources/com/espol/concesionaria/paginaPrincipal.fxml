@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -29,29 +28,10 @@
                               <Image url="@../../../images/volante.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
-                           <font>
-                              <Font name="Bernard MT Condensed" size="35.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="76.0" prefWidth="576.0">
                      <children>
-                        <ComboBox fx:id="cmbHead" layoutX="10.0" layoutY="35.0" prefHeight="35.0" prefWidth="150.0" promptText="Otros" style="-fx-font-size: 16; -fx-font-family: &quot;Bernard MT Condensed&quot;; -fx-background-color: white;">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ComboBox>
-                        <TextField fx:id="TFHead" layoutX="161.0" layoutY="34.0" prefHeight="38.0" prefWidth="222.0" />
-                        <ImageView fx:id="IVBuscar" fitHeight="46.0" fitWidth="41.0" layoutX="342.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/lupa.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="36.0" layoutX="492.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../images/usuario.png" />
@@ -67,6 +47,11 @@
                            <effect>
                               <Glow />
                            </effect>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="49.0" layoutY="24.0" prefHeight="48.0" prefWidth="179.0" text="AviCars" textFill="#c97c00">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="35.0" />
+                           </font>
                         </Label>
                      </children>
                   </AnchorPane>

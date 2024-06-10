@@ -70,6 +70,12 @@ public class PaginaAutosUsadosController implements Initializable {
      * Initializes the controller class.
      */
     private ArrayListJR<Vehiculo> vehicles = new ArrayListJR<>();
+    @FXML
+    private HBox head;
+    @FXML
+    private HBox menu;
+    @FXML
+    private HBox filtro;
     private void limpiarCampos() {
         TFPrecioDesde.clear();
         TFPrecioHasta.clear();

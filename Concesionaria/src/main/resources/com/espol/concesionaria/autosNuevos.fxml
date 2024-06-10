@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -27,29 +26,15 @@
                               <Image url="@../../../images/volante.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="97.0" layoutY="26.0" prefHeight="48.0" prefWidth="179.0" text="Patiotuerca" textFill="#c97c00">
-                           <font>
-                              <Font name="Bernard MT Condensed" size="35.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="86.0" prefWidth="466.0">
                      <children>
-                        <ComboBox fx:id="cmbHead1" layoutX="34.0" layoutY="34.0" prefHeight="38.0" prefWidth="126.0" promptText="Otros" style="-fx-font-size: 16; -fx-font-family: &quot;Bernard MT Condensed&quot;;">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ComboBox>
-                        <TextField fx:id="TFHead1" layoutX="161.0" layoutY="34.0" prefHeight="38.0" prefWidth="190.0" />
-                        <ImageView fx:id="IVBuscar1" fitHeight="46.0" fitWidth="41.0" layoutX="310.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../images/lupa.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
+                        <Label alignment="CENTER" layoutX="151.0" layoutY="22.0" prefHeight="48.0" prefWidth="179.0" text="AviCars" textFill="#c97c00">
+                           <font>
+                              <Font name="Bernard MT Condensed" size="35.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="100.0" prefWidth="398.0">
