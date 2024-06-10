@@ -48,7 +48,7 @@ public class InicioSesionController implements Initializable {
         Random rand = new Random();
         // Inicializar una cadena para la placa
         StringBuilder placa = new StringBuilder();
-
+        
         // Generar las tres primeras letras de la placa
         for (int i = 0; i < 3; i++) {
             // Obtener un índice aleatorio para seleccionar una letra de la lista
@@ -56,7 +56,7 @@ public class InicioSesionController implements Initializable {
             // Agregar la letra seleccionada a la placa
             placa.append(letras.charAt(index));
         }
-
+        
         // Generar los tres últimos dígitos de la placa
         for (int i = 0; i < 3; i++) {
             // Generar un número aleatorio entre 0 y 9

@@ -134,12 +134,14 @@ public class PaginaPrincipalController implements Initializable {
         return resultado;
     }
     
-    public static void llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
+    public static ArrayListJR<Vehiculo> llenarVehiculosEnContenedor(String usadoONuevo,FlowPane fpVehiculos,ArrayListJR<Vehiculo> vehiculos){
+        ArrayListJR<Vehiculo> vehiculos1 = new ArrayListJR<>();
         fpVehiculos.getChildren().clear();
         if (usadoONuevo.equals("Usado") || usadoONuevo.equals("Nuevo")) {
             for(int i = 0; i < vehiculos.size(); i++){
                 if(vehiculos.get(i).getUsadoONuevo().equals(usadoONuevo)){
                     Vehiculo a = vehiculos.get(i);
+                    vehiculos1.add(a);
                     VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
                     ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
                     +a.getUsadoONuevo(),"$ "+a.getPrecio());
@@ -158,12 +160,14 @@ public class PaginaPrincipalController implements Initializable {
         else{
             for(int i = 0; i < vehiculos.size(); i++){
                 Vehiculo a = vehiculos.get(i);
+                vehiculos1.add(a);
                 VBox v =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
                     ,a.getAño() + "   "+a.getKilometraje()+" kms .   "+a.getUbicacionActualVehiculo()+"\n"
                     +a.getUsadoONuevo(),"$ "+a.getPrecio());
                 fpVehiculos.getChildren().add(v);        
             }
         }
+        return vehiculos1;
     }
      
     public static void llenarListaTipos(){
@@ -191,16 +195,16 @@ public class PaginaPrincipalController implements Initializable {
             lista=vehiculosPorModelo(lista, cmbModelo.getValue());
         }
         if(cmbPrecioDesde.getValue()!=null){
-            lista=vehiculosPorValor(lista, (int) cmbPrecioDesde.getValue(),"desde");
+            lista=vehiculosPorPrecio(lista, (int)cmbPrecioDesde.getValue(),"desde");
         }
         if(cmbPrecioHasta.getValue()!=null){
-            lista=vehiculosPorValor(lista, (int) cmbPrecioHasta.getValue(),"hasta");
+            lista=vehiculosPorPrecio(lista, (int) cmbPrecioHasta.getValue(),"hasta");
         }
         if(cmbAñoDesde.getValue()!=null){
-            lista=vehiculosPorValor(lista,(int)cmbAñoDesde.getValue(),"desde");
+            lista=vehiculosPorAño(lista,(int)cmbAñoDesde.getValue(),"desde");
         }
         if(cmbAñoHasta.getValue()!=null){
-            lista=vehiculosPorValor(lista,(int)cmbAñoHasta.getValue(),"hasta");
+            lista=vehiculosPorAño(lista,(int)cmbAñoHasta.getValue(),"hasta");
         }
         listaFiltrada=lista;
     }
@@ -245,7 +249,7 @@ public class PaginaPrincipalController implements Initializable {
         }
     }
     
-    public static ArrayListJR<Vehiculo> vehiculosPorValor(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
+    public static ArrayListJR<Vehiculo> vehiculosPorPrecio(ArrayListJR<Vehiculo> vehiculos,int precio,String limite){
         ArrayListJR<Vehiculo> vehiculosPrecio = new ArrayListJR<>();
         if(limite.equals("desde")){
             for(int i=0;i<vehiculos.size();i++){
@@ -261,6 +265,41 @@ public class PaginaPrincipalController implements Initializable {
             }
         }
         return vehiculosPrecio;
+    }
+    
+    public static ArrayListJR<Vehiculo> vehiculosPorAño(ArrayListJR<Vehiculo> vehiculos,int anio,String limite){
+        ArrayListJR<Vehiculo> vehiculosAnio = new ArrayListJR<>();
+        if(limite.equals("desde")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getAño()>=anio){
+                    vehiculosAnio.add(vehiculos.get(i));
+                }
+            }
+        }else if(limite.equals("hasta")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getAño()<=anio){
+                    vehiculosAnio.add(vehiculos.get(i));
+                }
+            }
+        }
+        return vehiculosAnio;
+    }
+    public static ArrayListJR<Vehiculo> vehiculosPorKilometraje(ArrayListJR<Vehiculo> vehiculos,int k,String limite){
+        ArrayListJR<Vehiculo> vehiculosK = new ArrayListJR<>();
+        if(limite.equals("desde")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getKilometraje()>=k){
+                    vehiculosK.add(vehiculos.get(i));
+                }
+            }
+        }else if(limite.equals("hasta")){
+            for(int i=0;i<vehiculos.size();i++){
+                if(vehiculos.get(i).getKilometraje()<=k){
+                    vehiculosK.add(vehiculos.get(i));
+                }
+            }
+        }
+        return vehiculosK;
     }
     
     public static <E> ArrayListJR<Vehiculo> vehiculosPorModelo(ArrayListJR<Vehiculo> vehiculos,E modelo){

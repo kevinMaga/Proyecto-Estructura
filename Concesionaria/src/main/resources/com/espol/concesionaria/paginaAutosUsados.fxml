@@ -164,17 +164,17 @@
                         </HBox>
                         <HBox prefHeight="47.0" prefWidth="407.0">
                            <children>
-                              <TextField fx:id="TFDesde1" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                              <TextField fx:id="TFPrecioDesde" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="TFHasta1" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                              <TextField fx:id="TFPrecioHasta" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <ImageView fx:id="IVBuscarPrecio1" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="IVBuscarP" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/lupa.png" />
                                  </image>
@@ -188,17 +188,17 @@
                         </Label>
                         <HBox prefHeight="47.0" prefWidth="407.0">
                            <children>
-                              <TextField fx:id="TFDesde11" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                              <TextField fx:id="TFAñoDesde" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="TFHasta11" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                              <TextField fx:id="TFAñoHasta" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <ImageView fx:id="IVBuscarPrecio11" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="IVBuscarA" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/lupa.png" />
                                  </image>
@@ -212,45 +212,23 @@
                         </Label>
                         <HBox prefHeight="47.0" prefWidth="407.0">
                            <children>
-                              <TextField fx:id="TFDesde12" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
+                              <TextField fx:id="TFKilometrosDesde" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="DESDE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="TFHasta12" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
+                              <TextField fx:id="TFKilometrajeHasta" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" promptText="HASTA">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </TextField>
-                              <ImageView fx:id="IVBuscarPrecio12" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="IVBuscarK" fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../images/lupa.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-                           <children>
-                              <Label text="Marcas">
-                                 <font>
-                                    <Font name="Arial" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Provincias/Estados">
-                                 <font>
-                                    <Font name="Arial" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label text="Transmisión">
-                                 <font>
-                                    <Font name="Arial" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </padding>
-                        </VBox>
                      </children>
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
