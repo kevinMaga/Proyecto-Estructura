@@ -157,11 +157,18 @@ public class PaginaAutosUsadosController implements Initializable {
                 vehicles1 =PaginaPrincipalController.vehiculosPorAño(vehicles1, Integer.valueOf(TFAñoHasta.getText()), "hasta");
             }
             for (int i = 0; i < vehicles1.size(); i++) {
-                final int j = i;
                 Vehiculo a = vehicles1.get(i);
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });
@@ -185,6 +192,14 @@ public class PaginaAutosUsadosController implements Initializable {
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });
@@ -210,6 +225,14 @@ public class PaginaAutosUsadosController implements Initializable {
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });

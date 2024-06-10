@@ -158,6 +158,14 @@ public class AutosNuevosController implements Initializable {
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });
@@ -181,6 +189,14 @@ public class AutosNuevosController implements Initializable {
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });
@@ -206,6 +222,14 @@ public class AutosNuevosController implements Initializable {
                 VBox v = PaginaPrincipalController.contenedorParaImagenes(App.pathImages + a.getRutasFotos().get(0), a.getMarca() + " " + a.getModelo(),
                          a.getAño() + "   " + a.getKilometraje() + " kms . " + a.getUbicacionActualVehiculo() + "\n"
                         + a.getUsadoONuevo(), "$ " + a.getPrecio());
+                v.setOnMouseClicked(event -> {
+                    PaginaDetallesVehiculoController.v = a;
+                    try {
+                        App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 fpVehiculos.getChildren().add(v);
             }
         });
