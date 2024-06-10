@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.espol.concesionaria;
+import static com.espol.concesionaria.PaginaPrincipalController.contenedorParaImagenes;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Comparator;
@@ -15,6 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import listas.ArrayListJR;
 import modelo.Tipo;
@@ -46,7 +48,6 @@ public class PaginaVehiculosOrdenamientoController implements Initializable {
     private FlowPane fpVehiculos;
     @FXML
     private ComboBox cmbOrdenar;
-    private ArrayListJR<Vehiculo> vehiculos=new ArrayListJR<>();
     public static String ordenamiento=null;
     
     private void cambiarColorLabel(String color,Label label){
@@ -58,45 +59,63 @@ public class PaginaVehiculosOrdenamientoController implements Initializable {
         label.setStyle("-fx-background-color:"+color+";");
     }
     
-    private void comboBoxOrdenamiento(){
-        cmbOrdenar.getItems().addAll("Cantidad de Ventas","Precio","Kilometraje");
-        if(ordenamiento!=null){
-            cmbOrdenar.setValue(ordenamiento);  
-            Comparator<Vehiculo> c1 =(v1,v2)->{
-                return v2.getCantidadVentas()-v1.getCantidadVentas();
-            };
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, PaginaPrincipalController.encontrarTipoPorNombre("AUTOS"));
-            PaginaPrincipalController.ordenar(vehiculos, c1);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("ninguno", fpVehiculos, vehiculos);
-        }else{
-            PaginaPrincipalController.llenarVehiculosEnContenedor("ninguno", fpVehiculos, PaginaPrincipalController.vehiculos);
-        }
-        cmbOrdenar.setOnAction(e->{
+    private void llenarContenedorDetalles(ArrayListJR<Vehiculo> vehiculos1){
+        fpVehiculos.getChildren().clear();
+        for (int i = 0; i < vehiculos1.size(); i++) {
+            Vehiculo a = vehiculos1.get(i);
+            final int j = i;
+            VBox vbox =contenedorParaImagenes(App.pathImages+a.getRutasFotos().get(0),a.getMarca()+" "+a.getModelo()
+                    ,a.getAño() + "   "+a.getKilometraje()+" kms . "+a.getUbicacionActualVehiculo()+"\n"
+                    +a.getUsadoONuevo(),"$ "+a.getPrecio());
+            vbox.setOnMouseClicked(e -> {
+                PaginaDetallesVehiculoController.v = vehiculos1.get(j);
+                try {
+                    App.abrirNuevaVentana("paginaDetallesVehiculo", 834, 687);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
+            fpVehiculos.getChildren().add(vbox);
+        }       
+    }
+    
+    private void comboBoxOrdenamiento(ArrayListJR<Vehiculo> vehiculos){
+        cmbOrdenar.setOnAction(ev->{
             if(cmbOrdenar.getValue().equals("Cantidad de Ventas")){
                 Comparator<Vehiculo> c =(v1,v2)->{
                     return v2.getCantidadVentas()-v1.getCantidadVentas();
                 };
                 PaginaPrincipalController.ordenar(vehiculos, c);
-                PaginaPrincipalController.llenarVehiculosEnContenedor("ninguno", fpVehiculos, vehiculos);
+                llenarContenedorDetalles(vehiculos);
             }else if(cmbOrdenar.getValue().equals("Precio")){
                 Comparator<Vehiculo> c =(v1,v2)->{
                     return Double.compare(v1.getPrecio(), v2.getPrecio());
                 };
                 PaginaPrincipalController.ordenar(vehiculos, c);
-                PaginaPrincipalController.llenarVehiculosEnContenedor("ninguno", fpVehiculos, vehiculos);
+                llenarContenedorDetalles(vehiculos);
             }else if(cmbOrdenar.getValue().equals("Kilometraje")){
                 Comparator<Vehiculo> c =(v1,v2)->{
                     return v1.getKilometraje()-v2.getKilometraje();
                 };
                 PaginaPrincipalController.ordenar(vehiculos, c);
-                PaginaPrincipalController.llenarVehiculosEnContenedor("ninguno", fpVehiculos, vehiculos);
+                llenarContenedorDetalles(vehiculos);
             }
         });
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        cmbOrdenar.getItems().addAll("Cantidad de Ventas","Precio","Kilometraje");
+        cmbOrdenar.setValue("Cantidad de Ventas");
+        fpVehiculos.getChildren().clear(); 
         LBAutos.setStyle("-fx-background-color:blue;");
-        vehiculos=PaginaPrincipalController.vehiculosPorTipo(vehiculos, PaginaPrincipalController.encontrarTipoPorNombre("AUTOS"));
+        Comparator<Vehiculo> c = (v1, v2) -> {
+            return v2.getCantidadVentas() - v1.getCantidadVentas();
+        };
+        ArrayListJR<Vehiculo> vehiculos =PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, 
+                PaginaPrincipalController.encontrarTipoPorNombre("AUTOS"));
+        PaginaPrincipalController.ordenar(vehiculos, c);
+        llenarContenedorDetalles(vehiculos);
+        comboBoxOrdenamiento(vehiculos);
         IVInicio.setOnMouseClicked(e->{
             Stage ventanaActual = (Stage) IVInicio.getScene().getWindow();
             ventanaActual.close();
@@ -108,40 +127,44 @@ public class PaginaVehiculosOrdenamientoController implements Initializable {
         });
         LBAutos.setOnMouseClicked(e->{
             cmbOrdenar.setValue("");
-            Tipo a = PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
-            cambiarColorLabel("blue",LBAutos);
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, a);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,vehiculos);
+            cambiarColorLabel("blue", LBAutos);
+            Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("AUTOS");
+            ArrayListJR<Vehiculo> vehiculos1 = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos,t);
+            llenarContenedorDetalles(vehiculos1);
+            comboBoxOrdenamiento(vehiculos1);
         });
         LBMotos.setOnMouseClicked(e->{
             cmbOrdenar.setValue("");
-            Tipo m = PaginaPrincipalController.encontrarTipoPorNombre("MOTOS");
             cambiarColorLabel("blue",LBMotos);
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, m);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,vehiculos);
+            Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("MOTOS");
+            ArrayListJR<Vehiculo> vehiculos1 = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos,t);
+            llenarContenedorDetalles(vehiculos1);
+            comboBoxOrdenamiento(vehiculos1);
         });
         LBMaquinarias.setOnMouseClicked(e->{
             cmbOrdenar.setValue("");
-            Tipo maq = PaginaPrincipalController.encontrarTipoPorNombre("MAQUINARIAS");
             cambiarColorLabel("blue",LBMaquinarias);
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, maq);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,vehiculos);
+            Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("MAQUINARIAS");
+            ArrayListJR<Vehiculo> vehiculos1 = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos,t);
+            llenarContenedorDetalles(vehiculos1);
+            comboBoxOrdenamiento(vehiculos1);
         });
         LBPesados.setOnMouseClicked(e->{
             cmbOrdenar.setValue("");
-            Tipo p = PaginaPrincipalController.encontrarTipoPorNombre("PESADOS");
             cambiarColorLabel("blue",LBPesados);
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, p);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,vehiculos);
+            Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("PESADOS");
+            ArrayListJR<Vehiculo> vehiculos1 = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos,t);
+            llenarContenedorDetalles(vehiculos1);
+            comboBoxOrdenamiento(vehiculos1);
         });
         LBAcuaticos.setOnMouseClicked(e->{
             cmbOrdenar.setValue("");
-            Tipo acua = PaginaPrincipalController.encontrarTipoPorNombre("ACUATICOS");
             cambiarColorLabel("blue",LBAcuaticos);
-            vehiculos = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos, acua);
-            PaginaPrincipalController.llenarVehiculosEnContenedor("Usado",fpVehiculos,vehiculos);
-        });
-        comboBoxOrdenamiento();
+            Tipo t =PaginaPrincipalController.encontrarTipoPorNombre("ACUATICOS");
+            ArrayListJR<Vehiculo> vehiculos1 = PaginaPrincipalController.vehiculosPorTipo(PaginaPrincipalController.vehiculos,t);
+            llenarContenedorDetalles(vehiculos1);
+            comboBoxOrdenamiento(vehiculos1);
+        }); 
     }    
     
 }
